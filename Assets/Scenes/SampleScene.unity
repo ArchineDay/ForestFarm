@@ -364,6 +364,7 @@ GameObject:
   - component: {fileID: 1258844079}
   - component: {fileID: 1258844078}
   - component: {fileID: 1258844081}
+  - component: {fileID: 1258844082}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -705,6 +706,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1258844082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258844077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2495956d834279240a974e3973607df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Namespace: IndieFarm
+  ScriptName: Player
+  ScriptsFolder: Assets/Scripts/Game
+  GeneratePrefab: 0
+  PrefabFolder: Assets/Art/Prefab
+  Grid: {fileID: 2034824083}
+  Tilemap: {fileID: 1487783424}
 --- !u!1 &1487783421
 GameObject:
   m_ObjectHideFlags: 0
