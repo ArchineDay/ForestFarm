@@ -16,11 +16,56 @@ namespace IndieFarm
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.J))
-            {//如果按下J键，则会获取当前位置的单元格位置，并从Tilemap中获取该位置的瓷砖，然后将该位置的瓷砖设置为null。
+            if (Input.GetMouseButtonDown(0))
+            {
                 var cellPosition = Grid.WorldToCell(transform.position);
-                var tile = Tilemap.GetTile(cellPosition);
-                Tilemap.SetTile(cellPosition, null);
+                //var tile = Tilemap.GetTile(cellPosition);
+
+                var grid = FindObjectOfType<GridController>().ShowGrid;
+                if (cellPosition.x >= 0 && cellPosition.x < 10 && cellPosition.y >= 0 && cellPosition.y < 10)
+                {
+                    //没耕地
+                    if (grid[cellPosition.x, cellPosition.y] == null)
+                    {
+                        //开垦
+                        Tilemap.SetTile(cellPosition, FindObjectOfType<GridController>().Pen);
+                        grid[cellPosition.x, cellPosition.y] = new SoliData();
+
+                    }
+                    //耕地了
+                    else if(grid[cellPosition.x, cellPosition.y].HasPlant!=true)
+                    {
+                        //放种子
+
+                        var tileWorldPos = Grid.CellToWorld(cellPosition);
+                        var cellSize = Grid.cellSize;
+                        tileWorldPos.x+=cellSize.x/2;
+                        tileWorldPos.y+=cellSize.y/2;
+                        ResController.Instance.seedPrefab
+                            .Instantiate()
+                            .Position(tileWorldPos);
+                        
+                        grid[cellPosition.x, cellPosition.y].HasPlant = true;
+                    }
+                    
+                }
+            }
+            
+            
+            if (Input.GetMouseButtonDown(1))
+            {
+                var cellPosition = Grid.WorldToCell(transform.position);
+                //var tile = Tilemap.GetTile(cellPosition);
+
+                var grid = FindObjectOfType<GridController>().ShowGrid;
+                if (cellPosition.x >= 0 && cellPosition.x < 10 && cellPosition.y >= 0 && cellPosition.y < 10)
+                {
+                    if (grid[cellPosition.x, cellPosition.y] != null)
+                    {
+                        Tilemap.SetTile(cellPosition, null);
+                        grid[cellPosition.x, cellPosition.y] = null;
+                    }
+                }
             }
         }
     }
