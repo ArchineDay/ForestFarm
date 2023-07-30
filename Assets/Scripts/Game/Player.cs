@@ -16,12 +16,26 @@ namespace IndieFarm
 
         private void Update()
         {
+            var cellPosition = Grid.WorldToCell(transform.position);
+            var grid = FindObjectOfType<GridController>().ShowGrid;
+            
+            var tileWorldPos = Grid.CellToWorld(cellPosition);
+            var cellSize = Grid.cellSize;
+            tileWorldPos.x+=cellSize.x/2;
+            tileWorldPos.y+=cellSize.y/2; 
+            
+            if (cellPosition.x >= 0 && cellPosition.x < 10 && cellPosition.y >= 0 && cellPosition.y < 10)
+            {
+                TileSelectController.Instance.Position(tileWorldPos);
+                TileSelectController.Instance.Show();
+            }
+            else
+            {
+                TileSelectController.Instance.Hide();
+            }
+
             if (Input.GetMouseButtonDown(0))
             {
-                var cellPosition = Grid.WorldToCell(transform.position);
-                //var tile = Tilemap.GetTile(cellPosition);
-
-                var grid = FindObjectOfType<GridController>().ShowGrid;
                 if (cellPosition.x >= 0 && cellPosition.x < 10 && cellPosition.y >= 0 && cellPosition.y < 10)
                 {
                     //没耕地
@@ -36,11 +50,6 @@ namespace IndieFarm
                     else if(grid[cellPosition.x, cellPosition.y].HasPlant!=true)
                     {
                         //放种子
-
-                        var tileWorldPos = Grid.CellToWorld(cellPosition);
-                        var cellSize = Grid.cellSize;
-                        tileWorldPos.x+=cellSize.x/2;
-                        tileWorldPos.y+=cellSize.y/2;
                         ResController.Instance.seedPrefab
                             .Instantiate()
                             .Position(tileWorldPos);
@@ -54,10 +63,6 @@ namespace IndieFarm
             
             if (Input.GetMouseButtonDown(1))
             {
-                var cellPosition = Grid.WorldToCell(transform.position);
-                //var tile = Tilemap.GetTile(cellPosition);
-
-                var grid = FindObjectOfType<GridController>().ShowGrid;
                 if (cellPosition.x >= 0 && cellPosition.x < 10 && cellPosition.y >= 0 && cellPosition.y < 10)
                 {
                     if (grid[cellPosition.x, cellPosition.y] != null)
