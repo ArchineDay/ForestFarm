@@ -9,22 +9,19 @@ namespace IndieFarm
         public Grid Grid;
         public Tilemap Tilemap;
 
-        void Start()
-        {
-            // Code Here
-        }
-
         private void Update()
         {
+            //
             var cellPosition = Grid.WorldToCell(transform.position);
             var grid = FindObjectOfType<GridController>().ShowGrid;
             
+            //var tileWorldPos = transform.position;角色位置在左下角
             var tileWorldPos = Grid.CellToWorld(cellPosition);
             var cellSize = Grid.cellSize;
             tileWorldPos.x+=cellSize.x/2;
             tileWorldPos.y+=cellSize.y/2; 
             
-            if (cellPosition.x >= 0 && cellPosition.x < 10 && cellPosition.y >= 0 && cellPosition.y < 10)
+            if (cellPosition is { x: >=0 and < 10, y: >= 0 and < 10 })
             {
                 TileSelectController.Instance.Position(tileWorldPos);
                 TileSelectController.Instance.Show();
@@ -36,7 +33,7 @@ namespace IndieFarm
 
             if (Input.GetMouseButtonDown(0))
             {
-                if (cellPosition.x >= 0 && cellPosition.x < 10 && cellPosition.y >= 0 && cellPosition.y < 10)
+                if (cellPosition is { x: >=0 and < 10, y: >= 0 and < 10 })
                 {
                     //没耕地
                     if (grid[cellPosition.x, cellPosition.y] == null)
@@ -63,7 +60,7 @@ namespace IndieFarm
             
             if (Input.GetMouseButtonDown(1))
             {
-                if (cellPosition.x >= 0 && cellPosition.x < 10 && cellPosition.y >= 0 && cellPosition.y < 10)
+                if (cellPosition is { x: >=0 and < 10, y: >= 0 and < 10 })
                 {
                     if (grid[cellPosition.x, cellPosition.y] != null)
                     {
@@ -72,6 +69,18 @@ namespace IndieFarm
                     }
                 }
             }
+
+            //浇水
+            if (!Input.GetKeyDown(KeyCode.E)) return;
+            //if (cellPosition.x >= 0 && cellPosition.x < 10 && cellPosition.y >= 0 && cellPosition.y < 10)
+            if (cellPosition is not { x: >= 0 and < 10, y: >= 0 and < 10 }) return;
+            if (grid[cellPosition.x, cellPosition.y] == null) return;
+            if (grid[cellPosition.x, cellPosition.y].Watered == true) return;
+            ResController.Instance.waterPrefab
+                .Instantiate()
+                .Position(tileWorldPos);
+                        
+            grid[cellPosition.x, cellPosition.y].Watered = true;
         }
     }
 }
