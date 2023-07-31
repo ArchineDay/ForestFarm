@@ -15,9 +15,28 @@ namespace IndieFarm
 
         private void Start()
         {
-            //天数变更种子发芽
             Global.Days.Register(day =>
             {
+                var soilDatas = FindObjectOfType<GridController>().ShowGrid;
+                //天数变更小植物成熟
+                var smallPlants = SceneManager.GetActiveScene()
+                    .GetRootGameObjects()
+                    .Where(gameObj => gameObj.name.StartsWith("SmallPlant"));
+                foreach (var smallPlant in smallPlants)
+                {
+                    var tilePos = Grid.WorldToCell(smallPlant.transform.position);
+
+                    var tileData = soilDatas[tilePos.x, tilePos.y];
+
+                    if (tileData is not { Watered: true }) continue; //跳过本次循环
+                    ResController.Instance.RipePrefab.Instantiate()
+                        .Position(smallPlant.transform.position);
+
+                    smallPlant.DestroySelf();
+                    //tileData.RipeState = true;
+                }
+
+                //天数变更种子发芽
                 var seeds = SceneManager.GetActiveScene()
                     .GetRootGameObjects()
                     .Where(gameObj => gameObj.name.StartsWith("Seed"));
@@ -26,18 +45,35 @@ namespace IndieFarm
                 {
                     var tilePos = Grid.WorldToCell(seed.transform.position);
 
-                    var tileData = FindObjectOfType<GridController>().ShowGrid[tilePos.x, tilePos.y];
+                    var tileData = soilDatas[tilePos.x, tilePos.y];
                     // if (tileData!=null && Watered == true)
                     // {
                     //     ResController.Instance.smallPlantPrefab.Instantiate()
                     //         .Position(seed.transform.position);
                     //     seed.DestroySelf();
                     // }
-                    if (tileData is not { Watered: true }) continue;//跳出循环
+                    if (tileData is not { Watered: true }) continue; //跳过本次循环
                     ResController.Instance.smallPlantPrefab.Instantiate()
                         .Position(seed.transform.position);
+                    //tileData.SeedState = false;
 
                     seed.DestroySelf();
+                }
+
+                //清空水的状态
+                soilDatas.ForEach(soilData =>
+                {
+                    if (soilData != null)
+                    {
+                        soilData.Watered = false;
+                    }
+                });
+                //清空水的对象
+                foreach (var water in SceneManager.GetActiveScene()
+                             .GetRootGameObjects()
+                             .Where(gameObj => gameObj.name.StartsWith("Water")))
+                {
+                    water.DestroySelf();
                 }
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
         }
