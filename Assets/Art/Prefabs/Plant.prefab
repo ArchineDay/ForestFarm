@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 669078474982746565}
   - component: {fileID: 4266611570572926962}
+  - component: {fileID: -5690702030543730305}
   m_Layer: 0
-  m_Name: SmallPlant
+  m_Name: Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8902951029311973782, guid: e0f7ba3b149b2a247b0fb63b73e2e21a, type: 3}
+  m_Sprite: {fileID: -7866928900747384746, guid: 2307a34bf09abe544b8bd464296329bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,3 +85,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-5690702030543730305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3620523988723446051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0a563a03eff884ca7fdd42fb1f1fbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Namespace: IndieFarm
+  ScriptName: Plant
+  ScriptsFolder: Assets/Scripts/Game
+  GeneratePrefab: 0
+  PrefabFolder: Assets/Art/Prefab
+  States: 0

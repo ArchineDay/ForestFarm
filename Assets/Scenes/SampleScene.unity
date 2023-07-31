@@ -454,6 +454,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1061699777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1061699779}
+  - component: {fileID: 1061699778}
+  m_Layer: 0
+  m_Name: PlantController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1061699778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061699777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354404a7eef68db47801df83a16d6916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Namespace: IndieFarm
+  ScriptName: PlantController
+  ScriptsFolder: Assets/Scripts/Game
+  GeneratePrefab: 0
+  PrefabFolder: Assets/Art/Prefab
+--- !u!4 &1061699779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061699777}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1258844077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1128,11 @@ MonoBehaviour:
   seedPrefab: {fileID: 2447145044389700278, guid: e850b23e8b5ea354694a18a020e26657, type: 3}
   waterPrefab: {fileID: 1935732969578497417, guid: 5736f3101e0506441b2dbba8439d6c20, type: 3}
   smallPlantPrefab: {fileID: 3620523988723446051, guid: 3fa641421b0a30b4f959ed049f955a6d, type: 3}
-  RipePrefab: {fileID: 5574585003130990339, guid: f651e572b7dff7945a7db2f40b58ec29, type: 3}
+  ripePrefab: {fileID: 5574585003130990339, guid: f651e572b7dff7945a7db2f40b58ec29, type: 3}
+  plantPrefab: {fileID: 3620523988723446051, guid: f7cb7b9b07be12f4db0c90be8fc68f20, type: 3}
+  seedSprite: {fileID: -7866928900747384746, guid: 2307a34bf09abe544b8bd464296329bc, type: 3}
+  smallPlantSprite: {fileID: -8902951029311973782, guid: e0f7ba3b149b2a247b0fb63b73e2e21a, type: 3}
+  ripeSprite: {fileID: 853675080466277832, guid: 900ac3c42260ccd4eb3e573c069248c8, type: 3}
 --- !u!4 &1688994990
 Transform:
   m_ObjectHideFlags: 0

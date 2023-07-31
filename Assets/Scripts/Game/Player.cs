@@ -19,46 +19,45 @@ namespace IndieFarm
             {
                 var soilDatas = FindObjectOfType<GridController>().ShowGrid;
                 //天数变更小植物成熟
-                var smallPlants = SceneManager.GetActiveScene()
-                    .GetRootGameObjects()
-                    .Where(gameObj => gameObj.name.StartsWith("SmallPlant"));
-                foreach (var smallPlant in smallPlants)
+                // var smallPlants = SceneManager.GetActiveScene()
+                //     .GetRootGameObjects()
+                //     .Where(gameObj => gameObj.name.StartsWith("SmallPlant"));
+                // foreach (var smallPlant in smallPlants)
+                // {
+                //     var tilePos = Grid.WorldToCell(smallPlant.transform.position);
+                //
+                //     var tileData = soilDatas[tilePos.x, tilePos.y];
+                //
+                //     if (tileData is not { Watered: true }) continue; //跳过本次循环
+                //     ResController.Instance.ripePrefab.Instantiate()
+                //         .Position(smallPlant.transform.position);
+                //
+                //     smallPlant.DestroySelf();
+                //     //tileData.RipeState = true;
+                // }
+
+                PlantController.Instance.Plants.ForEach((x, y, plant) =>
                 {
-                    var tilePos = Grid.WorldToCell(smallPlant.transform.position);
-
-                    var tileData = soilDatas[tilePos.x, tilePos.y];
-
-                    if (tileData is not { Watered: true }) continue; //跳过本次循环
-                    ResController.Instance.RipePrefab.Instantiate()
-                        .Position(smallPlant.transform.position);
-
-                    smallPlant.DestroySelf();
-                    //tileData.RipeState = true;
-                }
-
-                //天数变更种子发芽
-                var seeds = SceneManager.GetActiveScene()
-                    .GetRootGameObjects()
-                    .Where(gameObj => gameObj.name.StartsWith("Seed"));
-
-                foreach (var seed in seeds)
-                {
-                    var tilePos = Grid.WorldToCell(seed.transform.position);
-
-                    var tileData = soilDatas[tilePos.x, tilePos.y];
-                    // if (tileData!=null && Watered == true)
-                    // {
-                    //     ResController.Instance.smallPlantPrefab.Instantiate()
-                    //         .Position(seed.transform.position);
-                    //     seed.DestroySelf();
-                    // }
-                    if (tileData is not { Watered: true }) continue; //跳过本次循环
-                    ResController.Instance.smallPlantPrefab.Instantiate()
-                        .Position(seed.transform.position);
-                    //tileData.SeedState = false;
-
-                    seed.DestroySelf();
-                }
+                    if (plant)
+                    {
+                        if (plant.State == PlantStates.Seed)
+                        {
+                            if (soilDatas[x, y].Watered)
+                            {
+                                //plant切换到small状态
+                                plant.SetState(PlantStates.Small);
+                            }
+                        }
+                        else if (plant.State == PlantStates.Small)
+                        {
+                            if (soilDatas[x, y].Watered)
+                            {
+                                plant.SetState(PlantStates.Ripe);
+                            }
+                        }
+                    }
+                });
+                
 
                 //清空水的状态
                 soilDatas.ForEach(soilData =>
@@ -132,9 +131,16 @@ namespace IndieFarm
                     else if (grid[cellPosition.x, cellPosition.y].HasPlant != true)
                     {
                         //放种子
-                        ResController.Instance.seedPrefab
+                        var plantGameObj = ResController.Instance.plantPrefab
                             .Instantiate()
                             .Position(tileWorldPos);
+                        var plant = plantGameObj.GetComponent<Plant>();
+                        plant.XCell = cellPosition.x;
+                        plant.YCell = cellPosition.y;
+
+                        //添加到 Plants 数组
+                        PlantController.Instance.Plants[cellPosition.x, cellPosition.y] = plant;
+
 
                         grid[cellPosition.x, cellPosition.y].HasPlant = true;
                     }
