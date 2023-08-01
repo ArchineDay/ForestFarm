@@ -78,18 +78,28 @@ namespace IndieFarm
         }
 
         private void OnGUI()
-        {
+        { 
             //显示天数
             IMGUIHelper.SetDesignResolution(640, 360);
             GUILayout.Space(10); //默认是verticle垂直方向，是行间距
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
-            GUILayout.Label("天数" + Global.Days.Value);
+            GUILayout.Label("天数:" + Global.Days.Value);
             GUILayout.EndHorizontal();
             
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
-            GUILayout.Label("果子" + Global.FruitCount.Value);
+            GUILayout.Label("果子:" + Global.FruitCount.Value);
+            GUILayout.EndHorizontal();
+            
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(10);
+            GUILayout.Label("浇水: E" );
+            GUILayout.EndHorizontal();
+            
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(10);
+            GUILayout.Label("下一天: F" );
             GUILayout.EndHorizontal();
         }
 
@@ -145,15 +155,18 @@ namespace IndieFarm
 
                         //添加到 Plants 数组
                         PlantController.Instance.Plants[cellPosition.x, cellPosition.y] = plant;
-                        
+
                         grid[cellPosition.x, cellPosition.y].HasPlant = true;
                     }
                     else if (grid[cellPosition.x,cellPosition.y].HasPlant)
                     {
                         if (grid[cellPosition.x,cellPosition.y].PlantState == PlantStates.Ripe)
                         {
-                            //摘果子，植物->old
-                            PlantController.Instance.Plants[cellPosition.x,cellPosition.y].SetState(PlantStates.Old);
+                            //摘果子，植物消失
+                            Destroy(PlantController.Instance.Plants[cellPosition.x,cellPosition.y].gameObject);
+                            grid[cellPosition.x, cellPosition.y].HasPlant = false;
+                            PlantController.Instance.Plants[cellPosition.x,cellPosition.y].SetState(PlantStates.Seed);
+
                             //果子+1
                             Global.FruitCount.Value++;
                         }
@@ -185,6 +198,14 @@ namespace IndieFarm
                 .Position(tileWorldPos);
 
             grid[cellPosition.x, cellPosition.y].Watered = true;
+
+            //结束游戏
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                SceneManager.LoadScene("GamePass");
+            }
         }
+        
+        
     }
 }
