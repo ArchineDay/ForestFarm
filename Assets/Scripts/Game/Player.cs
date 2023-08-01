@@ -86,6 +86,11 @@ namespace IndieFarm
             GUILayout.Space(10);
             GUILayout.Label("天数" + Global.Days.Value);
             GUILayout.EndHorizontal();
+            
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(10);
+            GUILayout.Label("果子" + Global.FruitCount.Value);
+            GUILayout.EndHorizontal();
         }
 
         private void Update()
@@ -140,9 +145,18 @@ namespace IndieFarm
 
                         //添加到 Plants 数组
                         PlantController.Instance.Plants[cellPosition.x, cellPosition.y] = plant;
-
-
+                        
                         grid[cellPosition.x, cellPosition.y].HasPlant = true;
+                    }
+                    else if (grid[cellPosition.x,cellPosition.y].HasPlant)
+                    {
+                        if (grid[cellPosition.x,cellPosition.y].PlantState == PlantStates.Ripe)
+                        {
+                            //摘果子，植物->old
+                            PlantController.Instance.Plants[cellPosition.x,cellPosition.y].SetState(PlantStates.Old);
+                            //果子+1
+                            Global.FruitCount.Value++;
+                        }
                     }
                 }
             }

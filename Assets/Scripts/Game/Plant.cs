@@ -26,6 +26,9 @@ namespace IndieFarm
 				}else if (newState ==PlantStates.Seed)
 				{
 					GetComponent<SpriteRenderer>().sprite = ResController.Instance.seedSprite;
+				}else if (newState ==PlantStates.Old)
+				{
+					GetComponent<SpriteRenderer>().sprite = ResController.Instance.oldSprite;
 				}
 				//同步到SoilData中
 				FindObjectOfType<GridController>().ShowGrid[XCell, YCell].PlantState = newState;
