@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using HutongGames.PlayMaker.Actions;
 using UnityEngine;
 using QFramework;
 using Unity.VisualScripting;
@@ -57,7 +58,7 @@ namespace IndieFarm
                         }
                     }
                 });
-                
+
 
                 //清空水的状态
                 soilDatas.ForEach(soilData =>
@@ -78,7 +79,7 @@ namespace IndieFarm
         }
 
         private void OnGUI()
-        { 
+        {
             //显示天数
             IMGUIHelper.SetDesignResolution(640, 360);
             GUILayout.Space(10); //默认是verticle垂直方向，是行间距
@@ -86,32 +87,34 @@ namespace IndieFarm
             GUILayout.Space(10);
             GUILayout.Label("天数:" + Global.Days.Value);
             GUILayout.EndHorizontal();
-            
+
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
             GUILayout.Label("果子:" + Global.FruitCount.Value);
             GUILayout.EndHorizontal();
-            
+
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
-            GUILayout.Label("浇水: E" );
+            GUILayout.Label("浇水: E");
             GUILayout.EndHorizontal();
-            
+
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
-            GUILayout.Label("下一天: F" );
+            GUILayout.Label("下一天: F");
             GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(10);
+            GUILayout.Label($"当前工具: {Global.CurrentToolName.Value}");
+            GUILayout.EndHorizontal();
+
+            GUILayout.FlexibleSpace();
+
+            GUI.Label(new Rect(10, 360 - 24, 200, 24), "[1] 手 [2] 锄头");
         }
 
         private void Update()
         {
-            //天数变更
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                Global.Days.Value++;
-            }
-
-            //
             var cellPosition = Grid.WorldToCell(transform.position);
             var grid = FindObjectOfType<GridController>().ShowGrid;
 
@@ -136,14 +139,16 @@ namespace IndieFarm
                 if (cellPosition is { x: >= 0 and < 10, y: >= 0 and < 10 })
                 {
                     //没耕地
-                    if (grid[cellPosition.x, cellPosition.y] == null)
+                    if (grid[cellPosition.x, cellPosition.y] == null&&Global.CurrentToolName.Value=="锄头")
                     {
                         //开垦
                         Tilemap.SetTile(cellPosition, FindObjectOfType<GridController>().Pen);
                         grid[cellPosition.x, cellPosition.y] = new SoliData();
                     }
+
+                    return;
                     //耕地了
-                    else if (grid[cellPosition.x, cellPosition.y].HasPlant != true)
+                    if (grid[cellPosition.x, cellPosition.y].HasPlant != true&&Global.CurrentToolName.Value=="手")
                     {
                         //放种子
                         var plantGameObj = ResController.Instance.plantPrefab
@@ -158,14 +163,14 @@ namespace IndieFarm
 
                         grid[cellPosition.x, cellPosition.y].HasPlant = true;
                     }
-                    else if (grid[cellPosition.x,cellPosition.y].HasPlant)
+                    else if (grid[cellPosition.x, cellPosition.y].HasPlant)
                     {
-                        if (grid[cellPosition.x,cellPosition.y].PlantState == PlantStates.Ripe)
+                        if (grid[cellPosition.x, cellPosition.y].PlantState == PlantStates.Ripe)
                         {
                             //摘果子，植物消失
-                            Destroy(PlantController.Instance.Plants[cellPosition.x,cellPosition.y].gameObject);
+                            Destroy(PlantController.Instance.Plants[cellPosition.x, cellPosition.y].gameObject);
                             grid[cellPosition.x, cellPosition.y].HasPlant = false;
-                            PlantController.Instance.Plants[cellPosition.x,cellPosition.y].SetState(PlantStates.Seed);
+                            PlantController.Instance.Plants[cellPosition.x, cellPosition.y].SetState(PlantStates.Seed);
 
                             //果子+1
                             Global.FruitCount.Value++;
@@ -188,24 +193,39 @@ namespace IndieFarm
             }
 
             //浇水
-            if (!Input.GetKeyDown(KeyCode.E)) return;
-            //if (cellPosition.x >= 0 && cellPosition.x < 10 && cellPosition.y >= 0 && cellPosition.y < 10)
-            if (cellPosition is not { x: >= 0 and < 10, y: >= 0 and < 10 }) return;
-            if (grid[cellPosition.x, cellPosition.y] == null) return;
-            if (grid[cellPosition.x, cellPosition.y].Watered == true) return;
-            ResController.Instance.waterPrefab
-                .Instantiate()
-                .Position(tileWorldPos);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (cellPosition is not { x: >= 0 and < 10, y: >= 0 and < 10 }) return;
+                if (grid[cellPosition.x, cellPosition.y] == null) return;
+                if (grid[cellPosition.x, cellPosition.y].Watered == true) return;
+                ResController.Instance.waterPrefab
+                    .Instantiate()
+                    .Position(tileWorldPos);
 
-            grid[cellPosition.x, cellPosition.y].Watered = true;
+                grid[cellPosition.x, cellPosition.y].Watered = true;
+            }
+
+            //天数变更
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Global.Days.Value++;
+            }
 
             //结束游戏
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 SceneManager.LoadScene("GamePass");
             }
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                Global.CurrentToolName.Value = "手";
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                Global.CurrentToolName.Value = "锄头";
+            }
         }
-        
-        
     }
 }
