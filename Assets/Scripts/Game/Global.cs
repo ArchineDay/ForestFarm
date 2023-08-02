@@ -23,6 +23,7 @@ namespace IndieFarm
         public const string TOOL_HAND = "hand";
         public const string TOOL_SHOVEL = "shovel";
         public const string TOOL_SEED = "seed";
+        public const string TOOL_WATERING_SCAN = "watering_scan";
 
         public static string DisplayName(string tool)
         {
@@ -34,6 +35,8 @@ namespace IndieFarm
                     return "铁锹";
                 case TOOL_SEED:
                     return "种子";
+                case TOOL_WATERING_SCAN:
+                    return "花洒";
             }
             return string.Empty;
         }
