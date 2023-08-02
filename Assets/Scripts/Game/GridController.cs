@@ -21,6 +21,7 @@ namespace IndieFarm
             {
                 if (data != null)
                 {
+                    //用的pen来设置
                     Tilemap.SetTile(new Vector3Int(x, y), Pen);
                 }
             });
