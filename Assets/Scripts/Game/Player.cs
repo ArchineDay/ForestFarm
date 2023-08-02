@@ -105,12 +105,12 @@ namespace IndieFarm
 
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
-            GUILayout.Label($"当前工具: {Global.CurrentToolName.Value}");
+            GUILayout.Label($"当前工具: {Constant.DisplayName(Global.CurrentTool)}");
             GUILayout.EndHorizontal();
 
             GUILayout.FlexibleSpace();
 
-            GUI.Label(new Rect(10, 360 - 24, 200, 24), "[1] 手 [2] 锄头");
+            GUI.Label(new Rect(10, 360 - 24, 200, 24), "[1] 手 [2] 铁锹 [3] 种子");
         }
 
         private void Update()
@@ -126,29 +126,42 @@ namespace IndieFarm
 
             if (cellPosition is { x: >= 0 and < 10, y: >= 0 and < 10 })
             {
-                TileSelectController.Instance.Position(tileWorldPos);
-                TileSelectController.Instance.Show();
+                if (Global.CurrentTool == Constant.TOOL_SHOVEL && grid[cellPosition.x, cellPosition.y] == null)
+                {
+                    TileSelectController.Instance.Position(tileWorldPos);
+                    TileSelectController.Instance.Show();
+                }
+                else if (Global.CurrentTool == Constant.TOOL_SEED &&
+                         grid[cellPosition.x, cellPosition.y] != null &&
+                         grid[cellPosition.x, cellPosition.y].HasPlant != true)
+                {
+                    TileSelectController.Instance.Position(tileWorldPos);
+                    TileSelectController.Instance.Show();
+                }
+                else
+                {
+                    TileSelectController.Instance.Hide();
+                }
             }
-            else
-            {
-                TileSelectController.Instance.Hide();
-            }
+
 
             if (Input.GetMouseButtonDown(0))
             {
                 if (cellPosition is { x: >= 0 and < 10, y: >= 0 and < 10 })
                 {
                     //没耕地
-                    if (grid[cellPosition.x, cellPosition.y] == null&&Global.CurrentToolName.Value=="锄头")
+                    if (grid[cellPosition.x, cellPosition.y] == null &&
+                        Global.CurrentTool.Value == Constant.TOOL_SHOVEL)
                     {
                         //开垦
                         Tilemap.SetTile(cellPosition, FindObjectOfType<GridController>().Pen);
                         grid[cellPosition.x, cellPosition.y] = new SoliData();
                     }
 
-                    return;
                     //耕地了
-                    if (grid[cellPosition.x, cellPosition.y].HasPlant != true&&Global.CurrentToolName.Value=="手")
+                    else if (grid[cellPosition.x, cellPosition.y] != null&&
+                             grid[cellPosition.x, cellPosition.y].HasPlant != true &&
+                             Global.CurrentTool.Value == Constant.TOOL_SEED)
                     {
                         //放种子
                         var plantGameObj = ResController.Instance.plantPrefab
@@ -163,7 +176,9 @@ namespace IndieFarm
 
                         grid[cellPosition.x, cellPosition.y].HasPlant = true;
                     }
-                    else if (grid[cellPosition.x, cellPosition.y].HasPlant)
+
+                    return;
+                    if (grid[cellPosition.x, cellPosition.y].HasPlant)
                     {
                         if (grid[cellPosition.x, cellPosition.y].PlantState == PlantStates.Ripe)
                         {
@@ -219,12 +234,17 @@ namespace IndieFarm
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                Global.CurrentToolName.Value = "手";
+                Global.CurrentTool.Value = Constant.TOOL_HAND;
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                Global.CurrentToolName.Value = "锄头";
+                Global.CurrentTool.Value = Constant.TOOL_SHOVEL;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                Global.CurrentTool.Value = Constant.TOOL_SEED;
             }
         }
     }
