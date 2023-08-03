@@ -11,7 +11,7 @@ namespace IndieFarm
 		private PlantStates mState = PlantStates.Seed;
 		public PlantStates State => mState;//get方法
 		
-		//成熟第几天
+		//成熟当天
 		public int RipeDay;
 
 		public void SetState(PlantStates newState)

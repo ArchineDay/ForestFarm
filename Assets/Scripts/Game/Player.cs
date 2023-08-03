@@ -18,7 +18,7 @@ namespace IndieFarm
         {
             Global.Days.Register(day =>
             {
-                Global.RipeAndHarvestInCurrentDay = 0;
+                Global.RipeAndHarvestCountInCurrentDay.Value = 0;
                 var soilDatas = FindObjectOfType<GridController>().ShowGrid;
                 //天数变更小植物成熟
                 PlantController.Instance.Plants.ForEach((x, y, plant) =>
@@ -197,14 +197,8 @@ namespace IndieFarm
                         grid[cellPosition.x, cellPosition.y].HasPlant = false;
                         PlantController.Instance.Plants[cellPosition.x, cellPosition.y].SetState(PlantStates.Seed);
                         
-                        if (PlantController.Instance.Plants[cellPosition.x, cellPosition.y].RipeDay == Global.Days.Value)
-                        {
-                            Global.RipeAndHarvestInCurrentDay++;
-                            if (Global.RipeAndHarvestInCurrentDay >= 2)
-                            {
-                                ActionKit.Delay(1.0f, () => { SceneManager.LoadScene("GamePass"); }).Start(this);
-                            }
-                        }
+                        Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[cellPosition.x, cellPosition.y]);
+                       
 
 
                         //果子+1

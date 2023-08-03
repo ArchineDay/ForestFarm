@@ -19,7 +19,17 @@ namespace IndieFarm
         // a：BindableProperty是一个可绑定的属性，可以在属性值发生变化的时候，通知到其他地方。
 
         //当天成熟的数量
-        public static int RipeAndHarvestInCurrentDay = 0;
+        public static BindableProperty<int> RipeAndHarvestCountInCurrentDay = new BindableProperty<int>(0);
+
+        public static List<Challenge> Challenges = new List<Challenge>()
+        {
+            new ChallengeRipeAndHarvestTwoFruitsInOneDay()
+        };
+        
+        //植物收割
+        public static EasyEvent<Plant> OnPlantHarvest = new EasyEvent<Plant>();
+        
+        public static EasyEvent<Challenge> OnChallengeFinish = new EasyEvent<Challenge>();
     }
 
     public class Constant

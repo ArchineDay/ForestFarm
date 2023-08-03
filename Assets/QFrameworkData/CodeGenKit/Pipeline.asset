@@ -25,5 +25,5 @@ MonoBehaviour:
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace IndieFarm\r\n{\r\n\tpublic
       partial class GameController : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:83eb163c-f488-49f3-a49d-6204514c1620\r\nusing UnityEngine;\r\n\r\nnamespace
+    DesignerCode: "// Generate Id:f9cfa6b6-7bd1-4216-ae75-2bc76a9a0765\r\nusing UnityEngine;\r\n\r\nnamespace
       IndieFarm\r\n{\r\n\tpublic partial class GameController\r\n\t{\r\n\r\n\t}\r\n}\r\n"
