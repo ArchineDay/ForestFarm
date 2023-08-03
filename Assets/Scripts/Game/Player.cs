@@ -18,25 +18,9 @@ namespace IndieFarm
         {
             Global.Days.Register(day =>
             {
+                Global.RipeAndHarvestInCurrentDay = 0;
                 var soilDatas = FindObjectOfType<GridController>().ShowGrid;
                 //天数变更小植物成熟
-                // var smallPlants = SceneManager.GetActiveScene()
-                //     .GetRootGameObjects()
-                //     .Where(gameObj => gameObj.name.StartsWith("SmallPlant"));
-                // foreach (var smallPlant in smallPlants)
-                // {
-                //     var tilePos = Grid.WorldToCell(smallPlant.transform.position);
-                //
-                //     var tileData = soilDatas[tilePos.x, tilePos.y];
-                //
-                //     if (tileData is not { Watered: true }) continue; //跳过本次循环
-                //     ResController.Instance.ripePrefab.Instantiate()
-                //         .Position(smallPlant.transform.position);
-                //
-                //     smallPlant.DestroySelf();
-                //     //tileData.RipeState = true;
-                // }
-
                 PlantController.Instance.Plants.ForEach((x, y, plant) =>
                 {
                     if (plant)
@@ -212,6 +196,16 @@ namespace IndieFarm
                         Destroy(PlantController.Instance.Plants[cellPosition.x, cellPosition.y].gameObject);
                         grid[cellPosition.x, cellPosition.y].HasPlant = false;
                         PlantController.Instance.Plants[cellPosition.x, cellPosition.y].SetState(PlantStates.Seed);
+                        
+                        if (PlantController.Instance.Plants[cellPosition.x, cellPosition.y].RipeDay == Global.Days.Value)
+                        {
+                            Global.RipeAndHarvestInCurrentDay++;
+                            if (Global.RipeAndHarvestInCurrentDay >= 2)
+                            {
+                                ActionKit.Delay(1.0f, () => { SceneManager.LoadScene("GamePass"); }).Start(this);
+                            }
+                        }
+
 
                         //果子+1
                         Global.FruitCount.Value++;
