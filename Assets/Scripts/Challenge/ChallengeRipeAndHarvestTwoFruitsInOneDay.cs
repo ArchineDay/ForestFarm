@@ -4,28 +4,20 @@ using UnityEngine.SceneManagement;
 
 namespace IndieFarm
 {
-    public class ChallengeRipeAndHarvestTwoFruitsInOneDay : Challenge, IUnRegisterList
+    public class ChallengeRipeAndHarvestTwoFruitsInOneDay : Challenge
     {
         public override void OnStart()
         {
-            //监听当前成熟的植物是不是当天成熟收割的
-            Global.OnPlantHarvest.Register(plant =>
-            {
-                if (plant.RipeDay == Global.Days.Value)
-                {
-                    Global.RipeAndHarvestCountInCurrentDay.Value++;
-                }
-            }).AddToUnregisterList(this); //当前类
         }
 
         public override bool CheckFinish()
         {
-            return Global.RipeAndHarvestCountInCurrentDay >= 2;
+            return Global.RipeAndHarvestCountInCurrentDay.Value >= 2;
         }
 
         public override void OnFinish()
         {
-            this.UnRegisterAll();
+            //this.UnRegisterAll();
             // ActionKit.Delay(1.0f, ()
             //     =>
             // { 
@@ -33,6 +25,6 @@ namespace IndieFarm
             // }).StartGlobal();
         }
 
-        public List<IUnRegister> UnregisterList { get; } = new List<IUnRegister>();
+        //public List<IUnRegister> UnregisterList { get; } = new List<IUnRegister>();
     }
 }

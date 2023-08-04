@@ -23,12 +23,14 @@ namespace IndieFarm
 
         public static List<Challenge> Challenges = new List<Challenge>()
         {
-            new ChallengeRipeAndHarvestTwoFruitsInOneDay()
+            new ChallengeHarvesetFirstFruit(),
+            new ChallengeRipeAndHarvestTwoFruitsInOneDay(),
+            new ChallengeRipeAndHarvestFiveFruitsInOneDay()
         };
         
         //植物收割
         public static EasyEvent<Plant> OnPlantHarvest = new EasyEvent<Plant>();
-        
+        //挑战完成
         public static EasyEvent<Challenge> OnChallengeFinish = new EasyEvent<Challenge>();
     }
 

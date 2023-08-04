@@ -10,23 +10,30 @@ namespace IndieFarm
     {
         void Start()
         {
+            
+            //监听当前成熟的植物是不是当天成熟收割的
+            Global.OnPlantHarvest.Register(plant =>
+            {
+                if (plant.RipeDay == Global.Days.Value)
+                {
+                    Global.RipeAndHarvestCountInCurrentDay.Value++;
+                }
+            }).UnRegisterWhenGameObjectDestroyed(gameObject); //当前类
+            
+            
            Global.OnChallengeFinish.Register(challenge =>
            {
                Debug.Log("@@@"+challenge.GetType().Name+"挑战完成");
+
+               if (Global.Challenges.All(challenges=>challenges.State==Challenge.States.Finished))
+               {
+                   ActionKit.Delay(0.5f, () =>
+                   {
+                       SceneManager.LoadScene("GamePass");
+                   }).Start(this);
+               }
            } ).UnRegisterWhenGameObjectDestroyed(gameObject);
            
-           // Global.FruitCount.Register(fruitCount =>
-           // {
-           //     if (fruitCount >= 1)
-           //     {
-           //         ActionKit.Delay(1.0f, () =>
-           //         {
-           //             SceneManager.LoadScene("GamePass");
-           //         }).Start(this);
-           //
-           //     }
-           // }).UnRegisterWhenGameObjectDestroyed(this);
-           // //this 关键字指的是当前 GameController 类的实例对象
         }
 
         private void Update()
