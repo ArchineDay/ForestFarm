@@ -195,6 +195,7 @@ namespace IndieFarm
                         //摘果子，植物消失
                         Destroy(PlantController.Instance.Plants[cellPosition.x, cellPosition.y].gameObject);
                         grid[cellPosition.x, cellPosition.y].HasPlant = false;
+                        
                         PlantController.Instance.Plants[cellPosition.x, cellPosition.y].SetState(PlantStates.Seed);
                         
                         Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[cellPosition.x, cellPosition.y]);

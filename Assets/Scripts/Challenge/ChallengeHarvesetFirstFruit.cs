@@ -2,6 +2,8 @@ namespace IndieFarm
 {
     public class ChallengeHarvesetFirstFruit:Challenge
     {
+        public override string Name { get; } = "收获第一个果子";
+
         public override void OnStart()
         {
             
