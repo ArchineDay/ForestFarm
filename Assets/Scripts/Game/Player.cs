@@ -77,7 +77,7 @@ namespace IndieFarm
             GUILayout.Space(10);
             GUILayout.Label("果子:" + Global.FruitCount.Value);
             GUILayout.EndHorizontal();
-            
+
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
             GUILayout.Label("下一天: F");
@@ -169,8 +169,9 @@ namespace IndieFarm
 
                         //添加到 Plants 数组
                         PlantController.Instance.Plants[cellPosition.x, cellPosition.y] = plant;
-
                         grid[cellPosition.x, cellPosition.y].HasPlant = true;
+
+                        AudioController.Get.SfxSeed.Play();
                     }
                     else if (grid[cellPosition.x, cellPosition.y] != null &&
                              grid[cellPosition.x, cellPosition.y].Watered != true &&
@@ -182,6 +183,7 @@ namespace IndieFarm
                             .Position(tileWorldPos);
 
                         grid[cellPosition.x, cellPosition.y].Watered = true;
+                        AudioController.Get.SfxWater.Play();
                     }
 
                     else if (grid[cellPosition.x, cellPosition.y] != null &&
@@ -202,6 +204,8 @@ namespace IndieFarm
 
                         //果子+1
                         Global.FruitCount.Value++;
+
+                        AudioController.Get.SfxHarvest.Play();
                     }
                 }
             }
@@ -223,6 +227,7 @@ namespace IndieFarm
             //天数变更
             if (Input.GetKeyDown(KeyCode.F))
             {
+                AudioController.Get.SfxNextDay.Play();
                 Global.Days.Value++;
             }
 

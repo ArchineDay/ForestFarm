@@ -27,6 +27,8 @@ namespace IndieFarm
 
             Global.OnChallengeFinish.Register(challenge =>
             {
+                AudioController.Get.SfxChallengeFinish.Play();
+                
                 if (Global.Challenges.All(challenges => challenges.State == Challenge.States.Finished))
                 {
                     ActionKit.Delay(0.5f, () => { SceneManager.LoadScene("GamePass"); }).Start(this);
