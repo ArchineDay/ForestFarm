@@ -19,6 +19,7 @@ namespace IndieFarm
             Global.Days.Register(day =>
             {
                 Global.RipeAndHarvestCountInCurrentDay.Value = 0;
+                Global.HarvestCountInCurrentDay.Value = 0;
                 var soilDatas = FindObjectOfType<GridController>().ShowGrid;
                 //天数变更小植物成熟
                 PlantController.Instance.Plants.ForEach((x, y, plant) =>
@@ -195,12 +196,13 @@ namespace IndieFarm
                         //摘果子，植物消失
                         Destroy(PlantController.Instance.Plants[cellPosition.x, cellPosition.y].gameObject);
                         grid[cellPosition.x, cellPosition.y].HasPlant = false;
-                        
+                        /*
+                         * 重置植物状态
+                         */
                         PlantController.Instance.Plants[cellPosition.x, cellPosition.y].SetState(PlantStates.Seed);
-                        
-                        Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[cellPosition.x, cellPosition.y]);
-                       
 
+                        Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[cellPosition.x, cellPosition.y]);
+                        Global.HarvestCountInCurrentDay.Value++;
 
                         //果子+1
                         Global.FruitCount.Value++;
