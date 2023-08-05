@@ -90,7 +90,7 @@ namespace IndieFarm
 
             GUILayout.FlexibleSpace();
 
-            GUI.Label(new Rect(10, 360 - 24, 200, 24), "[1] 手 [2] 铁锹 [3] 种子 [4] 花洒");
+            //GUI.Label(new Rect(10, 360 - 24, 200, 24), "[1] 手 [2] 铁锹 [3] 种子 [4] 花洒");
         }
 
         private void Update()
@@ -237,29 +237,7 @@ namespace IndieFarm
                 SceneManager.LoadScene("GamePass");
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                Global.CurrentTool.Value = Constant.TOOL_HAND;
-                AudioController.Get.SfxTake.Play();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                Global.CurrentTool.Value = Constant.TOOL_SHOVEL;
-                AudioController.Get.SfxTake.Play();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                Global.CurrentTool.Value = Constant.TOOL_SEED;
-                AudioController.Get.SfxTake.Play();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                Global.CurrentTool.Value = Constant.TOOL_WATERING_SCAN;
-                AudioController.Get.SfxTake.Play();
-            }
+           
         }
     }
 }
