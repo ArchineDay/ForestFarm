@@ -77,12 +77,7 @@ namespace IndieFarm
             GUILayout.Space(10);
             GUILayout.Label("果子:" + Global.FruitCount.Value);
             GUILayout.EndHorizontal();
-
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(10);
-            GUILayout.Label("浇水: E");
-            GUILayout.EndHorizontal();
-
+            
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
             GUILayout.Label("下一天: F");
@@ -156,6 +151,7 @@ namespace IndieFarm
                         //开垦
                         Tilemap.SetTile(cellPosition, FindObjectOfType<GridController>().Pen);
                         grid[cellPosition.x, cellPosition.y] = new SoliData();
+                        AudioController.Get.SfxShovelDig.Play();
                     }
 
                     //耕地了
@@ -239,21 +235,25 @@ namespace IndieFarm
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 Global.CurrentTool.Value = Constant.TOOL_HAND;
+                AudioController.Get.SfxTake.Play();
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 Global.CurrentTool.Value = Constant.TOOL_SHOVEL;
+                AudioController.Get.SfxTake.Play();
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
                 Global.CurrentTool.Value = Constant.TOOL_SEED;
+                AudioController.Get.SfxTake.Play();
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha4))
             {
                 Global.CurrentTool.Value = Constant.TOOL_WATERING_SCAN;
+                AudioController.Get.SfxTake.Play();
             }
         }
     }
