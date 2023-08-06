@@ -14,6 +14,11 @@ namespace IndieFarm
         public Grid Grid;
         public Tilemap Tilemap;
 
+        private void Awake()
+        {
+            Global.Player = this;
+        }
+
         private void Start()
         {
             Global.Days.Register(day =>
@@ -82,11 +87,8 @@ namespace IndieFarm
             GUILayout.Space(10);
             GUILayout.Label("下一天: F");
             GUILayout.EndHorizontal();
-
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(10);
-            GUILayout.Label($"当前工具: {Constant.DisplayName(Global.CurrentTool)}");
-            GUILayout.EndHorizontal();
+            
+            //GUILayout.Label($"当前工具: {Constant.DisplayName(Global.CurrentTool)}");
 
             GUILayout.FlexibleSpace();
 
@@ -236,8 +238,11 @@ namespace IndieFarm
             {
                 SceneManager.LoadScene("GamePass");
             }
+        }
 
-           
+        private void OnDestroy()
+        {
+            Global.Player = null;
         }
     }
 }

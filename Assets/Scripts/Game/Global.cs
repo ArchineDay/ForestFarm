@@ -8,6 +8,7 @@ namespace IndieFarm
 {
     public class Global
     {
+        public static Player Player = null;
         //默认是第一天
         public static BindableProperty<int> Days = new BindableProperty<int>(1);
         
