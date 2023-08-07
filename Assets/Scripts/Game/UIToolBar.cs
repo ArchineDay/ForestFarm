@@ -11,8 +11,8 @@ namespace IndieFarm
         {
             HideAllSelect();
             Btn1Seclect.Show();
-            Global.Player.ToolIcon.sprite = Btn1Icon.sprite;
-            
+            //Global.Player.ToolIcon.sprite = Btn1Icon.sprite;
+            Global.Mouse.Icon.sprite = Btn1Icon.sprite;
             Btn1.onClick.AddListener(() => { ChangeTool(Constant.TOOL_HAND,Btn1Seclect,Btn1Icon.sprite); });
             Btn2.onClick.AddListener(() => { ChangeTool(Constant.TOOL_SHOVEL,Btn2Seclect,Btn2Icon.sprite); });
             Btn3.onClick.AddListener(() => { ChangeTool(Constant.TOOL_SEED,Btn3Seclect,Btn3Icon.sprite); });
@@ -34,7 +34,7 @@ namespace IndieFarm
             HideAllSelect();
             selectImage.Show();
             
-            Global.Player.ToolIcon.sprite=toolIcon;
+            Global.Mouse.Icon.sprite = toolIcon;
         }
 
         private void Update()
