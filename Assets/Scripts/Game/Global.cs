@@ -8,7 +8,7 @@ namespace IndieFarm
 {
     public class Global
     {
-        public static ToolController Mouse=null;
+        public static ToolController MouseTool=null;
         public static Player Player = null;
         //默认是第一天
         public static BindableProperty<int> Days = new BindableProperty<int>(1);
@@ -54,6 +54,7 @@ namespace IndieFarm
         public const string TOOL_SHOVEL = "shovel";
         public const string TOOL_SEED = "seed";
         public const string TOOL_WATERING_SCAN = "watering_scan";
+        public const string TOOL_SEED_RADISH ="seed_radish";
 
         public static string DisplayName(string tool)
         {
@@ -67,6 +68,8 @@ namespace IndieFarm
                     return "种子";
                 case TOOL_WATERING_SCAN:
                     return "花洒";
+                case TOOL_SEED_RADISH:
+                    return "萝卜种子";
             }
             return string.Empty;
         }

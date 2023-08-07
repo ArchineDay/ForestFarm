@@ -15,12 +15,12 @@ namespace IndieFarm
 
         private void Awake()
         {
-            Global.Mouse = this;
+            Global.MouseTool = this;
         }
 
         private void OnDestroy()
         {
-            Global.Mouse = null;
+            Global.MouseTool = null;
         }
 
         void Start()
