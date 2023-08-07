@@ -14,7 +14,7 @@ namespace IndieFarm
 	{
 		public static PlantController Instance => MonoSingletonProperty<PlantController>.Instance;
 		
-		public EasyGrid<Plant> Plants =new EasyGrid<Plant>(10,10);
+		public EasyGrid<IPlant> Plants =new EasyGrid<IPlant>(10,10);
 
 		public void OnSingletonInit()
 		{

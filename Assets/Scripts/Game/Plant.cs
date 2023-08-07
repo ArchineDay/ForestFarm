@@ -3,7 +3,14 @@ using QFramework;
 
 namespace IndieFarm
 {
-	public partial class Plant : ViewController
+	public interface IPlant
+	{
+		GameObject GameObject { get; }
+		PlantStates State { get; }
+		void SetState(PlantStates state);
+		void Grow(SoliData soilData);
+	}
+	public partial class Plant : ViewController,IPlant
 	{
 		public int XCell;
 		public int YCell;
@@ -42,5 +49,25 @@ namespace IndieFarm
 			}
 		}
 
+		public void Grow(SoliData soilData)
+		{
+			if (State == PlantStates.Seed)
+			{
+			    if (soilData.Watered)
+			    {
+			        //plant切换到small状态
+			        SetState(PlantStates.Small);
+			    }
+			}
+			else if (State == PlantStates.Small)
+			{
+			    if (soilData.Watered)
+			    {
+			       SetState(PlantStates.Ripe);
+			    }
+			}
+		}
+
+		public GameObject GameObject => gameObject;
 	}
 }

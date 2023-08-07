@@ -29,24 +29,26 @@ namespace IndieFarm
                 //天数变更小植物成熟
                 PlantController.Instance.Plants.ForEach((x, y, plant) =>
                 {
-                    if (plant)
+                    if (plant!=null)
                     {
-                        if (plant.State == PlantStates.Seed)
-                        {
-                            if (soilDatas[x, y].Watered)
-                            {
-                                //plant切换到small状态
-                                plant.SetState(PlantStates.Small);
-                            }
-                        }
-                        else if (plant.State == PlantStates.Small)
-                        {
-                            if (soilDatas[x, y].Watered)
-                            {
-                                plant.SetState(PlantStates.Ripe);
-                            }
-                        }
+                        plant.Grow(soilDatas[x, y]);
+                        // if (plant.State == PlantStates.Seed)
+                        // {
+                        //     if (soilDatas[x, y].Watered)
+                        //     {
+                        //         //plant切换到small状态
+                        //         plant.SetState(PlantStates.Small);
+                        //     }
+                        // }
+                        // else if (plant.State == PlantStates.Small)
+                        // {
+                        //     if (soilDatas[x, y].Watered)
+                        //     {
+                        //         plant.SetState(PlantStates.Ripe);
+                        //     }
+                        // }
                     }
+                    
                 });
 
 

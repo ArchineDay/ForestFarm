@@ -99,6 +99,27 @@ namespace IndieFarm
                             AudioController.Get.SfxSeed.Play();
                         }
                     }
+                    //放萝卜种子
+                    else if (Global.CurrentTool == Constant.TOOL_SEED_RADISH &&
+                             mShowGrid[cellPos.x, cellPos.y] != null &&
+                             mShowGrid[cellPos.x, cellPos.y].HasPlant != true)
+                    {
+                        if (Input.GetMouseButtonDown(0))
+                        {
+                            var plantGameObj = ResController.Instance.plantRadishPrefab
+                                .Instantiate()
+                                .Position(gridCenterPos);
+                            var plant = plantGameObj.GetComponent<PlantRadish>();
+                            plant.XCell = cellPos.x;
+                            plant.YCell = cellPos.y;
+
+                            //添加到 Plants 数组
+                            PlantController.Instance.Plants[cellPos.x, cellPos.y] = plant;
+                            mShowGrid[cellPos.x, cellPos.y].HasPlant = true;
+
+                            AudioController.Get.SfxSeed.Play();
+                        }
+                    }
                     //浇水
                     else if (mShowGrid[cellPos.x, cellPos.y] != null &&
                              mShowGrid[cellPos.x, cellPos.y].Watered != true &&
@@ -123,14 +144,14 @@ namespace IndieFarm
                         if (Input.GetMouseButtonDown(0))
                         {
                             //摘果子，植物消失
-                            Destroy(PlantController.Instance.Plants[cellPos.x, cellPos.y].gameObject);
+                            Destroy(PlantController.Instance.Plants[cellPos.x, cellPos.y].GameObject);
                             mShowGrid[cellPos.x, cellPos.y].HasPlant = false;
                             /*
                              * 重置植物状态
                              */ 
                             PlantController.Instance.Plants[cellPos.x, cellPos.y].SetState(PlantStates.Seed);
 
-                            Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[cellPos.x, cellPos.y]);
+                            //Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[cellPos.x, cellPos.y]);
                             Global.HarvestCountInCurrentDay.Value++;
 
                             //果子+1

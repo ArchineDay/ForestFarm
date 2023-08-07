@@ -1466,6 +1466,9 @@ MonoBehaviour:
   Btn4: {fileID: 1850204324}
   Btn4Icon: {fileID: 669030610}
   Btn4Seclect: {fileID: 1408974306}
+  Btn5: {fileID: 178525552}
+  Btn5Icon: {fileID: 845243001}
+  Btn5Seclect: {fileID: 409614387}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4162,10 +4165,12 @@ MonoBehaviour:
   PrefabFolder: Assets/Art/Prefab
   waterPrefab: {fileID: 1935732969578497417, guid: 5736f3101e0506441b2dbba8439d6c20, type: 3}
   plantPrefab: {fileID: 3620523988723446051, guid: f7cb7b9b07be12f4db0c90be8fc68f20, type: 3}
+  plantRadishPrefab: {fileID: 3620523988723446051, guid: 37489f7ae4ac6f94cbe4106556b2ce02, type: 3}
   seedSprite: {fileID: -7866928900747384746, guid: 2307a34bf09abe544b8bd464296329bc, type: 3}
   smallPlantSprite: {fileID: -8902951029311973782, guid: e0f7ba3b149b2a247b0fb63b73e2e21a, type: 3}
   ripeSprite: {fileID: 853675080466277832, guid: 900ac3c42260ccd4eb3e573c069248c8, type: 3}
   oldSprite: {fileID: -6728447469715521605, guid: fa2d6b72f9bbd4540b99180aae44a854, type: 3}
+  seedRadishSprite: {fileID: -6257656149191112168, guid: ea7edcd721e09b949b0a047f729552b0, type: 3}
 --- !u!4 &1688994990
 Transform:
   m_ObjectHideFlags: 0

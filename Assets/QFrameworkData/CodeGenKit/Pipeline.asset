@@ -15,68 +15,15 @@ MonoBehaviour:
   CurrentTask:
     ShowLog: 0
     Status: 1
-    GameObject: {fileID: 0}
+    GameObject: {fileID: 3620523988723446051, guid: 37489f7ae4ac6f94cbe4106556b2ce02, type: 3}
     From: 0
     NameToFullName: []
-    BindInfos:
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: Btn1
-      MemberName: Btn1
-    - TypeName: UnityEngine.UI.Image
-      PathToRoot: Btn1/Btn1Icon
-      MemberName: Btn1Icon
-    - TypeName: UnityEngine.UI.Image
-      PathToRoot: Btn1/Btn1Seclect
-      MemberName: Btn1Seclect
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: Btn2
-      MemberName: Btn2
-    - TypeName: UnityEngine.UI.Image
-      PathToRoot: Btn2/Btn2Icon
-      MemberName: Btn2Icon
-    - TypeName: UnityEngine.UI.Image
-      PathToRoot: Btn2/Btn2Seclect
-      MemberName: Btn2Seclect
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: Btn3
-      MemberName: Btn3
-    - TypeName: UnityEngine.UI.Image
-      PathToRoot: Btn3/Btn3Icon
-      MemberName: Btn3Icon
-    - TypeName: UnityEngine.UI.Image
-      PathToRoot: Btn3/Btn3Seclect
-      MemberName: Btn3Seclect
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: Btn4
-      MemberName: Btn4
-    - TypeName: UnityEngine.UI.Image
-      PathToRoot: Btn4/Btn4Icon
-      MemberName: Btn4Icon
-    - TypeName: UnityEngine.UI.Image
-      PathToRoot: Btn4/Btn4Seclect
-      MemberName: Btn4Seclect
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: Btn5
-      MemberName: Btn5
-    - TypeName: UnityEngine.UI.Image
-      PathToRoot: Btn5/Btn5Icon
-      MemberName: Btn5Icon
-    - TypeName: UnityEngine.UI.Image
-      PathToRoot: Btn5/Btn5Seclect
-      MemberName: Btn5Seclect
+    BindInfos: []
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: UIToolBar
+    ClassName: PlantRadish
     Namespace: IndieFarm
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace IndieFarm\r\n{\r\n\tpublic
-      partial class UIToolBar : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class PlantRadish : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:168e14ab-9631-4126-b6c1-46997d6f0797\r\nusing UnityEngine;\r\n\r\nnamespace
-      IndieFarm\r\n{\r\n\tpublic partial class UIToolBar\r\n\t{\r\n\r\n\t\tpublic
-      UnityEngine.UI.Button Btn1;\r\n\r\n\t\tpublic UnityEngine.UI.Image Btn1Icon;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Image Btn1Seclect;\r\n\r\n\t\tpublic UnityEngine.UI.Button Btn2;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Image Btn2Icon;\r\n\r\n\t\tpublic UnityEngine.UI.Image Btn2Seclect;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Button Btn3;\r\n\r\n\t\tpublic UnityEngine.UI.Image Btn3Icon;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Image Btn3Seclect;\r\n\r\n\t\tpublic UnityEngine.UI.Button Btn4;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Image Btn4Icon;\r\n\r\n\t\tpublic UnityEngine.UI.Image Btn4Seclect;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Button Btn5;\r\n\r\n\t\tpublic UnityEngine.UI.Image Btn5Icon;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Image Btn5Seclect;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:1ca0bce4-cab9-4139-afb0-43215ba39990\r\nusing UnityEngine;\r\n\r\nnamespace
+      IndieFarm\r\n{\r\n\tpublic partial class PlantRadish\r\n\t{\r\n\r\n\t}\r\n}\r\n"
