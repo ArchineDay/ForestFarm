@@ -4171,6 +4171,8 @@ MonoBehaviour:
   ripeSprite: {fileID: 853675080466277832, guid: 900ac3c42260ccd4eb3e573c069248c8, type: 3}
   oldSprite: {fileID: -6728447469715521605, guid: fa2d6b72f9bbd4540b99180aae44a854, type: 3}
   seedRadishSprite: {fileID: -6257656149191112168, guid: ea7edcd721e09b949b0a047f729552b0, type: 3}
+  smallPlantRadishSprite: {fileID: -3689203500237960935, guid: 746fb5a4f9a9d184cb7a8bdb8d9f0f0f, type: 3}
+  ripeRadishSprite: {fileID: 520748989501480910, guid: c002c3111c7b50049ac503d67967af83, type: 3}
 --- !u!4 &1688994990
 Transform:
   m_ObjectHideFlags: 0

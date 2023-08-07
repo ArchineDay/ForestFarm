@@ -9,18 +9,22 @@ namespace IndieFarm
 		PlantStates State { get; }
 		void SetState(PlantStates state);
 		void Grow(SoliData soilData);
+
+		int RipeDay { get; }
 	}
+	
 	public partial class Plant : ViewController,IPlant
 	{
+		public int RipeDay { get; private set; }
+
+		public GameObject GameObject => gameObject;
+		
 		public int XCell;
 		public int YCell;
 		
 		private PlantStates mState = PlantStates.Seed;
 		public PlantStates State => mState;//get方法
 		
-		//成熟当天
-		public int RipeDay;
-
 		public void SetState(PlantStates newState)
 		{
 			if (newState!=mState)
@@ -68,6 +72,6 @@ namespace IndieFarm
 			}
 		}
 
-		public GameObject GameObject => gameObject;
+	
 	}
 }

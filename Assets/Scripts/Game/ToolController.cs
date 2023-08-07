@@ -66,6 +66,7 @@ namespace IndieFarm
                             mShowGrid[cellPos.x, cellPos.y] = new SoliData();
                             AudioController.Get.SfxShovelDig.Play();
                         }
+
                         if (Input.GetMouseButtonDown(1))
                         {
                             if (cellPos is { x: >= 0 and < 10, y: >= 0 and < 10 })
@@ -148,14 +149,23 @@ namespace IndieFarm
                             mShowGrid[cellPos.x, cellPos.y].HasPlant = false;
                             /*
                              * 重置植物状态
-                             */ 
+                             */
                             PlantController.Instance.Plants[cellPos.x, cellPos.y].SetState(PlantStates.Seed);
 
-                            //Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[cellPos.x, cellPos.y]);
+                            Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[cellPos.x, cellPos.y]);
                             Global.HarvestCountInCurrentDay.Value++;
 
-                            //果子+1
-                            Global.FruitCount.Value++;
+                            if (PlantController.Instance.Plants[cellPos.x, cellPos.y] as Plant)
+                            {
+                                //果子+1
+                                Global.FruitCount.Value++;
+                            }
+
+                            if (PlantController.Instance.Plants[cellPos.x, cellPos.y] as PlantRadish)
+                            {
+                                //萝卜+1
+                                Global.RadishCount.Value++;
+                            }
 
                             AudioController.Get.SfxHarvest.Play();
                         }
