@@ -14,6 +14,8 @@ namespace IndieFarm
         public Grid Grid;
         public Tilemap Tilemap;
 
+        public Font Font;
+        private GUIStyle mLabelStyle;
         private void Awake()
         {
             Global.Player = this;
@@ -21,6 +23,10 @@ namespace IndieFarm
 
         private void Start()
         {
+            mLabelStyle =new GUIStyle("Label")
+            {
+                font = Font
+            };
             Global.Days.Register(day =>
             {
                 Global.RipeAndHarvestCountInCurrentDay.Value = 0;
@@ -32,21 +38,7 @@ namespace IndieFarm
                     if (plant!=null)
                     {
                         plant.Grow(soilDatas[x, y]);
-                        // if (plant.State == PlantStates.Seed)
-                        // {
-                        //     if (soilDatas[x, y].Watered)
-                        //     {
-                        //         //plant切换到small状态
-                        //         plant.SetState(PlantStates.Small);
-                        //     }
-                        // }
-                        // else if (plant.State == PlantStates.Small)
-                        // {
-                        //     if (soilDatas[x, y].Watered)
-                        //     {
-                        //         plant.SetState(PlantStates.Ripe);
-                        //     }
-                        // }
+                        Debug.Log("grow"+PlantController.Instance.Plants[x, y].State);
                     }
                     
                 });
@@ -77,23 +69,23 @@ namespace IndieFarm
             GUILayout.Space(10); //默认是verticle垂直方向，是行间距
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
-            GUILayout.Label("天数:" + Global.Days.Value);
+            GUILayout.Label("天数:" + Global.Days.Value,mLabelStyle);
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
-            GUILayout.Label("果子:" + Global.FruitCount.Value);
+            GUILayout.Label("果子:" + Global.FruitCount.Value,mLabelStyle);
             GUILayout.EndHorizontal();
             
             
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
-            GUILayout.Label("萝卜:" + Global.RadishCount.Value);
+            GUILayout.Label("萝卜:" + Global.RadishCount.Value,mLabelStyle);
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
-            GUILayout.Label("下一天: F");
+            GUILayout.Label("下一天: F",mLabelStyle);
             GUILayout.EndHorizontal();
             
             //GUILayout.Label($"当前工具: {Constant.DisplayName(Global.CurrentTool)}");

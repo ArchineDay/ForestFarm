@@ -60,31 +60,20 @@ namespace IndieFarm
                     //开垦
                     if (Global.CurrentTool == Constant.TOOL_SHOVEL && mShowGrid[cellPos.x, cellPos.y] == null)
                     {
-                        if (Input.GetMouseButtonDown(0))
+                        if (Input.GetMouseButton(0))
                         {
                             mTilemap.SetTile(cellPos, mGridController.Pen);
                             mShowGrid[cellPos.x, cellPos.y] = new SoliData();
                             AudioController.Get.SfxShovelDig.Play();
                         }
-
-                        if (Input.GetMouseButtonDown(1))
-                        {
-                            if (cellPos is { x: >= 0 and < 10, y: >= 0 and < 10 })
-                            {
-                                if (mShowGrid[cellPos.x, cellPos.y] != null)
-                                {
-                                    mTilemap.SetTile(cellPos, null);
-                                    mShowGrid[cellPos.x, cellPos.y] = null;
-                                }
-                            }
-                        }
                     }
+                    
                     //放种子
                     else if (Global.CurrentTool == Constant.TOOL_SEED &&
                              mShowGrid[cellPos.x, cellPos.y] != null &&
                              mShowGrid[cellPos.x, cellPos.y].HasPlant != true)
                     {
-                        if (Input.GetMouseButtonDown(0))
+                        if (Input.GetMouseButton(0))
                         {
                             var plantGameObj = ResController.Instance.plantPrefab
                                 .Instantiate()
@@ -96,7 +85,7 @@ namespace IndieFarm
                             //添加到 Plants 数组
                             PlantController.Instance.Plants[cellPos.x, cellPos.y] = plant;
                             mShowGrid[cellPos.x, cellPos.y].HasPlant = true;
-
+                            
                             AudioController.Get.SfxSeed.Play();
                         }
                     }
@@ -105,7 +94,7 @@ namespace IndieFarm
                              mShowGrid[cellPos.x, cellPos.y] != null &&
                              mShowGrid[cellPos.x, cellPos.y].HasPlant != true)
                     {
-                        if (Input.GetMouseButtonDown(0))
+                        if (Input.GetMouseButton(0))
                         {
                             var plantGameObj = ResController.Instance.plantRadishPrefab
                                 .Instantiate()
@@ -126,7 +115,7 @@ namespace IndieFarm
                              mShowGrid[cellPos.x, cellPos.y].Watered != true &&
                              Global.CurrentTool.Value == Constant.TOOL_WATERING_SCAN)
                     {
-                        if (Input.GetMouseButtonDown(0))
+                        if (Input.GetMouseButton(0))
                         {
                             ResController.Instance.waterPrefab
                                 .Instantiate()
@@ -134,6 +123,7 @@ namespace IndieFarm
 
                             mShowGrid[cellPos.x, cellPos.y].Watered = true;
                             AudioController.Get.SfxWater.Play();
+                            Debug.Log( "grid"+mShowGrid[cellPos.x, cellPos.y].PlantState);
                         }
                     }
                     //收割
@@ -142,16 +132,14 @@ namespace IndieFarm
                              mShowGrid[cellPos.x, cellPos.y].PlantState == PlantStates.Ripe &&
                              Global.CurrentTool.Value == Constant.TOOL_HAND)
                     {
-                        if (Input.GetMouseButtonDown(0))
+                        if (Input.GetMouseButton(0))
                         {
                             //摘果子，植物消失
                             Destroy(PlantController.Instance.Plants[cellPos.x, cellPos.y].GameObject);
                             mShowGrid[cellPos.x, cellPos.y].HasPlant = false;
-                            /*
-                             * 重置植物状态
-                             */
-                            PlantController.Instance.Plants[cellPos.x, cellPos.y].SetState(PlantStates.Seed);
-
+                            //重置土地的状态
+                            mShowGrid[cellPos.x, cellPos.y].PlantState = PlantStates.Seed;
+                            
                             Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[cellPos.x, cellPos.y]);
                             Global.HarvestCountInCurrentDay.Value++;
 
