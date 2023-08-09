@@ -22,38 +22,9 @@ namespace IndieFarm
         public static BindableProperty<string> CurrentTool = new BindableProperty<string>(Constant.TOOL_HAND);
         // a：BindableProperty是一个可绑定的属性，可以在属性值发生变化的时候，通知到其他地方。
 
-        //当天成熟果子的数量
-        public static BindableProperty<int> RipeAndHarvestCountInCurrentDay = new BindableProperty<int>(0);
-        //当天成熟萝卜的数量
-        public static BindableProperty<int> RipeAndHarvestRadishCountInCurrentDay = new BindableProperty<int>(0);
-        
-        //当天收割果子的数量
-        public static BindableProperty<int> HarvestCountInCurrentDay = new BindableProperty<int>(0);
-        //当天收割萝卜的数量
-        public static BindableProperty<int> RadishHarvestCountInCurrentDay = new BindableProperty<int>(0);
-
-        public static List<Challenge> Challenges = new List<Challenge>()
-        {
-            new ChallengeHarvestAFruit(),
-            new ChallengeRipeAndHarvestTwoFruitsInADay(),
-            new ChallengeRipeAndHarvestFiveFruitsInADay(),
-            new ChallengeHarvestARadish(),
-            new ChallengeRipeAndHarvestFruitAndRadishInOneDay()
-        };
-
-        public static List<Challenge> ActiveChallenges = new List<Challenge>()
-        {
-
-        };
-
-        public static List<Challenge> FinishedChallenges = new List<Challenge>()
-        {
-
-        };
         //植物收割
         public static EasyEvent<IPlant> OnPlantHarvest = new EasyEvent<IPlant>();
-        //挑战完成
-        public static EasyEvent<Challenge> OnChallengeFinish = new EasyEvent<Challenge>();
+     
     }
 
     public class Constant
