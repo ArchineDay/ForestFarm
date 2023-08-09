@@ -141,18 +141,20 @@ namespace IndieFarm
                             mShowGrid[cellPos.x, cellPos.y].PlantState = PlantStates.Seed;
                             
                             Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[cellPos.x, cellPos.y]);
-                            Global.HarvestCountInCurrentDay.Value++;
+                            
 
                             if (PlantController.Instance.Plants[cellPos.x, cellPos.y] as Plant)
                             {
                                 //果子+1
                                 Global.FruitCount.Value++;
+                               
                             }
 
                             if (PlantController.Instance.Plants[cellPos.x, cellPos.y] as PlantRadish)
                             {
                                 //萝卜+1
                                 Global.RadishCount.Value++;
+                                
                             }
 
                             AudioController.Get.SfxHarvest.Play();
