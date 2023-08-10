@@ -15,15 +15,22 @@ MonoBehaviour:
   CurrentTask:
     ShowLog: 0
     Status: 1
-    GameObject: {fileID: 3620523988723446051, guid: 37489f7ae4ac6f94cbe4106556b2ce02, type: 3}
+    GameObject: {fileID: 0}
     From: 0
     NameToFullName: []
-    BindInfos: []
+    BindInfos:
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnBuyFruitSeed
+      MemberName: BtnBuyFruitSeed
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnBuyRadishSeed
+      MemberName: BtnBuyRadishSeed
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: PlantRadish
+    ClassName: UIShop
     Namespace: IndieFarm
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace IndieFarm\r\n{\r\n\tpublic
-      partial class PlantRadish : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class UIShop : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:1ca0bce4-cab9-4139-afb0-43215ba39990\r\nusing UnityEngine;\r\n\r\nnamespace
-      IndieFarm\r\n{\r\n\tpublic partial class PlantRadish\r\n\t{\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:fa5215d6-b374-499c-841e-5c20756d0083\r\nusing UnityEngine;\r\n\r\nnamespace
+      IndieFarm\r\n{\r\n\tpublic partial class UIShop\r\n\t{\r\n\r\n\t\tpublic UnityEngine.UI.Button
+      BtnBuyFruitSeed;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnBuyRadishSeed;\r\n\r\n\t}\r\n}\r\n"
