@@ -67,26 +67,30 @@ namespace IndieFarm
                             AudioController.Get.SfxShovelDig.Play();
                         }
                     }
-                    
+
                     //放种子
                     else if (Global.CurrentTool == Constant.TOOL_SEED &&
                              mShowGrid[cellPos.x, cellPos.y] != null &&
                              mShowGrid[cellPos.x, cellPos.y].HasPlant != true)
                     {
-                        if (Input.GetMouseButton(0))
+                        if (Global.FruitSeedCount > 0)
                         {
-                            var plantGameObj = ResController.Instance.plantPrefab
-                                .Instantiate()
-                                .Position(gridCenterPos);
-                            var plant = plantGameObj.GetComponent<Plant>();
-                            plant.XCell = cellPos.x;
-                            plant.YCell = cellPos.y;
+                            if (Input.GetMouseButton(0))
+                            {
+                                Global.FruitSeedCount.Value--;
+                                var plantGameObj = ResController.Instance.plantPrefab
+                                    .Instantiate()
+                                    .Position(gridCenterPos);
+                                var plant = plantGameObj.GetComponent<Plant>();
+                                plant.XCell = cellPos.x;
+                                plant.YCell = cellPos.y;
 
-                            //添加到 Plants 数组
-                            PlantController.Instance.Plants[cellPos.x, cellPos.y] = plant;
-                            mShowGrid[cellPos.x, cellPos.y].HasPlant = true;
-                            
-                            AudioController.Get.SfxSeed.Play();
+                                //添加到 Plants 数组
+                                PlantController.Instance.Plants[cellPos.x, cellPos.y] = plant;
+                                mShowGrid[cellPos.x, cellPos.y].HasPlant = true;
+
+                                AudioController.Get.SfxSeed.Play();
+                            }
                         }
                     }
                     //放萝卜种子
@@ -94,20 +98,24 @@ namespace IndieFarm
                              mShowGrid[cellPos.x, cellPos.y] != null &&
                              mShowGrid[cellPos.x, cellPos.y].HasPlant != true)
                     {
-                        if (Input.GetMouseButton(0))
+                        if (Global.RadishSeedCount > 0)
                         {
-                            var plantGameObj = ResController.Instance.plantRadishPrefab
-                                .Instantiate()
-                                .Position(gridCenterPos);
-                            var plant = plantGameObj.GetComponent<PlantRadish>();
-                            plant.XCell = cellPos.x;
-                            plant.YCell = cellPos.y;
+                            if (Input.GetMouseButton(0))
+                            {
+                                Global.RadishSeedCount.Value--;
+                                var plantGameObj = ResController.Instance.plantRadishPrefab
+                                    .Instantiate()
+                                    .Position(gridCenterPos);
+                                var plant = plantGameObj.GetComponent<PlantRadish>();
+                                plant.XCell = cellPos.x;
+                                plant.YCell = cellPos.y;
 
-                            //添加到 Plants 数组
-                            PlantController.Instance.Plants[cellPos.x, cellPos.y] = plant;
-                            mShowGrid[cellPos.x, cellPos.y].HasPlant = true;
+                                //添加到 Plants 数组
+                                PlantController.Instance.Plants[cellPos.x, cellPos.y] = plant;
+                                mShowGrid[cellPos.x, cellPos.y].HasPlant = true;
 
-                            AudioController.Get.SfxSeed.Play();
+                                AudioController.Get.SfxSeed.Play();
+                            }
                         }
                     }
                     //浇水
@@ -123,7 +131,7 @@ namespace IndieFarm
 
                             mShowGrid[cellPos.x, cellPos.y].Watered = true;
                             AudioController.Get.SfxWater.Play();
-                            Debug.Log( "grid"+mShowGrid[cellPos.x, cellPos.y].PlantState);
+                            Debug.Log("grid" + mShowGrid[cellPos.x, cellPos.y].PlantState);
                         }
                     }
                     //收割
@@ -139,22 +147,20 @@ namespace IndieFarm
                             mShowGrid[cellPos.x, cellPos.y].HasPlant = false;
                             //重置土地的状态
                             mShowGrid[cellPos.x, cellPos.y].PlantState = PlantStates.Seed;
-                            
+
                             Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[cellPos.x, cellPos.y]);
-                            
+
 
                             if (PlantController.Instance.Plants[cellPos.x, cellPos.y] as Plant)
                             {
                                 //果子+1
                                 Global.FruitCount.Value++;
-                               
                             }
 
                             if (PlantController.Instance.Plants[cellPos.x, cellPos.y] as PlantRadish)
                             {
                                 //萝卜+1
                                 Global.RadishCount.Value++;
-                                
                             }
 
                             AudioController.Get.SfxHarvest.Play();

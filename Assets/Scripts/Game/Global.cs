@@ -15,8 +15,10 @@ namespace IndieFarm
         
         //果子数量
         public static BindableProperty<int> FruitCount =new BindableProperty<int>(0);
+        public static BindableProperty<int> FruitSeedCount =new BindableProperty<int>(5);
         //萝卜数量
         public static BindableProperty<int> RadishCount =new BindableProperty<int>(0);
+        public static BindableProperty<int> RadishSeedCount =new BindableProperty<int>(5);
 
         //当前工具
         public static BindableProperty<string> CurrentTool = new BindableProperty<string>(Constant.TOOL_HAND);
