@@ -1838,6 +1838,7 @@ GameObject:
   - component: {fileID: 559811641}
   - component: {fileID: 559811640}
   - component: {fileID: 559811639}
+  - component: {fileID: 559811642}
   m_Layer: 5
   m_Name: BtnBuyFruitSeed
   m_TagString: Untagged
@@ -1948,6 +1949,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559811637}
   m_CullTransparentMesh: 1
+--- !u!114 &559811642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559811637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkType: 0
+  CustomComponentName: BtnBuyRadishSeed
+  CustomComment: 
+  mComponentName: UnityEngine.UI.Button
 --- !u!1 &606472490
 GameObject:
   m_ObjectHideFlags: 0
@@ -2825,6 +2842,55 @@ MonoBehaviour:
   CustomComponentName: Btn1Seclect
   CustomComment: 
   mComponentName: UnityEngine.UI.Image
+--- !u!1 &875785176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 875785178}
+  - component: {fileID: 875785177}
+  m_Layer: 0
+  m_Name: TimeController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &875785177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875785176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb270a1ceeff60549b5863068fd13fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Namespace: IndieFarm
+  ScriptName: TimeController
+  ScriptsFolder: Assets/Scripts/Game
+  GeneratePrefab: 0
+  PrefabFolder: Assets/Art/Prefab
+--- !u!4 &875785178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875785176}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 119.68574, y: 234.54356, z: -0.5664064}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1022908657
 GameObject:
   m_ObjectHideFlags: 0
@@ -4342,6 +4408,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1604319040}
+  - component: {fileID: 1604319041}
   m_Layer: 5
   m_Name: UIShop
   m_TagString: Untagged
@@ -4371,6 +4438,25 @@ RectTransform:
   m_AnchoredPosition: {x: -777, y: -316}
   m_SizeDelta: {x: 222.5719, y: 191.9289}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1604319041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604319039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fbadf0fc83e356468a0025c80e9be2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Namespace: IndieFarm
+  ScriptName: UIShop
+  ScriptsFolder: Assets/Scripts/Game
+  GeneratePrefab: 0
+  PrefabFolder: Assets/Art/Prefab
+  BtnBuyFruitSeed: {fileID: 559811639}
+  BtnBuyRadishSeed: {fileID: 2083346100}
 --- !u!1 &1688994988
 GameObject:
   m_ObjectHideFlags: 0
@@ -5014,6 +5100,7 @@ GameObject:
   - component: {fileID: 2083346102}
   - component: {fileID: 2083346101}
   - component: {fileID: 2083346100}
+  - component: {fileID: 2083346103}
   m_Layer: 5
   m_Name: BtnBuyRadishSeed
   m_TagString: Untagged
@@ -5124,6 +5211,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083346098}
   m_CullTransparentMesh: 1
+--- !u!114 &2083346103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083346098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkType: 0
+  CustomComponentName: BtnBuyRadishSeed
+  CustomComment: 
+  mComponentName: UnityEngine.UI.Button
 --- !u!1 &2113878903
 GameObject:
   m_ObjectHideFlags: 0

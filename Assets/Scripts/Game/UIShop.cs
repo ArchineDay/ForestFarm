@@ -36,6 +36,12 @@ namespace IndieFarm
 				Global.FruitCount.Value -= 1;
 				Global.FruitSeedCount.Value+= 2;
 			});
+			
+			BtnBuyRadishSeed.onClick.AddListener(()=>
+			{
+				Global.RadishCount.Value -= 1;
+				Global.RadishSeedCount.Value+= 2;
+			});
 		}
 	}
 }
