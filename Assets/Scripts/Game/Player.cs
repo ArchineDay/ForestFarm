@@ -94,10 +94,10 @@ namespace IndieFarm
             GUILayout.Label("萝卜:" + Global.RadishCount.Value, mLabelStyle);
             GUILayout.EndHorizontal();
 
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(10);
-            GUILayout.Label("下一天: F", mLabelStyle);
-            GUILayout.EndHorizontal();
+            // GUILayout.BeginHorizontal();
+            // GUILayout.Space(10);
+            // GUILayout.Label("下一天: F", mLabelStyle);
+            // GUILayout.EndHorizontal();
 
             //GUILayout.Label($"当前工具: {Constant.DisplayName(Global.CurrentTool)}");
 
@@ -108,12 +108,12 @@ namespace IndieFarm
 
         private void Update()
         {
-            //天数变更
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                AudioController.Get.SfxNextDay.Play();
-                Global.Days.Value++;
-            }
+            // //天数变更
+            // if (Input.GetKeyDown(KeyCode.F))
+            // {
+            //     AudioController.Get.SfxNextDay.Play();
+            //     Global.Days.Value++;
+            // }
 
             //结束游戏
             if (Input.GetKeyDown(KeyCode.Return))

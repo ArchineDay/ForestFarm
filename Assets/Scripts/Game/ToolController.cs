@@ -50,7 +50,7 @@ namespace IndieFarm
             float deltaY = Mathf.Abs(cellPos.y - playerPos.y);
 
             // 检查cellPos是否在playerPos周围（相邻或对角线位置）
-            if (deltaX <= 1 && deltaY <= 1 && (deltaX + deltaY) > 0)
+            if (deltaX <= 1 && deltaY <= 1 && (deltaX + deltaY) >=0)
             {
                 if (cellPos is { x: >= 0 and < 10, y: >= 0 and < 10 })
                 {

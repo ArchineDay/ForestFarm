@@ -17,6 +17,15 @@ namespace IndieFarm
 				{
 					BtnBuyFruitSeed.Hide();
 				}
+
+				if (fruitCount>=2)
+				{
+					BtnBuyRadish.Show();
+				}
+				else
+				{
+					BtnBuyRadish.Hide();
+				}
 			}).UnRegisterWhenGameObjectDestroyed(gameObject);
 			
 			Global.RadishCount.RegisterWithInitValue(radishCount =>
@@ -28,6 +37,15 @@ namespace IndieFarm
 				else
 				{
 					BtnBuyRadishSeed.Hide();
+				}
+
+				if (radishCount>=2)
+				{
+					BtnBuyFruit.Show();
+				}
+				else
+				{
+					BtnBuyFruit.Hide();
 				}
 			}).UnRegisterWhenGameObjectDestroyed(gameObject);
 			
@@ -41,6 +59,18 @@ namespace IndieFarm
 			{
 				Global.RadishCount.Value -= 1;
 				Global.RadishSeedCount.Value+= 2;
+			});
+			
+			BtnBuyFruit.onClick.AddListener(() =>
+			{
+				Global.FruitCount.Value += 1;
+				Global.RadishCount.Value -= 2;
+			});
+			
+			BtnBuyRadish.onClick.AddListener(() =>
+			{
+				Global.RadishCount.Value += 1;
+				Global.FruitCount.Value -= 2;
 			});
 		}
 	}
