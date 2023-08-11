@@ -14,16 +14,21 @@ namespace IndieFarm
 
 
         //当天成熟果子的数量
-        public static BindableProperty<int> RipeAndHarvestCountInCurrentDay = new (0);
+        public static BindableProperty<int> RipeAndHarvestCountInCurrentDay = new(0);
 
         //当天成熟萝卜的数量
-        public static BindableProperty<int> RipeAndHarvestRadishCountInCurrentDay = new (0);
+        public static BindableProperty<int> RipeAndHarvestRadishCountInCurrentDay = new(0);
 
         //当天收割果子的数量
-        public static BindableProperty<int> HarvestCountInCurrentDay = new (0);
+        public static BindableProperty<int> HarvestCountInCurrentDay = new(0);
 
         //当天收割萝卜的数量
-        public static BindableProperty<int> RadishHarvestCountInCurrentDay = new (0);
+        public static BindableProperty<int> RadishHarvestCountInCurrentDay = new(0);
+
+        //收获过的果实数量
+        public static int HarvestedFruitCount = 0;
+        //收获过的萝卜数量
+        public static int HarvestedRadishCount = 0;
 
         public static List<Challenge> Challenges = new List<Challenge>()
         {
@@ -31,7 +36,11 @@ namespace IndieFarm
             new ChallengeRipeAndHarvestTwoFruitsInADay(),
             new ChallengeRipeAndHarvestFiveFruitsInADay(),
             new ChallengeHarvestARadish(),
-            new ChallengeRipeAndHarvestFruitAndRadishInOneDay()
+            new ChallengeRipeAndHarvestFruitAndRadishInOneDay(),
+            new ChallengeHarvest10thFruit(),
+            new ChallengeHarvest10thRadish(),
+            new ChallengeFruitCountGreaterOrEqual10(),
+            new ChallengeRadishCountGreaterOrEqual10()
         };
 
         public static List<Challenge> ActiveChallenges = new List<Challenge>();
@@ -56,6 +65,7 @@ namespace IndieFarm
             {
                 if (plant is Plant)
                 {
+                    HarvestedFruitCount++;
                     HarvestCountInCurrentDay.Value++;
                     if (plant.RipeDay == Global.Days.Value)
                     {
@@ -65,6 +75,7 @@ namespace IndieFarm
 
                 if (plant is PlantRadish)
                 {
+                    HarvestedRadishCount++;
                     RadishHarvestCountInCurrentDay.Value++;
                     if (plant.RipeDay == Global.Days.Value)
                     {
@@ -78,19 +89,19 @@ namespace IndieFarm
         {
             IMGUIHelper.SetDesignResolution(960, 540);
 
-            GUI.Label(new Rect(960 - 300, 0, 300, 20), "@@ 挑战 @@", mLabelStyle);
+            GUI.Label(new Rect(960 - 300, 0, 300, 24), "@@ 挑战 @@", mLabelStyle);
             for (int i = 0; i < ActiveChallenges.Count; i++)
             {
                 var challenge = ActiveChallenges[i];
 
-                GUI.Label(new Rect(960 - 300, 20 + i * 20, 300, 20), challenge.Name, mLabelStyle);
+                GUI.Label(new Rect(960 - 300, 24 + i * 24, 300, 24), challenge.Name, mLabelStyle);
             }
 
             for (int i = 0; i < FinishedChallenges.Count; i++)
             {
                 var challenge = FinishedChallenges[i];
 
-                GUI.Label(new Rect(960 - 300, 20 + (i + ActiveChallenges.Count) * 20, 300, 20),
+                GUI.Label(new Rect(960 - 300, 24 + (i + ActiveChallenges.Count) * 24, 300, 24),
                     "<color=green>" + challenge.Name + "</color>", mLabelStyle);
             }
         }
