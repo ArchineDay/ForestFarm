@@ -18,12 +18,42 @@ MonoBehaviour:
     GameObject: {fileID: 0}
     From: 0
     NameToFullName: []
-    BindInfos: []
+    BindInfos:
+    - TypeName: UnityEngine.AudioSource
+      PathToRoot: SfxShovelDig
+      MemberName: SfxShovelDig
+    - TypeName: UnityEngine.AudioSource
+      PathToRoot: SfxTake
+      MemberName: SfxTake
+    - TypeName: UnityEngine.AudioSource
+      PathToRoot: SfxSeed
+      MemberName: SfxSeed
+    - TypeName: UnityEngine.AudioSource
+      PathToRoot: SfxWater
+      MemberName: SfxWater
+    - TypeName: UnityEngine.AudioSource
+      PathToRoot: SfxHarvest
+      MemberName: SfxHarvest
+    - TypeName: UnityEngine.AudioSource
+      PathToRoot: SfxChallengeFinish
+      MemberName: SfxChallengeFinish
+    - TypeName: UnityEngine.AudioSource
+      PathToRoot: SfxNextDay
+      MemberName: SfxNextDay
+    - TypeName: UnityEngine.AudioSource
+      PathToRoot: SfxBuy
+      MemberName: SfxBuy
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: Home
+    ClassName: AudioController
     Namespace: IndieFarm
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace IndieFarm\r\n{\r\n\tpublic
-      partial class Home : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class AudioController : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:236f7b1b-9933-436a-8fc4-1862c3de7e4c\r\nusing UnityEngine;\r\n\r\nnamespace
-      IndieFarm\r\n{\r\n\tpublic partial class Home\r\n\t{\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:cb3892aa-8a15-488e-af06-c3b321f62d8f\r\nusing UnityEngine;\r\n\r\nnamespace
+      IndieFarm\r\n{\r\n\tpublic partial class AudioController\r\n\t{\r\n\r\n\t\tpublic
+      UnityEngine.AudioSource SfxShovelDig;\r\n\r\n\t\tpublic UnityEngine.AudioSource
+      SfxTake;\r\n\r\n\t\tpublic UnityEngine.AudioSource SfxSeed;\r\n\r\n\t\tpublic
+      UnityEngine.AudioSource SfxWater;\r\n\r\n\t\tpublic UnityEngine.AudioSource
+      SfxHarvest;\r\n\r\n\t\tpublic UnityEngine.AudioSource SfxChallengeFinish;\r\n\r\n\t\tpublic
+      UnityEngine.AudioSource SfxNextDay;\r\n\r\n\t\tpublic UnityEngine.AudioSource
+      SfxBuy;\r\n\r\n\t}\r\n}\r\n"
