@@ -11,32 +11,30 @@ namespace IndieFarm
         public EasyGrid<SoliData> ShowGrid=>mShowGrid;
 
         public TileBase Pen;
+        public TileBase PlantablePen;
 
         void Start()
         {
             mShowGrid[0, 0] = new SoliData();
             mShowGrid[2, 2] = new SoliData();
 
+            for (var i = 0; i < 10; i++)
+            {
+                for (var j = 0; j < 10; j++)
+                {
+                    Ground.SetTile(new Vector3Int(i,j),PlantablePen);
+                }
+            }
+            
             mShowGrid.ForEach((x, y, data) =>
             {
                 if (data != null)
                 {
                     //用的pen来设置
-                    Tilemap.SetTile(new Vector3Int(x, y), Pen);
+                    Soil.SetTile(new Vector3Int(x, y), Pen);
                 }
             });
-            // for (int i = 0; i < mShowGrid.Width; i++)
-            // {
-            // 	for (int j = 0; j < mShowGrid.Height; j++)
-            // 	{
-            // 		bool show = mShowGrid[i, j];
-            // 		if (show)
-            // 		{
-            // 			Vector3Int position = new Vector3Int(i, j, 0);
-            // 			Tilemap.SetTile(position, Pen);
-            // 		}
-            // 	}
-            // }
+         
         }
     }
 }

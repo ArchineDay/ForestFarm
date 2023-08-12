@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -7866928900747384746, guid: 2307a34bf09abe544b8bd464296329bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,4 +102,5 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
-  States: 0
+  XCell: 0
+  YCell: 0

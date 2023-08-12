@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -6257656149191112168, guid: ea7edcd721e09b949b0a047f729552b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -97,11 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456743b19e36ed34181b722ac24ad6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Namespace: 
-  ScriptName: 
-  ScriptsFolder: 
+  Namespace: IndieFarm
+  ScriptName: PlantRadish
+  ScriptsFolder: Assets/Scripts/Game
   GeneratePrefab: 0
-  PrefabFolder: 
+  PrefabFolder: Assets/Art/Prefab
   XCell: 0
   YCell: 0
-  RipeDay: 0

@@ -28,7 +28,7 @@ namespace IndieFarm
             mGridController = FindObjectOfType<GridController>();
             mShowGrid = mGridController.ShowGrid;
             mGrid = mGridController.GetComponent<Grid>();
-            mTilemap = mGridController.Tilemap;
+            mTilemap = mGridController.Soil;
 
             mMainCamera = Camera.main;
             mSprite = GetComponent<SpriteRenderer>();
