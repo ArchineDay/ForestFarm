@@ -4,10 +4,11 @@ namespace IndieFarm.Tool
 {
     public class ToolSeedRadish : ITool
     {
+        public string Name { get; set; } = "seed_radish";
+
         public bool Selectable(ToolData toolData)
         {
-            return Global.CurrentTool == Constant.TOOL_SEED_RADISH &&
-                   toolData.ShowGrid[toolData.CellPos.x, toolData.CellPos.y] != null &&
+            return toolData.ShowGrid[toolData.CellPos.x, toolData.CellPos.y] != null &&
                    toolData.ShowGrid[toolData.CellPos.x, toolData.CellPos.y].HasPlant != true &&
                    Global.RadishSeedCount > 0;
         }

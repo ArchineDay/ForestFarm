@@ -35,14 +35,8 @@ namespace IndieFarm
             mSprite = GetComponent<SpriteRenderer>();
             mSprite.enabled = false;
         }
-
-        private ITool mShovel = new ToolShovel();
+        
         private ToolData mTooldata = new ToolData();
-        private ITool mSeed = new ToolSeed();
-        private ITool mSeedRadish = new ToolSeedRadish();
-        private ITool mWatereingScan = new ToolWateringScan();
-        private ITool mHand = new ToolHand();
-
         private void Update()
         {
             mSprite.enabled = false;
@@ -70,50 +64,15 @@ namespace IndieFarm
                     mTooldata.SoilTilemap = mTilemap;
                     mTooldata.Pen = mGridController.Pen;
                     //开垦
-                    if (Global.CurrentTool == Constant.TOOL_SHOVEL && mShovel.Selectable(mTooldata))
+                    if (Global.CurrentTool.Value.Selectable(mTooldata))
                     {
                         if (Input.GetMouseButton(0))
                         {
-                            mShovel.Use(mTooldata);
+                            Global.CurrentTool.Value.Use(mTooldata);
+                            //Constant.ToolShovel.Use(mTooldata);
                         }
                     }
 
-                    //放种子
-                    else if (Global.CurrentTool == Constant.TOOL_SEED &&
-                             mSeed.Selectable(mTooldata))
-                    {
-                        if (Input.GetMouseButton(0))
-                        {
-                            mSeed.Use(mTooldata);
-                        }
-                    }
-                    //放萝卜种子
-                    else if (Global.CurrentTool == Constant.TOOL_SEED_RADISH &&
-                             mSeedRadish.Selectable(mTooldata))
-                    {
-                        if (Input.GetMouseButton(0))
-                        {
-                            mSeedRadish.Use(mTooldata);
-                        }
-                    }
-                    //浇水
-                    else if (Global.CurrentTool.Value == Constant.TOOL_WATERING_SCAN &&
-                             mWatereingScan.Selectable(mTooldata))
-                    {
-                        if (Input.GetMouseButton(0))
-                        {
-                            mWatereingScan.Use(mTooldata);
-                        }
-                    }
-                    //收割
-                    else if (Global.CurrentTool.Value == Constant.TOOL_HAND && 
-                             mHand.Selectable(mTooldata))
-                    {
-                        if (Input.GetMouseButton(0))
-                        {
-                           mHand.Use(mTooldata);
-                        }
-                    }
                 }
                 else
                 {

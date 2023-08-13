@@ -5,10 +5,11 @@ namespace IndieFarm.Tool
 {
     public class ToolSeed : ITool
     {
+        public string Name { get; set; } = "seed";
+
         public bool Selectable(ToolData toolData)
         {
-            return Global.CurrentTool == Constant.TOOL_SEED &&
-                   toolData.ShowGrid[toolData.CellPos.x, toolData.CellPos.y] != null &&
+            return toolData.ShowGrid[toolData.CellPos.x, toolData.CellPos.y] != null &&
                    toolData.ShowGrid[toolData.CellPos.x, toolData.CellPos.y].HasPlant != true &&
                    Global.FruitSeedCount > 0;
         }

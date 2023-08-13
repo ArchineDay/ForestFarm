@@ -1,4 +1,5 @@
 using System;
+using IndieFarm.Tool;
 using UnityEngine;
 using QFramework;
 using UnityEngine.UI;
@@ -13,11 +14,11 @@ namespace IndieFarm
             Btn1Seclect.Show();
             //Global.Player.ToolIcon.sprite = Btn1Icon.sprite;
             Global.MouseTool.Icon.sprite = Btn1Icon.sprite;
-            Btn1.onClick.AddListener(() => { ChangeTool(Constant.TOOL_HAND,Btn1Seclect,Btn1Icon.sprite); });
-            Btn2.onClick.AddListener(() => { ChangeTool(Constant.TOOL_SHOVEL,Btn2Seclect,Btn2Icon.sprite); });
-            Btn3.onClick.AddListener(() => { ChangeTool(Constant.TOOL_SEED,Btn3Seclect,Btn3Icon.sprite); });
-            Btn4.onClick.AddListener(() => { ChangeTool(Constant.TOOL_WATERING_SCAN,Btn4Seclect,Btn4Icon.sprite); });
-            Btn5.onClick.AddListener(() => { ChangeTool(Constant.TOOL_SEED_RADISH,Btn5Seclect,Btn5Icon.sprite); });
+            Btn1.onClick.AddListener(() => { ChangeTool(Constant.ToolHand,Btn1Seclect,Btn1Icon.sprite); });
+            Btn2.onClick.AddListener(() => { ChangeTool(Constant.ToolShovel,Btn2Seclect,Btn2Icon.sprite); });
+            Btn3.onClick.AddListener(() => { ChangeTool(Constant.ToolSeed,Btn3Seclect,Btn3Icon.sprite); });
+            Btn4.onClick.AddListener(() => { ChangeTool(Constant.ToolWateringCan,Btn4Seclect,Btn4Icon.sprite); });
+            Btn5.onClick.AddListener(() => { ChangeTool(Constant.ToolSeedRadish,Btn5Seclect,Btn5Icon.sprite); });
         }
 
         void HideAllSelect()
@@ -28,7 +29,7 @@ namespace IndieFarm
             Btn4Seclect.Hide();
             Btn5Seclect.Hide();
         }
-        void ChangeTool(string tool,Image selectImage,Sprite toolIcon)
+        void ChangeTool(ITool tool,Image selectImage,Sprite toolIcon)
         {
             Global.CurrentTool.Value = tool;
             AudioController.Get.SfxTake.Play();
@@ -43,27 +44,27 @@ namespace IndieFarm
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                ChangeTool(Constant.TOOL_HAND,Btn1Seclect,Btn1Icon.sprite);
+                ChangeTool(Constant.ToolHand,Btn1Seclect,Btn1Icon.sprite);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                ChangeTool(Constant.TOOL_SHOVEL,Btn2Seclect,Btn2Icon.sprite);
+                ChangeTool(Constant.ToolShovel,Btn2Seclect,Btn2Icon.sprite);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                ChangeTool(Constant.TOOL_SEED,Btn3Seclect,Btn3Icon.sprite);
+                ChangeTool(Constant.ToolSeed,Btn3Seclect,Btn3Icon.sprite);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha4))
             {
-                ChangeTool(Constant.TOOL_WATERING_SCAN,Btn4Seclect,Btn4Icon.sprite);
+                ChangeTool(Constant.ToolWateringCan,Btn4Seclect,Btn4Icon.sprite);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha5))
             {
-                ChangeTool(Constant.TOOL_SEED_RADISH,Btn5Seclect,Btn5Icon.sprite);
+                ChangeTool(Constant.ToolSeedRadish,Btn5Seclect,Btn5Icon.sprite);
             }
         }
     }
