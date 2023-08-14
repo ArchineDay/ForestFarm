@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using QFramework;
 
@@ -23,6 +25,14 @@ namespace IndieFarm
 		public Sprite smallCabbageSprite;
 		public Sprite ripeCabbageSprite;
 
+
+		public List<Sprite> Sprites = new List<Sprite>();
+
+		public Sprite LoadSprites(string spriteName)
+		{
+			return Sprites.Single(spr=>spr.name==spriteName);
+		}
+		
 		//在整个应用程序中只有一个指定类型的对象实例存在
 		public static ResController Instance => MonoSingletonProperty<ResController>.Instance;
 		

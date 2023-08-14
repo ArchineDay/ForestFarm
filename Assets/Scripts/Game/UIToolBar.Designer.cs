@@ -1,4 +1,4 @@
-// Generate Id:3cf071c1-3c26-4e1d-a575-225ef3bb90e7
+// Generate Id:4cb81e08-50b9-4165-8772-e082fd843739
 using UnityEngine;
 
 namespace IndieFarm
@@ -41,6 +41,26 @@ namespace IndieFarm
 		public UnityEngine.UI.Image Btn6Icon;
 
 		public UnityEngine.UI.Image Btn6Seclect;
+
+		public IndieFarm.UISlot ToolbarSlot1;
+
+		public IndieFarm.UISlot ToolbarSlot2;
+
+		public IndieFarm.UISlot ToolbarSlot3;
+
+		public IndieFarm.UISlot ToolbarSlot4;
+
+		public IndieFarm.UISlot ToolbarSlot5;
+
+		public IndieFarm.UISlot ToolbarSlot6;
+
+		public IndieFarm.UISlot ToolbarSlot7;
+
+		public IndieFarm.UISlot ToolbarSlot8;
+
+		public IndieFarm.UISlot ToolbarSlot9;
+
+		public IndieFarm.UISlot ToolbarSlot10;
 
 	}
 }
