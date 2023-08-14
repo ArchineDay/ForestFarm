@@ -3,7 +3,7 @@ using QFramework;
 
 namespace IndieFarm
 {
-    public partial class PlantRadish : ViewController, IPlant
+    public partial class PlantCabbage : ViewController, IPlant
     {
         public int RipeDay { get; private set; }
         public GameObject GameObject => gameObject;
@@ -27,15 +27,15 @@ namespace IndieFarm
                 //切换表现
                 if (newState == PlantStates.Small)
                 {
-                    GetComponent<SpriteRenderer>().sprite = ResController.Instance.smallPlantRadishSprite;
+                    GetComponent<SpriteRenderer>().sprite = ResController.Instance.smallCabbageSprite;
                 }
                 else if (newState == PlantStates.Ripe)
                 {
-                    GetComponent<SpriteRenderer>().sprite = ResController.Instance.ripeRadishSprite;
+                    GetComponent<SpriteRenderer>().sprite = ResController.Instance.ripeCabbageSprite;
                 }
                 else if (newState == PlantStates.Seed)
                 {
-                    GetComponent<SpriteRenderer>().sprite = ResController.Instance.seedRadishSprite;
+                    GetComponent<SpriteRenderer>().sprite = ResController.Instance.seedCabbageSprite;
                 }
                 else if (newState == PlantStates.Old)
                 {
@@ -47,7 +47,8 @@ namespace IndieFarm
             }
         }
 
-        private int mSmallStateDay;
+        private int mSeedStateDay = 0;
+        private int mSmallStateDay = 0;
 
         public void Grow(SoliData soilData)
         {
@@ -55,8 +56,12 @@ namespace IndieFarm
             {
                 if (soilData.Watered)
                 {
-                    //plant切换到small状态
-                    SetState(PlantStates.Small);
+                    mSeedStateDay++;
+                    if (mSeedStateDay == 2)
+                    {
+                        //切换到small状态
+                        SetState(PlantStates.Small);
+                    }
                 }
             }
             else if (State == PlantStates.Small)

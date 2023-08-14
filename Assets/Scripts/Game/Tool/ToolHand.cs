@@ -35,6 +35,12 @@ namespace IndieFarm.Tool
                 //萝卜+1
                 Global.RadishCount.Value++;
             }
+            
+            if (PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as PlantCabbage)
+            {
+                //白菜+1
+                Global.CabbageCount.Value++;
+            }
 
             AudioController.Get.SfxHarvest.Play();
         }

@@ -19,6 +19,7 @@ namespace IndieFarm
             Btn3.onClick.AddListener(() => { ChangeTool(Constant.ToolSeed,Btn3Seclect,Btn3Icon.sprite); });
             Btn4.onClick.AddListener(() => { ChangeTool(Constant.ToolWateringCan,Btn4Seclect,Btn4Icon.sprite); });
             Btn5.onClick.AddListener(() => { ChangeTool(Constant.ToolSeedRadish,Btn5Seclect,Btn5Icon.sprite); });
+            Btn6.onClick.AddListener(() => { ChangeTool(Constant.ToolSeedCabbage,Btn6Seclect,Btn6Icon.sprite); });
         }
 
         void HideAllSelect()
@@ -28,6 +29,7 @@ namespace IndieFarm
             Btn3Seclect.Hide();
             Btn4Seclect.Hide();
             Btn5Seclect.Hide();
+            Btn6Seclect.Hide();
         }
         void ChangeTool(ITool tool,Image selectImage,Sprite toolIcon)
         {
@@ -65,6 +67,11 @@ namespace IndieFarm
             if (Input.GetKeyDown(KeyCode.Alpha5))
             {
                 ChangeTool(Constant.ToolSeedRadish,Btn5Seclect,Btn5Icon.sprite);
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                ChangeTool(Constant.ToolSeedCabbage,Btn6Seclect,Btn6Icon.sprite);
             }
         }
     }

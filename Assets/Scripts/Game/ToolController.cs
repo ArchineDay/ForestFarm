@@ -63,13 +63,12 @@ namespace IndieFarm
                     mTooldata.CellPos = cellPos;
                     mTooldata.SoilTilemap = mTilemap;
                     mTooldata.Pen = mGridController.Pen;
-                    //开垦
+                    //使用工具
                     if (Global.CurrentTool.Value.Selectable(mTooldata))
                     {
                         if (Input.GetMouseButton(0))
                         {
                             Global.CurrentTool.Value.Use(mTooldata);
-                            //Constant.ToolShovel.Use(mTooldata);
                         }
                     }
 

@@ -9,17 +9,25 @@ namespace IndieFarm
 {
     public class Global
     {
-        public static ToolController MouseTool=null;
+        public static ToolController MouseTool = null;
+
         public static Player Player = null;
+
         //默认是第一天
         public static BindableProperty<int> Days = new BindableProperty<int>(1);
-        
+
         //果子数量
-        public static BindableProperty<int> FruitCount =new BindableProperty<int>(0);
-        public static BindableProperty<int> FruitSeedCount =new BindableProperty<int>(5);
+        public static BindableProperty<int> FruitCount = new BindableProperty<int>(0);
+
+        public static BindableProperty<int> FruitSeedCount = new BindableProperty<int>(5);
+
         //萝卜数量
-        public static BindableProperty<int> RadishCount =new BindableProperty<int>(0);
-        public static BindableProperty<int> RadishSeedCount =new BindableProperty<int>(5);
+        public static BindableProperty<int> RadishCount = new BindableProperty<int>(0);
+        public static BindableProperty<int> RadishSeedCount = new BindableProperty<int>(5);
+        
+        //白菜数量
+        public static BindableProperty<int> CabbageCount = new BindableProperty<int>(0);
+        public static BindableProperty<int> CabbageSeedCount = new BindableProperty<int>(5);
 
         //当前工具
         public static BindableProperty<ITool> CurrentTool = new BindableProperty<ITool>(Constant.ToolHand);
@@ -27,8 +35,5 @@ namespace IndieFarm
 
         //植物收割
         public static EasyEvent<IPlant> OnPlantHarvest = new EasyEvent<IPlant>();
-     
     }
-
-   
 }

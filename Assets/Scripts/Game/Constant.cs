@@ -9,5 +9,6 @@ namespace IndieFarm
         public  static readonly ITool ToolSeed = new ToolSeed();
         public  static readonly ITool ToolSeedRadish = new ToolSeedRadish();
         public  static readonly ITool ToolWateringCan = new ToolWateringCan();
+        public  static readonly ITool ToolSeedCabbage = new ToolSeedCabbage();
     }
 }
