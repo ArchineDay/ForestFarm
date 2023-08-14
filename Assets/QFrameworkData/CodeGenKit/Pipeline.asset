@@ -15,15 +15,113 @@ MonoBehaviour:
   CurrentTask:
     ShowLog: 0
     Status: 1
-    GameObject: {fileID: 3620523988723446051, guid: 0abef9089575b8f4b92bcba02f21f43a, type: 3}
+    GameObject: {fileID: 0}
     From: 0
     NameToFullName: []
-    BindInfos: []
+    BindInfos:
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: Btn1
+      MemberName: Btn1
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn1/Btn1Icon
+      MemberName: Btn1Icon
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn1/Btn1Seclect
+      MemberName: Btn1Seclect
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: Btn2
+      MemberName: Btn2
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn2/Btn2Icon
+      MemberName: Btn2Icon
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn2/Btn2Seclect
+      MemberName: Btn2Seclect
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: Btn3
+      MemberName: Btn3
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn3/Btn3Icon
+      MemberName: Btn3Icon
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn3/Btn3Seclect
+      MemberName: Btn3Seclect
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: Btn4
+      MemberName: Btn4
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn4/Btn4Icon
+      MemberName: Btn4Icon
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn4/Btn4Seclect
+      MemberName: Btn4Seclect
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: Btn5
+      MemberName: Btn5
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn5/Btn5Icon
+      MemberName: Btn5Icon
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn5/Btn5Seclect
+      MemberName: Btn5Seclect
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: Btn6
+      MemberName: Btn6
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn6/Btn6Icon
+      MemberName: Btn6Icon
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn6/Btn6Seclect
+      MemberName: Btn6Seclect
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot1
+      MemberName: ToolbarSlot1
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot2
+      MemberName: ToolbarSlot2
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot3
+      MemberName: ToolbarSlot3
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot4
+      MemberName: ToolbarSlot4
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot5
+      MemberName: ToolbarSlot5
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot6
+      MemberName: ToolbarSlot6
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot7
+      MemberName: ToolbarSlot7
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot8
+      MemberName: ToolbarSlot8
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot9
+      MemberName: ToolbarSlot9
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot10
+      MemberName: ToolbarSlot10
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: PlantCabbage
+    ClassName: UIToolBar
     Namespace: IndieFarm
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace IndieFarm\r\n{\r\n\tpublic
-      partial class PlantCabbage : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class UIToolBar : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:a1025d1e-8d46-4736-91e7-89964d3d661d\r\nusing UnityEngine;\r\n\r\nnamespace
-      IndieFarm\r\n{\r\n\tpublic partial class PlantCabbage\r\n\t{\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:4cb81e08-50b9-4165-8772-e082fd843739\r\nusing UnityEngine;\r\n\r\nnamespace
+      IndieFarm\r\n{\r\n\tpublic partial class UIToolBar\r\n\t{\r\n\r\n\t\tpublic
+      UnityEngine.UI.Button Btn1;\r\n\r\n\t\tpublic UnityEngine.UI.Image Btn1Icon;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Image Btn1Seclect;\r\n\r\n\t\tpublic UnityEngine.UI.Button Btn2;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Image Btn2Icon;\r\n\r\n\t\tpublic UnityEngine.UI.Image Btn2Seclect;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Button Btn3;\r\n\r\n\t\tpublic UnityEngine.UI.Image Btn3Icon;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Image Btn3Seclect;\r\n\r\n\t\tpublic UnityEngine.UI.Button Btn4;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Image Btn4Icon;\r\n\r\n\t\tpublic UnityEngine.UI.Image Btn4Seclect;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Button Btn5;\r\n\r\n\t\tpublic UnityEngine.UI.Image Btn5Icon;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Image Btn5Seclect;\r\n\r\n\t\tpublic UnityEngine.UI.Button Btn6;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Image Btn6Icon;\r\n\r\n\t\tpublic UnityEngine.UI.Image Btn6Seclect;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot1;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot2;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot3;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot4;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot5;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot6;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot7;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot8;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot9;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot10;\r\n\r\n\t}\r\n}\r\n"
