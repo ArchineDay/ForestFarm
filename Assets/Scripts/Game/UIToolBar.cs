@@ -13,48 +13,13 @@ namespace IndieFarm
 
         private void Start()
         {
-            ToolbarSlot1.SetData(new SlotData()
-            {
-                Icon = ResController.Instance.LoadSprites("ToolHand_0"),
-                OnSelect = () => { ChangeTool(Constant.ToolHand, ToolbarSlot1.Select, ToolbarSlot1.Icon.sprite); }
-            },"1");
+            // ToolbarSlot1.SetData(new SlotData()
+            // {
+            //     Icon = ResController.Instance.LoadSprites(Config.Hand.Name),
+            //     OnSelect = () => { ChangeTool(Config.Hand.Tool, ToolbarSlot1.Select, ToolbarSlot1.Icon.sprite); }
+            // },"1");
 
-            ToolbarSlot2.SetData(new SlotData()
-            {
-                Icon = ResController.Instance.LoadSprites("ToolShovel_0"),
-                OnSelect = () => { ChangeTool(Constant.ToolShovel, ToolbarSlot2.Select, ToolbarSlot2.Icon.sprite); }
-            },"2");
 
-            ToolbarSlot3.SetData(new SlotData()
-            {
-                Icon = ResController.Instance.LoadSprites("ToolSeed_0"),
-                OnSelect = () => { ChangeTool(Constant.ToolSeed, ToolbarSlot3.Select, ToolbarSlot3.Icon.sprite); }
-            },"3");
-
-            ToolbarSlot4.SetData(new SlotData()
-            {
-                Icon = ResController.Instance.LoadSprites("ToolWateringCan_0"),
-                OnSelect = () =>
-                {
-                    ChangeTool(Constant.ToolWateringCan, ToolbarSlot4.Select, ToolbarSlot4.Icon.sprite);
-                }
-            },"4");
-
-            ToolbarSlot5.SetData(new SlotData()
-            {
-                Icon = ResController.Instance.LoadSprites("ToolSeedRadish_0"),
-                OnSelect = () => { ChangeTool(Constant.ToolSeedRadish, ToolbarSlot5.Select, ToolbarSlot5.Icon.sprite); }
-            },"5");
-
-            ToolbarSlot6.SetData(new SlotData()
-            {
-                Icon = ResController.Instance.LoadSprites("ToolSeedCabbage_0"),
-                OnSelect = () =>
-                {
-                    ChangeTool(Constant.ToolSeedCabbage, ToolbarSlot6.Select, ToolbarSlot6.Icon.sprite);
-                }
-            },"6");
-            
             ToolbarSlots.Add(ToolbarSlot1);
             ToolbarSlots.Add(ToolbarSlot2);
             ToolbarSlots.Add(ToolbarSlot3);
@@ -66,6 +31,21 @@ namespace IndieFarm
             ToolbarSlots.Add(ToolbarSlot9);
             ToolbarSlots.Add(ToolbarSlot10);
 
+
+            for (var i = 0; i < ToolbarSlots.Count; i++)
+            {
+                var slot = ToolbarSlots[i];
+                if (i < Config.Items.Count)
+                {
+                    var item = Config.Items[i];
+                    slot.SetData(new SlotData()
+                    {
+                        Icon = ResController.Instance.LoadSprites(item.IconName),
+                        OnSelect = () => { ChangeTool(item.Tool, slot.Select, slot.Icon.sprite); }
+                    }, (i + 1).ToString());
+                }
+            }
+
             HideAllSelect();
             ToolbarSlots[0].Select.Show();
             Global.MouseTool.Icon.sprite = ToolbarSlots[0].Icon.sprite;
@@ -73,10 +53,7 @@ namespace IndieFarm
             foreach (var toolbarSlot in ToolbarSlots)
             {
                 var data = toolbarSlot.Data;
-                toolbarSlot.GetComponent<Button>().onClick.AddListener(() =>
-                {
-                    data?.OnSelect?.Invoke();
-                });
+                toolbarSlot.GetComponent<Button>().onClick.AddListener(() => { data?.OnSelect?.Invoke(); });
             }
 
             // Btn1.onClick.AddListener(() => { ChangeTool(Constant.ToolHand,Btn1Seclect,Btn1Icon.sprite); });...
