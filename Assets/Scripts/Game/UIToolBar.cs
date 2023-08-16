@@ -19,6 +19,15 @@ namespace IndieFarm
             //     OnSelect = () => { ChangeTool(Config.Hand.Tool, ToolbarSlot1.Select, ToolbarSlot1.Icon.sprite); }
             // },"1");
 
+            UISlot.IconLoader = (spriteName) => ResController.Instance.LoadSprite(spriteName);
+
+            UISlot.OnItemSelect = slot =>
+            {
+                if (slot != null)
+                {
+                    ChangeTool(slot.Data.Tool, slot.Select, slot.Icon.sprite);
+                }
+            };
 
             ToolbarSlots.Add(ToolbarSlot1);
             ToolbarSlots.Add(ToolbarSlot2);
@@ -38,11 +47,7 @@ namespace IndieFarm
                 if (i < Config.Items.Count)
                 {
                     var item = Config.Items[i];
-                    slot.SetData(new SlotData()
-                    {
-                        Icon = ResController.Instance.LoadSprites(item.IconName),
-                        OnSelect = () => { ChangeTool(item.Tool, slot.Select, slot.Icon.sprite); }
-                    }, (i + 1).ToString());
+                    slot.SetData(item, (i + 1).ToString());
                 }
             }
 
@@ -50,11 +55,11 @@ namespace IndieFarm
             ToolbarSlots[0].Select.Show();
             Global.MouseTool.Icon.sprite = ToolbarSlots[0].Icon.sprite;
 
-            foreach (var toolbarSlot in ToolbarSlots)
-            {
-                var data = toolbarSlot.Data;
-                toolbarSlot.GetComponent<Button>().onClick.AddListener(() => { data?.OnSelect?.Invoke(); });
-            }
+            // foreach (var toolbarSlot in ToolbarSlots)
+            // {
+            //     var data = toolbarSlot.Data;
+            //     toolbarSlot.GetComponent<Button>().onClick.AddListener(() => { data?.OnSelect?.Invoke(); });
+            // }
 
             // Btn1.onClick.AddListener(() => { ChangeTool(Constant.ToolHand,Btn1Seclect,Btn1Icon.sprite); });...
         }
@@ -81,17 +86,18 @@ namespace IndieFarm
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1)) ToolbarSlots[0].Data?.OnSelect?.Invoke();
             //ChangeTool(Constant.ToolHand, ToolbarSlots[0].Select, ToolbarSlots[0].Icon.sprite);
-            if (Input.GetKeyDown(KeyCode.Alpha2)) ToolbarSlots[1].Data?.OnSelect?.Invoke();
-            if (Input.GetKeyDown(KeyCode.Alpha3)) ToolbarSlots[2].Data?.OnSelect?.Invoke();
-            if (Input.GetKeyDown(KeyCode.Alpha4)) ToolbarSlots[3].Data?.OnSelect?.Invoke();
-            if (Input.GetKeyDown(KeyCode.Alpha5)) ToolbarSlots[4].Data?.OnSelect?.Invoke();
-            if (Input.GetKeyDown(KeyCode.Alpha6)) ToolbarSlots[5].Data?.OnSelect?.Invoke();
-            if (Input.GetKeyDown(KeyCode.Alpha7)) ToolbarSlots[6].Data?.OnSelect?.Invoke();
-            if (Input.GetKeyDown(KeyCode.Alpha8)) ToolbarSlots[7].Data?.OnSelect?.Invoke();
-            if (Input.GetKeyDown(KeyCode.Alpha9)) ToolbarSlots[8].Data?.OnSelect?.Invoke();
-            if (Input.GetKeyDown(KeyCode.Alpha0)) ToolbarSlots[9].Data?.OnSelect?.Invoke();
+            //if (Input.GetKeyDown(KeyCode.Alpha1)) ToolbarSlots[0].Data?.OnSelect?.Invoke();
+            
+            if (Input.GetKeyDown(KeyCode.Alpha2)) UISlot.OnItemSelect(ToolbarSlot1);
+            if (Input.GetKeyDown(KeyCode.Alpha3)) UISlot.OnItemSelect(ToolbarSlot2);
+            if (Input.GetKeyDown(KeyCode.Alpha4)) UISlot.OnItemSelect(ToolbarSlot3);
+            if (Input.GetKeyDown(KeyCode.Alpha5)) UISlot.OnItemSelect(ToolbarSlot4);
+            if (Input.GetKeyDown(KeyCode.Alpha6)) UISlot.OnItemSelect(ToolbarSlot5);
+            if (Input.GetKeyDown(KeyCode.Alpha7)) UISlot.OnItemSelect(ToolbarSlot6);
+            if (Input.GetKeyDown(KeyCode.Alpha8)) UISlot.OnItemSelect(ToolbarSlot7);
+            if (Input.GetKeyDown(KeyCode.Alpha9)) UISlot.OnItemSelect(ToolbarSlot8);
+            if (Input.GetKeyDown(KeyCode.Alpha0)) UISlot.OnItemSelect(ToolbarSlot9);
         }
     }
 }

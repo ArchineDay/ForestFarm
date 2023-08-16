@@ -28,7 +28,7 @@ namespace IndieFarm
 
 		public List<Sprite> Sprites = new List<Sprite>();
 
-		public Sprite LoadSprites(string spriteName)
+		public Sprite LoadSprite(string spriteName)
 		{
 			return Sprites.Single(spr=>spr.name==spriteName);
 		}
