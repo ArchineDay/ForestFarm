@@ -8253,6 +8253,10 @@ MonoBehaviour:
   - {fileID: 2971062254677532018, guid: c2304d0fb156244489af513693c58ace, type: 3}
   - {fileID: -4100675368256277520, guid: e1c4ce1caa19dbc46be45a77778dd49b, type: 3}
   - {fileID: 5784744574513117716, guid: bdf06a903bd88b74c93642d9e68287af, type: 3}
+  PlantPrefabs:
+  - {fileID: 3620523988723446051, guid: f7cb7b9b07be12f4db0c90be8fc68f20, type: 3}
+  - {fileID: 3620523988723446051, guid: 37489f7ae4ac6f94cbe4106556b2ce02, type: 3}
+  - {fileID: 3620523988723446051, guid: 0abef9089575b8f4b92bcba02f21f43a, type: 3}
 --- !u!4 &1688994990
 Transform:
   m_ObjectHideFlags: 0

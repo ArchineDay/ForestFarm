@@ -5,6 +5,7 @@ namespace IndieFarm.Tool
 {
     public class ToolWateringCan : ITool
     {
+        public Item Item { get; set; }
         public string Name { get; set; } ="watering_can";
 
         public bool Selectable(ToolData toolData)

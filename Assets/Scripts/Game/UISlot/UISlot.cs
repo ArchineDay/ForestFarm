@@ -60,8 +60,13 @@ namespace IndieFarm
             ShortCut.text = shortCut;
             if (data.Countable)
             {
-                Count.text = mData.Count.ToString();
-                Count.Show();
+                //实时更新数量
+                data.Count.RegisterWithInitValue(count =>
+                {
+                    Count.text = count.ToString();
+                }).UnRegisterWhenGameObjectDestroyed(gameObject);
+                // Count.text = mData.Count.Value.ToString();
+                // Count.Show();
             }
             
         }

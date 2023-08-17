@@ -1,4 +1,5 @@
 using IndieFarm.Tool;
+using QFramework;
 using UnityEngine;
  
  namespace IndieFarm
@@ -8,11 +9,11 @@ using UnityEngine;
      {
          public  string Name;
          public string  IconName;
-         public int Count;
+         public BindableProperty<int> Count;
  
          public bool Countable=false;
          public ITool Tool;
          public bool IsPlant;
-         public string PlantPrefab;
+         public string PlantPrefabName;
      }
  }

@@ -6,6 +6,7 @@ namespace IndieFarm.Tool
 {
     public class ToolShovel:ITool
     {
+        public Item Item { get; set; }
         public string Name { get; set; }="shovel";
 
         public bool Selectable(ToolData toolData)

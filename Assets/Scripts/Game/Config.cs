@@ -1,4 +1,7 @@
 using System.Collections.Generic;
+using IndieFarm.Tool;
+using QFramework;
+using Unity.VisualScripting.Dependencies.NCalc;
 
 namespace IndieFarm
 {
@@ -9,63 +12,72 @@ namespace IndieFarm
             new Item()
             {
                 IconName = "ToolHand_0",
-                Count = 1,
+                Count = new BindableProperty<int>(1),
                 Countable = false,
                 IsPlant = false,
                 Name = "hand",
-                PlantPrefab = string.Empty,
-                Tool = Constant.ToolHand
+                PlantPrefabName = string.Empty,
+                Tool = new ToolHand()
             },
             new Item()
             {
                 IconName = "ToolShovel_0",
-                Count = 1,
+                Count = new BindableProperty<int>(1),
                 Countable = false,
                 IsPlant = false,
                 Name = "shovel",
-                PlantPrefab = string.Empty,
-                Tool = Constant.ToolShovel
+                PlantPrefabName = string.Empty,
+                Tool = new ToolShovel()
             },
             new Item()
             {
                 IconName = "ToolSeed_0",
-                Count = 1,
+                Count = new BindableProperty<int>(5),
                 Countable = true,
                 IsPlant = true,
                 Name = "seed",
-                PlantPrefab = "Plant",
-                Tool = Constant.ToolSeed
-            },
+                PlantPrefabName = "Plant",
+                Tool = new ToolSeed()
+            }.Self(item => item.Tool = new ToolSeed()
+            {
+                Item = item
+            }),
             new Item()
             {
                 IconName = "ToolWateringCan_0",
-                Count = 1,
+                Count = new BindableProperty<int>(1),
                 Countable = false,
                 IsPlant = false,
                 Name = "watering_can",
-                PlantPrefab = string.Empty,
-                Tool = Constant.ToolWateringCan
+                PlantPrefabName = string.Empty,
+                Tool = new ToolWateringCan()
             },
             new Item()
             {
                 IconName = "ToolSeedRadish_0",
-                Count = 1,
+                Count = new BindableProperty<int>(5),
                 Countable = true,
                 IsPlant = true,
                 Name = "seed_radish",
-                PlantPrefab = "PlantRadish",
-                Tool = Constant.ToolSeedRadish
-            },
+                PlantPrefabName = "PlantRadish",
+                Tool = new ToolSeed()
+            }.Self(item => item.Tool = new ToolSeed()
+            {
+                Item = item
+            }),
             new Item()
             {
                 IconName = "ToolSeedCabbage_0",
-                Count = 1,
+                Count = new BindableProperty<int>(5),
                 Countable = true,
                 IsPlant = true,
                 Name = "seed_cabbage",
-                PlantPrefab = "PlantCabbage",
-                Tool = Constant.ToolSeedCabbage
-            }
+                PlantPrefabName = "PlantCabbage",
+                Tool = new ToolSeed()
+            }.Self(item => item.Tool = new ToolSeed()
+            {
+                Item = item
+            }),
         };
     }
 }

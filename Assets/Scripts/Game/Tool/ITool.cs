@@ -7,6 +7,7 @@ namespace IndieFarm.Tool
 {
     public interface ITool
     {
+        Item Item { get; set; }
         string Name { get; set; }
         bool Selectable(ToolData toolData);
 

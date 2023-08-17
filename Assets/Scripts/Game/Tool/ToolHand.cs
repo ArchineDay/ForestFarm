@@ -4,6 +4,7 @@ namespace IndieFarm.Tool
 {
     public class ToolHand:ITool
     {
+        public Item Item { get; set; }
         public string Name { get; set; } = "hand";
 
         public bool Selectable(ToolData toolData)

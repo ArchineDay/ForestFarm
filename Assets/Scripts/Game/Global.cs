@@ -30,7 +30,7 @@ namespace IndieFarm
         public static BindableProperty<int> CabbageSeedCount = new BindableProperty<int>(5);
 
         //当前工具
-        public static BindableProperty<ITool> CurrentTool = new BindableProperty<ITool>(Constant.ToolHand);
+        public static BindableProperty<ITool> CurrentTool = new BindableProperty<ITool>(Config.Items[0].Tool);
         // a：BindableProperty是一个可绑定的属性，可以在属性值发生变化的时候，通知到其他地方。
 
         //植物收割

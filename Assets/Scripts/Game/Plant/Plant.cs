@@ -11,6 +11,9 @@ namespace IndieFarm
 		void Grow(SoliData soilData);
 
 		int RipeDay { get; }
+		
+		public int XCell { get; set; }
+		public int YCell { get; set; }
 	}
 	
 	public partial class Plant : ViewController,IPlant
@@ -19,8 +22,8 @@ namespace IndieFarm
 
 		public GameObject GameObject => gameObject;
 		
-		public int XCell;
-		public int YCell;
+		public int XCell { get;  set; }
+		public int YCell { get; set; }
 		
 		private PlantStates mState = PlantStates.Seed;
 		public PlantStates State => mState;//get方法
