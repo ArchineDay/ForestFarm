@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace IndieFarm
 {
-	public partial class ChallengeCotroller
+	public partial class ChallengeController
 	{
 
 	}

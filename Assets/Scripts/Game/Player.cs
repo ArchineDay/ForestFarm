@@ -41,12 +41,12 @@ namespace IndieFarm
 
             Global.Days.Register(day =>
             {
-                ChallengeCotroller.RipeAndHarvestCountInCurrentDay.Value = 0;
-                ChallengeCotroller.HarvestCountInCurrentDay.Value = 0;
-                ChallengeCotroller.RipeAndHarvestRadishCountInCurrentDay.Value = 0;
-                ChallengeCotroller.RadishHarvestCountInCurrentDay.Value = 0;
-                ChallengeCotroller.RipeAndHarvestCabbageCountInCurrentDay.Value = 0;
-                ChallengeCotroller.CabbageHarvestCountInCurrentDay.Value = 0;
+                ChallengeController.RipeAndHarvestCountInCurrentDay.Value = 0;
+                ChallengeController.HarvestCountInCurrentDay.Value = 0;
+                ChallengeController.RipeAndHarvestRadishCountInCurrentDay.Value = 0;
+                ChallengeController.RadishHarvestCountInCurrentDay.Value = 0;
+                ChallengeController.RipeAndHarvestCabbageCountInCurrentDay.Value = 0;
+                ChallengeController.CabbageHarvestCountInCurrentDay.Value = 0;
                 var soilDatas = FindObjectOfType<GridController>().ShowGrid;
                 //天数变更小植物成熟
                 PlantController.Instance.Plants.ForEach((x, y, plant) =>

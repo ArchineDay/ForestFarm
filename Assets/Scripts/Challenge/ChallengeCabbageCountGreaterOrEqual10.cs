@@ -1,8 +1,8 @@
 namespace IndieFarm
 {
-    public class ChallengeHarvest10thFruit:Challenge
+    public class ChallengeCabbageCountGreaterOrEqual10:Challenge
     {
-        public override string Name { get; } = "收获第10个水果";
+        public override string Name { get; } = "拥有10棵白菜";
         public override void OnStart()
         {
             
@@ -10,7 +10,7 @@ namespace IndieFarm
 
         public override bool CheckFinish()
         {
-            return ChallengeController.HarvestedFruitCount>=10;
+         return Global.CabbageCount.Value >= 10;
         }
 
         public override void OnFinish()

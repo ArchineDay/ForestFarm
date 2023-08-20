@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 
 namespace IndieFarm
 {
-    public partial class ChallengeCotroller : ViewController
+    public partial class ChallengeController : ViewController
     {
         public Font Font;
         private GUIStyle mLabelStyle;
@@ -47,7 +47,10 @@ namespace IndieFarm
             new ChallengeHarvest10thRadish(),
             new ChallengeFruitCountGreaterOrEqual10(),
             new ChallengeRadishCountGreaterOrEqual10(),
-            new ChallengeHarvestACabbage()
+            new ChallengeHarvestACabbage(),
+            new ChallengeCoin100(),
+            new ChallengeHarvest10thCabbage(),
+            new ChallengeCabbageCountGreaterOrEqual10()
         };
 
         public static List<Challenge> ActiveChallenges = new List<Challenge>();

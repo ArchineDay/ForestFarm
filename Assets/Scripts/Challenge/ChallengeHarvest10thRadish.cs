@@ -10,7 +10,7 @@ namespace IndieFarm
 
         public override bool CheckFinish()
         {
-            return ChallengeCotroller.HarvestedRadishCount>= 10;
+            return ChallengeController.HarvestedRadishCount>= 10;
         }
 
         public override void OnFinish()

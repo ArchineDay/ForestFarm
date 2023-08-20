@@ -29,7 +29,7 @@ namespace IndieFarm
         
         //白菜数量
         public static BindableProperty<int> CabbageCount = new BindableProperty<int>(0);
-        public static BindableProperty<int> CabbageSeedCount = new BindableProperty<int>(5);
+  
 
         //当前工具
         public static BindableProperty<ITool> CurrentTool = new BindableProperty<ITool>(Config.Items[0].Tool);

@@ -10,11 +10,11 @@ namespace IndieFarm
     {
         void Start()
         {
-            ChallengeCotroller.OnChallengeFinish.Register(challenge =>
+            ChallengeController.OnChallengeFinish.Register(challenge =>
             {
                 AudioController.Get.SfxChallengeFinish.Play();
 
-                if (ChallengeCotroller.Challenges.All(challenges => challenges.State == Challenge.States.Finished))
+                if (ChallengeController.Challenges.All(challenges => challenges.State == Challenge.States.Finished))
                 {
                     ActionKit.Delay(0.5f, () => { SceneManager.LoadScene("GamePass"); }).Start(this);
                 }

@@ -1,16 +1,16 @@
 namespace IndieFarm
 {
-    public class ChallengeHarvest10thFruit:Challenge
+    public class ChallengeCoin100:Challenge
     {
-        public override string Name { get; } = "收获第10个水果";
+        public override string Name { get; } = "赚取100金币";
         public override void OnStart()
         {
-            
+        
         }
 
         public override bool CheckFinish()
         {
-            return ChallengeController.HarvestedFruitCount>=10;
+           return  Global.Coin.Value >= 100;
         }
 
         public override void OnFinish()
