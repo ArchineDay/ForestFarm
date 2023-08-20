@@ -18,17 +18,23 @@ namespace IndieFarm
 
         //当天成熟萝卜的数量
         public static BindableProperty<int> RipeAndHarvestRadishCountInCurrentDay = new(0);
+        //当天成熟白菜的数量
+        public static BindableProperty<int> RipeAndHarvestCabbageCountInCurrentDay = new(0);
 
         //当天收割果子的数量
         public static BindableProperty<int> HarvestCountInCurrentDay = new(0);
 
         //当天收割萝卜的数量
         public static BindableProperty<int> RadishHarvestCountInCurrentDay = new(0);
+        //当天收获白菜的数量
+        public static BindableProperty<int> CabbageHarvestCountInCurrentDay = new(0);
 
         //收获过的果实数量
         public static int HarvestedFruitCount = 0;
         //收获过的萝卜数量
         public static int HarvestedRadishCount = 0;
+        //收获过的白菜数量
+        public static int HarvestedCabbageCount = 0;
 
         public static List<Challenge> Challenges = new List<Challenge>()
         {
@@ -40,7 +46,8 @@ namespace IndieFarm
             new ChallengeHarvest10thFruit(),
             new ChallengeHarvest10thRadish(),
             new ChallengeFruitCountGreaterOrEqual10(),
-            new ChallengeRadishCountGreaterOrEqual10()
+            new ChallengeRadishCountGreaterOrEqual10(),
+            new ChallengeHarvestACabbage()
         };
 
         public static List<Challenge> ActiveChallenges = new List<Challenge>();
@@ -73,13 +80,21 @@ namespace IndieFarm
                     }
                 }
 
-                if (plant is PlantRadish)
+                else if (plant is PlantRadish)
                 {
                     HarvestedRadishCount++;
                     RadishHarvestCountInCurrentDay.Value++;
                     if (plant.RipeDay == Global.Days.Value)
                     {
                         RipeAndHarvestRadishCountInCurrentDay.Value++;
+                    }
+                }else if (plant is PlantCabbage)
+                {
+                    HarvestedCabbageCount++;
+                    CabbageHarvestCountInCurrentDay.Value++;
+                    if (plant.RipeDay == Global.Days.Value)
+                    {
+                        RipeAndHarvestCabbageCountInCurrentDay.Value++;
                     }
                 }
             }).UnRegisterWhenGameObjectDestroyed(gameObject); //当前类

@@ -1,8 +1,8 @@
 namespace IndieFarm
 {
-    public class ChallengeHarvestARadish:Challenge
+    public class ChallengeHarvestACabbage:Challenge
     {
-        public override string Name { get; } = "收获一棵萝卜";
+        public override string Name { get; } = "收获一棵白菜";
 
         public override void OnStart()
         {
@@ -11,7 +11,7 @@ namespace IndieFarm
 
         public override bool CheckFinish()
         {//隔开挑战日期，当天是startDATe说明不可能成熟
-            return Global.Days.Value!=StartDate&&ChallengeCotroller.RadishHarvestCountInCurrentDay.Value >= 1;
+            return Global.Days.Value!=StartDate&&ChallengeCotroller.CabbageHarvestCountInCurrentDay.Value >= 1;
         }
 
         public override void OnFinish()
