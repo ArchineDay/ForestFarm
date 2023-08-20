@@ -18,12 +18,47 @@ MonoBehaviour:
     GameObject: {fileID: 0}
     From: 0
     NameToFullName: []
-    BindInfos: []
+    BindInfos:
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot1
+      MemberName: ToolbarSlot1
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot2
+      MemberName: ToolbarSlot2
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot3
+      MemberName: ToolbarSlot3
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot4
+      MemberName: ToolbarSlot4
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot5
+      MemberName: ToolbarSlot5
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot6
+      MemberName: ToolbarSlot6
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot7
+      MemberName: ToolbarSlot7
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot8
+      MemberName: ToolbarSlot8
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot9
+      MemberName: ToolbarSlot9
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot10
+      MemberName: ToolbarSlot10
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: ResController
+    ClassName: UIToolBar
     Namespace: IndieFarm
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace IndieFarm\r\n{\r\n\tpublic
-      partial class ResController : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class UIToolBar : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:ed711914-b636-470f-85b2-7d023e5936d8\r\nusing UnityEngine;\r\n\r\nnamespace
-      IndieFarm\r\n{\r\n\tpublic partial class ResController\r\n\t{\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:da9b2917-1ac4-43f5-9c6e-c944124a0b72\r\nusing UnityEngine;\r\n\r\nnamespace
+      IndieFarm\r\n{\r\n\tpublic partial class UIToolBar\r\n\t{\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot1;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot2;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot3;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot4;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot5;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot6;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot7;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot8;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot9;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot10;\r\n\r\n\t}\r\n}\r\n"

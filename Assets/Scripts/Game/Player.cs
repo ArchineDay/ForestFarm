@@ -16,6 +16,7 @@ namespace IndieFarm
 
         public Font Font;
         private GUIStyle mLabelStyle;
+        private GUIStyle mCoinStyle;
 
         private void Awake()
         {
@@ -28,6 +29,16 @@ namespace IndieFarm
             {
                 font = Font
             };
+
+            mCoinStyle = new GUIStyle("Label")
+            {
+                font = Font,
+                normal =
+                {
+                    textColor = Color.yellow
+                }
+            };
+
             Global.Days.Register(day =>
             {
                 ChallengeCotroller.RipeAndHarvestCountInCurrentDay.Value = 0;
@@ -74,6 +85,11 @@ namespace IndieFarm
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
             GUILayout.Label("天数:" + Global.Days.Value, mLabelStyle);
+            GUILayout.EndHorizontal();
+            
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(10);
+            GUILayout.Label("$" + Global.Coin.Value, mCoinStyle);
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();

@@ -18,6 +18,8 @@ namespace IndieFarm
 
         //果子数量
         public static BindableProperty<int> FruitCount = new BindableProperty<int>(0);
+        //硬币
+        public static BindableProperty<int> Coin = new BindableProperty<int>(0);
 
      
 
