@@ -58,7 +58,7 @@ namespace IndieFarm
             // 检查cellPos是否在playerPos周围（相邻或对角线位置）
             if (ToolInRange(mouseCellPos, playerPos,Global.CurrentTool.Value.Range))
             {
-                if (mouseCellPos is { x: >= 0 and < 10, y: >= 0 and < 10 })
+                if (mouseCellPos.x<mShowGrid.Width&&mouseCellPos.y<mShowGrid.Height&&mouseCellPos is { x: >= 0, y: >= 0 })
                 {
                     ShowSelectCenter(mouseCellPos);
                     mTooldata.GridCenterPos = ShowSelectCenter(mouseCellPos);

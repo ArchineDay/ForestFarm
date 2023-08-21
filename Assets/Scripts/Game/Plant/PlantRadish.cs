@@ -27,6 +27,7 @@ namespace IndieFarm
                 //切换表现
                 if (newState == PlantStates.Small)
                 {
+                    this.ClearSoilDigState();
                     GetComponent<SpriteRenderer>().sprite = ResController.Instance.smallPlantRadishSprite;
                 }
                 else if (newState == PlantStates.Ripe)

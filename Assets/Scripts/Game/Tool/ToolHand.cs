@@ -20,9 +20,10 @@ namespace IndieFarm.Tool
         {
             //摘果子，植物消失
             Object.Destroy(PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y].GameObject);
-            toolData.ShowGrid[toolData.CellPos.x, toolData.CellPos.y].HasPlant = false;
+            //toolData.ShowGrid[toolData.CellPos.x, toolData.CellPos.y].HasPlant = false;
             //重置土地的状态
-            toolData.ShowGrid[toolData.CellPos.x, toolData.CellPos.y].PlantState = PlantStates.Seed;
+            //toolData.ShowGrid[toolData.CellPos.x, toolData.CellPos.y].PlantState = PlantStates.Seed;
+            toolData.ShowGrid[toolData.CellPos.x, toolData.CellPos.y] = null;
 
             Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y]);
 

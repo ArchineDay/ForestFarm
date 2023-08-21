@@ -6,7 +6,7 @@ namespace IndieFarm
 {
     public partial class GridController : ViewController
     {
-        private EasyGrid<SoliData> mShowGrid = new EasyGrid<SoliData>(10, 10);
+        private EasyGrid<SoliData> mShowGrid = new EasyGrid<SoliData>(5, 4);
         
         public EasyGrid<SoliData> ShowGrid=>mShowGrid;
 
@@ -18,9 +18,9 @@ namespace IndieFarm
             mShowGrid[0, 0] = new SoliData();
             mShowGrid[2, 2] = new SoliData();
 
-            for (var i = 0; i < 10; i++)
+            for (var i = 0; i < ShowGrid.Width; i++)
             {
-                for (var j = 0; j < 10; j++)
+                for (var j = 0; j < ShowGrid.Height; j++)
                 {
                     Ground.SetTile(new Vector3Int(i,j),PlantablePen);
                 }
@@ -30,7 +30,7 @@ namespace IndieFarm
             {
                 if (data != null)
                 {
-                    //用的pen来设置
+                    //用pen来设置
                     Soil.SetTile(new Vector3Int(x, y), Pen);
                 }
             });

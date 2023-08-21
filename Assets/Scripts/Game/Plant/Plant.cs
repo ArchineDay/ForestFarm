@@ -16,6 +16,14 @@ namespace IndieFarm
 		public int YCell { get; set; }
 	}
 	
+	public static class PlantExtentions{
+		
+		public static void ClearSoilDigState(this IPlant self)
+		{//清空地块
+			Object.FindObjectOfType<GridController>().Soil.SetTile(new Vector3Int(self.XCell,self.YCell),null);
+		}
+	}
+	
 	public partial class Plant : ViewController,IPlant
 	{
 		public int RipeDay { get; private set; }
@@ -40,6 +48,7 @@ namespace IndieFarm
 				//切换表现
 				if (newState ==PlantStates.Small)
 				{
+					this.ClearSoilDigState();
 					GetComponent<SpriteRenderer>().sprite = ResController.Instance.smallPlantSprite;
 				}else if (newState ==PlantStates.Ripe)
 				{
