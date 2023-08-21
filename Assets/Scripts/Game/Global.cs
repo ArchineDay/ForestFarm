@@ -37,5 +37,11 @@ namespace IndieFarm
 
         //植物收割
         public static EasyEvent<IPlant> OnPlantHarvest = new EasyEvent<IPlant>();
+
+        //为什么用static
+        //全局的，如果不用static，那么就需要在每个场景中都创建一份这样的数据，这样就会造成数据的冗余
+        public static bool HandRange1UnLock = false;
+        public static bool ShovelRange1UnLock = false;
+        public static bool WateringCanRange1UnLock = false;
     }
 }

@@ -8,7 +8,7 @@ namespace IndieFarm
 {
     public partial class UIShop : ViewController
     {
-        void SetupBtnShowCheck(BindableProperty<int> itemCount,Button btn,Func<int,bool> showCondition)
+       public static void SetupBtnShowCheck(BindableProperty<int> itemCount,Button btn,Func<int,bool> showCondition,GameObject gameObject)
         {
             itemCount.RegisterWithInitValue(count =>
             {
@@ -26,12 +26,12 @@ namespace IndieFarm
         
         void Start()
         {
-            SetupBtnShowCheck(Global.FruitCount,BtnSellFruit,count=>count>=1);
-            SetupBtnShowCheck(Global.RadishCount,BtnSellRadish,count=>count>=1);
-            SetupBtnShowCheck(Global.CabbageCount,BtnSellCabbage,count=>count>=1);
-            SetupBtnShowCheck(Global.Coin,BtnBuyFruitSeed,count=>count>=1);
-            SetupBtnShowCheck(Global.Coin,BtnBuyRadishSeed,count=>count>=2);
-            SetupBtnShowCheck(Global.Coin,BtnBuyCabbageSeed,count=>count>=3);
+            SetupBtnShowCheck(Global.FruitCount,BtnSellFruit,count=>count>=1,gameObject);
+            SetupBtnShowCheck(Global.RadishCount,BtnSellRadish,count=>count>=1,gameObject);
+            SetupBtnShowCheck(Global.CabbageCount,BtnSellCabbage,count=>count>=1,gameObject);
+            SetupBtnShowCheck(Global.Coin,BtnBuyFruitSeed,count=>count>=1,gameObject);
+            SetupBtnShowCheck(Global.Coin,BtnBuyRadishSeed,count=>count>=2,gameObject);
+            SetupBtnShowCheck(Global.Coin,BtnBuyCabbageSeed,count=>count>=3,gameObject);
 
             BtnBuyFruitSeed.onClick.AddListener(() =>
             {
