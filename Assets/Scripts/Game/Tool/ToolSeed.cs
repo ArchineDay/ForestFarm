@@ -9,7 +9,7 @@ namespace IndieFarm.Tool
         public string Name { get; set; } = "seed";
 
         //=>表示 get { return "seed"; }
-        public int Range => 1;
+        public int Range => Global.SeedRange1UnLock?2:1;
 
         public bool Selectable(ToolData toolData)
         {

@@ -29,8 +29,8 @@ MonoBehaviour:
       PathToRoot: BtnWateringCanRange1
       MemberName: BtnWateringCanRange1
     - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnSellFruit
-      MemberName: BtnSellFruit
+      PathToRoot: BtnSeedRange1
+      MemberName: BtnSeedRange1
     - TypeName: UnityEngine.UI.Button
       PathToRoot: BtnSellRadish
       MemberName: BtnSellRadish
@@ -40,9 +40,9 @@ MonoBehaviour:
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace IndieFarm\r\n{\r\n\tpublic
       partial class UIPowerUp : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:12e0e690-5c8a-4f2b-9c6f-c86c022c76db\r\nusing UnityEngine;\r\n\r\nnamespace
+    DesignerCode: "// Generate Id:c7abcd03-146e-4021-8d2f-1f92b90fd456\r\nusing UnityEngine;\r\n\r\nnamespace
       IndieFarm\r\n{\r\n\tpublic partial class UIPowerUp\r\n\t{\r\n\r\n\t\tpublic
       UnityEngine.UI.Button BtnHandRange1;\r\n\r\n\t\tpublic UnityEngine.UI.Button
       BtnShovelRange1;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnWateringCanRange1;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Button BtnSellFruit;\r\n\r\n\t\tpublic UnityEngine.UI.Button
+      UnityEngine.UI.Button BtnSeedRange1;\r\n\r\n\t\tpublic UnityEngine.UI.Button
       BtnSellRadish;\r\n\r\n\t}\r\n}\r\n"

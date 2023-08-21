@@ -43,5 +43,6 @@ namespace IndieFarm
         public static bool HandRange1UnLock = false;
         public static bool ShovelRange1UnLock = false;
         public static bool WateringCanRange1UnLock = false;
+        public static bool SeedRange1UnLock = false;
     }
 }

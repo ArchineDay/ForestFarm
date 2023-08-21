@@ -7,12 +7,20 @@ namespace IndieFarm
     {
         void Start()
         {
-            UIShop.SetupBtnShowCheck(Global.Coin, BtnHandRange1, coin => coin >= 20 && !Global.HandRange1UnLock,
-                gameObject);
+            //顺序
+            //铁锹
+            //花洒
+            //手
+            //种子
             UIShop.SetupBtnShowCheck(Global.Coin, BtnShovelRange1, coin => coin >= 20 && !Global.ShovelRange1UnLock,
                 gameObject);
             UIShop.SetupBtnShowCheck(Global.Coin, BtnWateringCanRange1,
-                coin => coin >= 30 && !Global.WateringCanRange1UnLock, gameObject);
+                coin => coin >= 30 && !Global.WateringCanRange1UnLock && Global.ShovelRange1UnLock, gameObject);
+            UIShop.SetupBtnShowCheck(Global.Coin, BtnHandRange1,
+                coin => coin >= 20 && !Global.HandRange1UnLock && Global.WateringCanRange1UnLock,
+                gameObject);
+            UIShop.SetupBtnShowCheck(Global.Coin, BtnSeedRange1,
+                coin => coin >= 25 && !Global.SeedRange1UnLock && Global.HandRange1UnLock, gameObject);
 
             BtnHandRange1.onClick.AddListener(() =>
             {
@@ -32,6 +40,13 @@ namespace IndieFarm
             {
                 Global.WateringCanRange1UnLock = true;
                 Global.Coin.Value -= 30;
+                AudioController.Get.SfxBuy.Play();
+            });
+
+            BtnSeedRange1.onClick.AddListener(() =>
+            {
+                Global.SeedRange1UnLock = true;
+                Global.Coin.Value -= 25;
                 AudioController.Get.SfxBuy.Play();
             });
         }

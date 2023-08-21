@@ -3172,7 +3172,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u51FA\u552E\u679C\u5B50\uFF043"
+  m_Text: "\u79CD\u5B50 \u8303\u56F4+1 \uFF0430"
 --- !u!222 &502643965
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5583,12 +5583,12 @@ GameObject:
   - component: {fileID: 944523776}
   - component: {fileID: 944523775}
   m_Layer: 5
-  m_Name: BtnSellFruit
+  m_Name: BtnSeedRange1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &944523774
 RectTransform:
   m_ObjectHideFlags: 0
