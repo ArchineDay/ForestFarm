@@ -7,6 +7,8 @@ namespace IndieFarm
 	{
 		Seed,
 		Small,
+		Middle,
+		Big,
 		Ripe,
 		Old
 	}

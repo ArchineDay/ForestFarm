@@ -106,6 +106,11 @@ namespace IndieFarm
             GUILayout.Space(10);
             GUILayout.Label("白菜:" + Global.CabbageCount.Value, mLabelStyle);
             GUILayout.EndHorizontal();
+            
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(10);
+            GUILayout.Label("胡萝卜:" + Global.CarrotCount.Value, mLabelStyle);
+            GUILayout.EndHorizontal();
 
             // GUILayout.BeginHorizontal();
             // GUILayout.Space(10);

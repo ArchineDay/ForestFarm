@@ -19,30 +19,46 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos:
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnHandRange1
-      MemberName: BtnHandRange1
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnShovelRange1
-      MemberName: BtnShovelRange1
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnWateringCanRange1
-      MemberName: BtnWateringCanRange1
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnSeedRange1
-      MemberName: BtnSeedRange1
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnSellRadish
-      MemberName: BtnSellRadish
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot1
+      MemberName: ToolbarSlot1
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot2
+      MemberName: ToolbarSlot2
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot3
+      MemberName: ToolbarSlot3
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot4
+      MemberName: ToolbarSlot4
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot5
+      MemberName: ToolbarSlot5
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot6
+      MemberName: ToolbarSlot6
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot7
+      MemberName: ToolbarSlot7
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot8
+      MemberName: ToolbarSlot8
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot9
+      MemberName: ToolbarSlot9
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot10
+      MemberName: ToolbarSlot10
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: UIPowerUp
+    ClassName: UIToolBar
     Namespace: IndieFarm
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace IndieFarm\r\n{\r\n\tpublic
-      partial class UIPowerUp : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class UIToolBar : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:c7abcd03-146e-4021-8d2f-1f92b90fd456\r\nusing UnityEngine;\r\n\r\nnamespace
-      IndieFarm\r\n{\r\n\tpublic partial class UIPowerUp\r\n\t{\r\n\r\n\t\tpublic
-      UnityEngine.UI.Button BtnHandRange1;\r\n\r\n\t\tpublic UnityEngine.UI.Button
-      BtnShovelRange1;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnWateringCanRange1;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Button BtnSeedRange1;\r\n\r\n\t\tpublic UnityEngine.UI.Button
-      BtnSellRadish;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:c826ebca-7270-4b69-b3b4-efff624f2251\r\nusing UnityEngine;\r\n\r\nnamespace
+      IndieFarm\r\n{\r\n\tpublic partial class UIToolBar\r\n\t{\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot1;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot2;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot3;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot4;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot5;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot6;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot7;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot8;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot9;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot10;\r\n\r\n\t}\r\n}\r\n"

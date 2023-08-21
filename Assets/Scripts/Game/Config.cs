@@ -78,6 +78,19 @@ namespace IndieFarm
             {
                 Item = item
             }),
+            new Item()
+            {
+                IconName = "CarrotSeedIcon",
+                Count = new BindableProperty<int>(5),
+                Countable = true,
+                IsPlant = true,
+                Name = "seed_carrot",
+                PlantPrefabName = "PlantCarrot",
+                Tool = new ToolSeed()
+            }.Self(item => item.Tool = new ToolSeed()
+            {
+                Item = item
+            }),
         };
     }
 }

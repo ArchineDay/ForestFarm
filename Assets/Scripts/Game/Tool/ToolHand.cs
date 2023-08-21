@@ -45,6 +45,11 @@ namespace IndieFarm.Tool
                 //白菜+1
                 Global.CabbageCount.Value++;
             }
+            if (PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as PlantCarrot)
+            {
+                //胡萝卜+1
+                Global.CarrotCount.Value++;
+            }
 
             AudioController.Get.SfxHarvest.Play();
         }
