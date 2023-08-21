@@ -8,6 +8,8 @@ namespace IndieFarm.Tool
         public Item Item { get; set; }
         public string Name { get; set; } ="watering_can";
 
+        public int Range=>Global.WateringCanRange1UnLock?2:1;
+
         public bool Selectable(ToolData toolData)
         {
             return toolData.ShowGrid[toolData.CellPos.x, toolData.CellPos.y] != null &&

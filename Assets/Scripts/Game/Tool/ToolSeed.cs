@@ -8,6 +8,9 @@ namespace IndieFarm.Tool
         public Item Item { get; set; }
         public string Name { get; set; } = "seed";
 
+        //=>表示 get { return "seed"; }
+        public int Range => 1;
+
         public bool Selectable(ToolData toolData)
         {
             return toolData.ShowGrid[toolData.CellPos.x, toolData.CellPos.y] != null &&

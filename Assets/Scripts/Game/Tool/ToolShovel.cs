@@ -9,6 +9,8 @@ namespace IndieFarm.Tool
         public Item Item { get; set; }
         public string Name { get; set; }="shovel";
 
+        public int Range=>Global.ShovelRange1UnLock?2:1;
+
         public bool Selectable(ToolData toolData)
         {
             return toolData.ShowGrid[toolData.CellPos.x,toolData.CellPos.y] == null;

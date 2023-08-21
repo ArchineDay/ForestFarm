@@ -37,6 +37,14 @@ namespace IndieFarm
         }
         
         private ToolData mTooldata = new ToolData();
+
+        bool ToolInRange(Vector3Int mouseCellPos, Vector3Int playerPos, int range)
+        {
+            // 计算cellPos与playerPos之间的水平和垂直距离
+            float deltaX = Mathf.Abs(mouseCellPos.x - playerPos.x);
+            float deltaY = Mathf.Abs(mouseCellPos.y - playerPos.y);
+            return deltaX <= range && deltaY <= range && (deltaX + deltaY) >= 0;
+        }
         private void Update()
         {
             mSprite.enabled = false;
@@ -45,22 +53,18 @@ namespace IndieFarm
             var worldMousePos = mMainCamera.ScreenToWorldPoint(Input.mousePosition);
             //图标位置在格子右下角
             Icon.Position(worldMousePos.x + 0.5f, worldMousePos.y - 0.5f);
-            var cellPos = mGrid.WorldToCell(worldMousePos);
-
-            // 计算cellPos与playerPos之间的水平和垂直距离
-            float deltaX = Mathf.Abs(cellPos.x - playerPos.x);
-            float deltaY = Mathf.Abs(cellPos.y - playerPos.y);
-
+            var mouseCellPos = mGrid.WorldToCell(worldMousePos);
+            
             // 检查cellPos是否在playerPos周围（相邻或对角线位置）
-            if (deltaX <= 1 && deltaY <= 1 && (deltaX + deltaY) >= 0)
+            if (ToolInRange(mouseCellPos, playerPos,Global.CurrentTool.Value.Range))
             {
-                if (cellPos is { x: >= 0 and < 10, y: >= 0 and < 10 })
+                if (mouseCellPos is { x: >= 0 and < 10, y: >= 0 and < 10 })
                 {
-                    ShowSelectCenter(cellPos);
-                    mTooldata.GridCenterPos = ShowSelectCenter(cellPos);
+                    ShowSelectCenter(mouseCellPos);
+                    mTooldata.GridCenterPos = ShowSelectCenter(mouseCellPos);
 
                     mTooldata.ShowGrid = mShowGrid;
-                    mTooldata.CellPos = cellPos;
+                    mTooldata.CellPos = mouseCellPos;
                     mTooldata.SoilTilemap = mTilemap;
                     mTooldata.Pen = mGridController.Pen;
                     //使用工具

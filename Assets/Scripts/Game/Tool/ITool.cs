@@ -9,6 +9,7 @@ namespace IndieFarm.Tool
     {
         Item Item { get; set; }
         string Name { get; set; }
+        int Range { get; }
         bool Selectable(ToolData toolData);
 
         void Use(ToolData toolData);
