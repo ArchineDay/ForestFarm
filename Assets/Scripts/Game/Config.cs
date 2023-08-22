@@ -7,9 +7,9 @@ namespace IndieFarm
 {
     public class Config
     {
-        public static List<Item> Items = new List<Item>()
+        static Item CreateHand()
         {
-            new Item()
+            return new Item()
             {
                 IconName = "ToolHand_0",
                 Count = new BindableProperty<int>(1),
@@ -18,8 +18,12 @@ namespace IndieFarm
                 Name = "hand",
                 PlantPrefabName = string.Empty,
                 Tool = new ToolHand()
-            },
-            new Item()
+            };
+        }
+
+        static Item CreateHandShovel()
+        {
+            return new Item()
             {
                 IconName = "ToolShovel_0",
                 Count = new BindableProperty<int>(1),
@@ -28,11 +32,15 @@ namespace IndieFarm
                 Name = "shovel",
                 PlantPrefabName = string.Empty,
                 Tool = new ToolShovel()
-            },
-            new Item()
+            };
+        }
+
+        static Item CreateSeed(int count=5)
+        {
+            return new Item()
             {
                 IconName = "ToolSeed_0",
-                Count = new BindableProperty<int>(5),
+                Count = new BindableProperty<int>(count),
                 Countable = true,
                 IsPlant = true,
                 Name = "seed",
@@ -41,8 +49,12 @@ namespace IndieFarm
             }.Self(item => item.Tool = new ToolSeed()
             {
                 Item = item
-            }),
-            new Item()
+            });
+        }
+
+        static Item CreateWateringCan()
+        {
+            return new Item()
             {
                 IconName = "ToolWateringCan_0",
                 Count = new BindableProperty<int>(1),
@@ -51,11 +63,15 @@ namespace IndieFarm
                 Name = "watering_can",
                 PlantPrefabName = string.Empty,
                 Tool = new ToolWateringCan()
-            },
-            new Item()
+            };
+        }
+
+        static Item CreateSeedRadish(int count=5)
+        {
+            return new Item()
             {
                 IconName = "ToolSeedRadish_0",
-                Count = new BindableProperty<int>(5),
+                Count = new BindableProperty<int>(count),
                 Countable = true,
                 IsPlant = true,
                 Name = "seed_radish",
@@ -64,11 +80,15 @@ namespace IndieFarm
             }.Self(item => item.Tool = new ToolSeed()
             {
                 Item = item
-            }),
-            new Item()
+            });
+        }
+
+        static Item CreateSeedCabbage(int count=5)
+        {
+            return new Item()
             {
                 IconName = "ToolSeedCabbage_0",
-                Count = new BindableProperty<int>(5),
+                Count = new BindableProperty<int>(count),
                 Countable = true,
                 IsPlant = true,
                 Name = "seed_cabbage",
@@ -77,11 +97,15 @@ namespace IndieFarm
             }.Self(item => item.Tool = new ToolSeed()
             {
                 Item = item
-            }),
-            new Item()
+            });
+        }
+
+        static Item CreateSeedCarrot(int count=5)
+        {
+            return new Item()
             {
                 IconName = "CarrotSeedIcon",
-                Count = new BindableProperty<int>(5),
+                Count = new BindableProperty<int>(count),
                 Countable = true,
                 IsPlant = true,
                 Name = "seed_carrot",
@@ -90,7 +114,32 @@ namespace IndieFarm
             }.Self(item => item.Tool = new ToolSeed()
             {
                 Item = item
-            }),
+            });
+        }
+        public  static Item CreateCarrot(int count)
+        {
+            return new Item()
+            {
+                IconName = "CarrotIcon",
+                Count = new BindableProperty<int>(count),
+                Countable = true,
+                IsPlant = false,
+                Name = "carrot",
+                PlantPrefabName = string.Empty,
+                Tool =null
+            };
+        }
+
+        public static List<Item> Items = new List<Item>()
+        {
+            CreateHand(),
+            CreateHandShovel(),
+            CreateSeed(),
+            CreateWateringCan(),
+            CreateSeedRadish(),
+            CreateSeedCabbage(),
+            CreateSeedCarrot(),
+           
         };
     }
 }

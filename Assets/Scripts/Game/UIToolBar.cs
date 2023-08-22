@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using IndieFarm.Tool;
 using UnityEngine;
 using QFramework;
@@ -11,6 +12,10 @@ namespace IndieFarm
     {
         private List<UISlot> ToolbarSlots = new List<UISlot>();
 
+        // public void AddItem(Item item)
+        // {
+        //     ToolbarSlots.FirstOrDefault(slot=>slot.Data==null)?.SetData(item, (ToolbarSlots.Count + 1).ToString());
+        // }
         private void Start()
         {
             // ToolbarSlot1.SetData(new SlotData()
@@ -23,7 +28,7 @@ namespace IndieFarm
 
             UISlot.OnItemSelect = slot =>
             {
-                if (slot != null)
+                if (slot.Data != null)
                 {
                     ChangeTool(slot.Data.Tool, slot.Select, slot.Icon.sprite);
                 }
@@ -41,15 +46,7 @@ namespace IndieFarm
             ToolbarSlots.Add(ToolbarSlot10);
 
 
-            for (var i = 0; i < ToolbarSlots.Count; i++)
-            {
-                var slot = ToolbarSlots[i];
-                if (i < Config.Items.Count)
-                {
-                    var item = Config.Items[i];
-                    slot.SetData(item, (i + 1).ToString());
-                }
-            }
+           
 
             HideAllSelect();
             ToolbarSlots[0].Select.Show();
@@ -86,6 +83,16 @@ namespace IndieFarm
 
         private void Update()
         {
+            for (var i = 0; i < ToolbarSlots.Count; i++)
+            {
+                var slot = ToolbarSlots[i];
+                if (i < Config.Items.Count)
+                {
+                    var item = Config.Items[i];
+                    slot.SetData(item, (i + 1).ToString());
+                }
+            }
+            
             //ChangeTool(Constant.ToolHand, ToolbarSlots[0].Select, ToolbarSlots[0].Icon.sprite);
             //if (Input.GetKeyDown(KeyCode.Alpha1)) ToolbarSlots[0].Data?.OnSelect?.Invoke();
             if (Input.GetKeyDown(KeyCode.Alpha1)) UISlot.OnItemSelect(ToolbarSlot1);

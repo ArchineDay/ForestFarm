@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 namespace IndieFarm.Tool
@@ -48,6 +49,17 @@ namespace IndieFarm.Tool
             if (PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as PlantCarrot)
             {
                 //胡萝卜+1
+                var carrotItem=Config.Items.FirstOrDefault(item => item.Name == "carrot");
+                if (carrotItem==null)
+                {
+                    carrotItem = Config.CreateCarrot(1);
+                    Config.Items.Add(carrotItem);
+                   // Object.FindObjectOfType<UIToolBar>().AddItem(carrotItem);
+                }
+                else 
+                {
+                    carrotItem.Count.Value++;
+                }
                 Global.CarrotCount.Value++;
             }
 
