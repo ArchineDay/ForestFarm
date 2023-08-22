@@ -10,12 +10,8 @@ namespace IndieFarm
 {
     public partial class UIToolBar : ViewController
     {
-        private List<UISlot> ToolbarSlots = new List<UISlot>();
-
-        // public void AddItem(Item item)
-        // {
-        //     ToolbarSlots.FirstOrDefault(slot=>slot.Data==null)?.SetData(item, (ToolbarSlots.Count + 1).ToString());
-        // }
+        public List<UISlot> ToolbarSlots = new List<UISlot>();
+        
         private void Start()
         {
             // ToolbarSlot1.SetData(new SlotData()
@@ -46,19 +42,9 @@ namespace IndieFarm
             ToolbarSlots.Add(ToolbarSlot10);
 
 
-           
-
             HideAllSelect();
             ToolbarSlots[0].Select.Show();
             Global.MouseTool.Icon.sprite = ToolbarSlots[0].Icon.sprite;
-
-            // foreach (var toolbarSlot in ToolbarSlots)
-            // {
-            //     var data = toolbarSlot.Data;
-            //     toolbarSlot.GetComponent<Button>().onClick.AddListener(() => { data?.OnSelect?.Invoke(); });
-            // }
-
-            // Btn1.onClick.AddListener(() => { ChangeTool(Constant.ToolHand,Btn1Seclect,Btn1Icon.sprite); });...
         }
 
         void HideAllSelect()
@@ -72,7 +58,11 @@ namespace IndieFarm
 
         void ChangeTool(ITool tool, Image selectImage, Sprite toolIcon)
         {
-            Global.CurrentTool.Value = tool;
+            if (tool != null)
+            {
+                Global.CurrentTool.Value = tool;
+            }
+
             AudioController.Get.SfxTake.Play();
 
             HideAllSelect();
@@ -85,14 +75,19 @@ namespace IndieFarm
         {
             for (var i = 0; i < ToolbarSlots.Count; i++)
             {
-                var slot = ToolbarSlots[i];
                 if (i < Config.Items.Count)
                 {
                     var item = Config.Items[i];
-                    slot.SetData(item, (i + 1).ToString());
+                    ToolbarSlots[i].SetData(item, (i + 1).ToString());
+
+                    //i往后的slot都设置为空
+                    for (int j = i + 1; j < ToolbarSlots.Count; j++)
+                    {
+                        ToolbarSlots[j].SetData(null, string.Empty);
+                    }
                 }
             }
-            
+
             //ChangeTool(Constant.ToolHand, ToolbarSlots[0].Select, ToolbarSlots[0].Icon.sprite);
             //if (Input.GetKeyDown(KeyCode.Alpha1)) ToolbarSlots[0].Data?.OnSelect?.Invoke();
             if (Input.GetKeyDown(KeyCode.Alpha1)) UISlot.OnItemSelect(ToolbarSlot1);

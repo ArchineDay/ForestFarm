@@ -55,20 +55,28 @@ namespace IndieFarm
 
         public void SetData(Item data, string shortCut)
         {
-            mData = data;
-            Icon.sprite = IconLoader?.Invoke(mData.IconName);
-            ShortCut.text = shortCut;
-            if (data.Countable)
+            if (data==null)
             {
-                //实时更新数量
-                data.Count.RegisterWithInitValue(count =>
-                {
-                    Count.text = count.ToString();
-                }).UnRegisterWhenGameObjectDestroyed(gameObject);
-                // Count.text = mData.Count.Value.ToString();
-                // Count.Show();
+                mData = null;
+                Icon.sprite = null;
+                ShortCut.text = string.Empty;
+                Count.text = string.Empty;
             }
-            
+            else
+            {
+                mData = data;
+                Icon.sprite = IconLoader?.Invoke(mData.IconName);
+                ShortCut.text = shortCut;
+                if (data.Countable)
+                {
+                    //实时更新数量
+                    data.Count.RegisterWithInitValue(count =>
+                    {
+                        Count.text = count.ToString();
+                    }).UnRegisterWhenGameObjectDestroyed(gameObject);
+                }
+            }
+           
         }
     }
 }

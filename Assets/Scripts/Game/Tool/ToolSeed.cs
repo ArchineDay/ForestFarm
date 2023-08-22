@@ -1,4 +1,6 @@
+using System.Linq;
 using QFramework;
+using UnityEngine;
 using UnityEngine.Tilemaps;
 
 namespace IndieFarm.Tool
@@ -22,6 +24,11 @@ namespace IndieFarm.Tool
         {
             //Global.FruitSeedCount.Value--;
             Item.Count.Value--;
+            //如果数量为0，移除
+            if (Item.Count.Value==0)
+            {
+                Config.Items.Remove(Item);
+            }
 
             var plantGameObj = ResController.Instance.LoadPrefab(Item.PlantPrefabName)
                 .Instantiate()
