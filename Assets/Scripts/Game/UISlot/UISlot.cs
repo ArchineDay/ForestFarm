@@ -1,4 +1,5 @@
 using System;
+using IndieFarm.Tool;
 using QFramework;
 using UnityEngine;
 using UnityEngine.UI;
@@ -57,7 +58,7 @@ namespace IndieFarm
         {
             if (data==null)
             {
-                mData = null;
+                mData =null;
                 Icon.sprite = null;
                 ShortCut.text = string.Empty;
                 Count.text = string.Empty;

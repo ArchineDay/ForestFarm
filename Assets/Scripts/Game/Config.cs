@@ -7,7 +7,7 @@ namespace IndieFarm
 {
     public class Config
     {
-        static Item CreateHand()
+        public static Item CreateHand()
         {
             return new Item()
             {
@@ -21,7 +21,7 @@ namespace IndieFarm
             };
         }
 
-        static Item CreateHandShovel()
+        public static Item CreateHandShovel()
         {
             return new Item()
             {
@@ -35,7 +35,7 @@ namespace IndieFarm
             };
         }
 
-        static Item CreateSeed(int count=5)
+        public static Item CreateSeed(int count = 5)
         {
             return new Item()
             {
@@ -52,7 +52,7 @@ namespace IndieFarm
             });
         }
 
-        static Item CreateWateringCan()
+        public static Item CreateWateringCan()
         {
             return new Item()
             {
@@ -66,7 +66,7 @@ namespace IndieFarm
             };
         }
 
-        static Item CreateSeedRadish(int count=5)
+        public static Item CreateSeedRadish(int count = 5)
         {
             return new Item()
             {
@@ -83,7 +83,7 @@ namespace IndieFarm
             });
         }
 
-        static Item CreateSeedCabbage(int count=5)
+        public static Item CreateSeedCabbage(int count = 5)
         {
             return new Item()
             {
@@ -100,7 +100,7 @@ namespace IndieFarm
             });
         }
 
-        static Item CreateSeedCarrot(int count=5)
+        public static Item CreateSeedCarrot(int count = 5)
         {
             return new Item()
             {
@@ -116,7 +116,8 @@ namespace IndieFarm
                 Item = item
             });
         }
-        public  static Item CreateCarrot(int count)
+
+        public static Item CreateCarrot(int count)
         {
             return new Item()
             {
@@ -126,7 +127,7 @@ namespace IndieFarm
                 IsPlant = false,
                 Name = "carrot",
                 PlantPrefabName = string.Empty,
-                Tool =null
+                Tool = null
             };
         }
 
@@ -134,12 +135,11 @@ namespace IndieFarm
         {
             CreateHand(),
             CreateHandShovel(),
-            CreateSeed(),
             CreateWateringCan(),
+            CreateSeed(),
             CreateSeedRadish(),
             CreateSeedCabbage(),
             CreateSeedCarrot(),
-           
         };
     }
 }

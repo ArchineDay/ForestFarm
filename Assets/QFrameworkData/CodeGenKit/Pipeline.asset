@@ -19,46 +19,40 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos:
-    - TypeName: IndieFarm.UISlot
-      PathToRoot: ToolbarSlot1
-      MemberName: ToolbarSlot1
-    - TypeName: IndieFarm.UISlot
-      PathToRoot: ToolbarSlot2
-      MemberName: ToolbarSlot2
-    - TypeName: IndieFarm.UISlot
-      PathToRoot: ToolbarSlot3
-      MemberName: ToolbarSlot3
-    - TypeName: IndieFarm.UISlot
-      PathToRoot: ToolbarSlot4
-      MemberName: ToolbarSlot4
-    - TypeName: IndieFarm.UISlot
-      PathToRoot: ToolbarSlot5
-      MemberName: ToolbarSlot5
-    - TypeName: IndieFarm.UISlot
-      PathToRoot: ToolbarSlot6
-      MemberName: ToolbarSlot6
-    - TypeName: IndieFarm.UISlot
-      PathToRoot: ToolbarSlot7
-      MemberName: ToolbarSlot7
-    - TypeName: IndieFarm.UISlot
-      PathToRoot: ToolbarSlot8
-      MemberName: ToolbarSlot8
-    - TypeName: IndieFarm.UISlot
-      PathToRoot: ToolbarSlot9
-      MemberName: ToolbarSlot9
-    - TypeName: IndieFarm.UISlot
-      PathToRoot: ToolbarSlot10
-      MemberName: ToolbarSlot10
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnBuyFruitSeed
+      MemberName: BtnBuyFruitSeed
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnBuyRadishSeed
+      MemberName: BtnBuyRadishSeed
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnBuyCabbageSeed
+      MemberName: BtnBuyCabbageSeed
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnSellFruit
+      MemberName: BtnSellFruit
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnSellRadish
+      MemberName: BtnSellRadish
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnSellCabbage
+      MemberName: BtnSellCabbage
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnSellCarrot
+      MemberName: BtnSellCarrot
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnBuyCarrotSeed
+      MemberName: BtnBuyCarrotSeed
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: UIToolBar
+    ClassName: UIShop
     Namespace: IndieFarm
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace IndieFarm\r\n{\r\n\tpublic
-      partial class UIToolBar : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class UIShop : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:c826ebca-7270-4b69-b3b4-efff624f2251\r\nusing UnityEngine;\r\n\r\nnamespace
-      IndieFarm\r\n{\r\n\tpublic partial class UIToolBar\r\n\t{\r\n\r\n\t\tpublic
-      IndieFarm.UISlot ToolbarSlot1;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot2;\r\n\r\n\t\tpublic
-      IndieFarm.UISlot ToolbarSlot3;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot4;\r\n\r\n\t\tpublic
-      IndieFarm.UISlot ToolbarSlot5;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot6;\r\n\r\n\t\tpublic
-      IndieFarm.UISlot ToolbarSlot7;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot8;\r\n\r\n\t\tpublic
-      IndieFarm.UISlot ToolbarSlot9;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot10;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:783bd36a-f9d3-4dd3-b170-b5b5528af70e\r\nusing UnityEngine;\r\n\r\nnamespace
+      IndieFarm\r\n{\r\n\tpublic partial class UIShop\r\n\t{\r\n\r\n\t\tpublic UnityEngine.UI.Button
+      BtnBuyFruitSeed;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnBuyRadishSeed;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Button BtnBuyCabbageSeed;\r\n\r\n\t\tpublic UnityEngine.UI.Button
+      BtnSellFruit;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnSellRadish;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Button BtnSellCabbage;\r\n\r\n\t\tpublic UnityEngine.UI.Button
+      BtnSellCarrot;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnBuyCarrotSeed;\r\n\r\n\t}\r\n}\r\n"

@@ -11,7 +11,7 @@ namespace IndieFarm.Tool
         public string Name { get; set; } = "seed";
 
         //=>表示 get { return "seed"; }
-        public int Range => Global.SeedRange1UnLock?2:1;
+        public int Range => Global.SeedRange1UnLock ? 2 : 1;
 
         public bool Selectable(ToolData toolData)
         {
@@ -25,9 +25,11 @@ namespace IndieFarm.Tool
             //Global.FruitSeedCount.Value--;
             Item.Count.Value--;
             //如果数量为0，移除
-            if (Item.Count.Value==0)
+            if (Item.Count.Value == 0)
             {
                 Config.Items.Remove(Item);
+                //切换回手
+                Object.FindObjectOfType<UIToolBar>().SelectDefault();
             }
 
             var plantGameObj = ResController.Instance.LoadPrefab(Item.PlantPrefabName)

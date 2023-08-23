@@ -71,6 +71,10 @@ namespace IndieFarm
             Global.MouseTool.Icon.sprite = toolIcon;
         }
 
+        public void SelectDefault()
+        {
+            UISlot.OnItemSelect(ToolbarSlot1);
+        }
         private void Update()
         {
             for (var i = 0; i < ToolbarSlots.Count; i++)
