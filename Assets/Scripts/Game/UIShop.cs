@@ -99,6 +99,7 @@ namespace IndieFarm
             BtnBuyCarrotSeed.onClick.AddListener(() =>
             {
                 Global.Coin.Value -= 4;
+               //购买胡萝卜种子
                //查询是否有胡萝卜种子，如果没有，创建一个,有的话，数量+1
                 var seedItem = Config.Items.FirstOrDefault(i => i.Name == "seed_carrot");
                 if (seedItem==null)
