@@ -18,6 +18,7 @@ namespace IndieFarm
 
         //当天成熟萝卜的数量
         public static BindableProperty<int> RipeAndHarvestRadishCountInCurrentDay = new(0);
+        public static BindableProperty<int> RipeAndHarvestCarrotCountInCurrentDay = new(0);
         //当天成熟白菜的数量
         public static BindableProperty<int> RipeAndHarvestCabbageCountInCurrentDay = new(0);
 
@@ -26,6 +27,7 @@ namespace IndieFarm
 
         //当天收割萝卜的数量
         public static BindableProperty<int> RadishHarvestCountInCurrentDay = new(0);
+        public static BindableProperty<int> CarrotHarvestCountInCurrentDay = new(0);
         //当天收获白菜的数量
         public static BindableProperty<int> CabbageHarvestCountInCurrentDay = new(0);
 
@@ -33,24 +35,28 @@ namespace IndieFarm
         public static int HarvestedFruitCount = 0;
         //收获过的萝卜数量
         public static int HarvestedRadishCount = 0;
+        public static int HarvestedCarrotCount = 0;
         //收获过的白菜数量
         public static int HarvestedCabbageCount = 0;
 
         public static List<Challenge> Challenges = new List<Challenge>()
         {
-            new ChallengeHarvestAFruit(),
-            new ChallengeRipeAndHarvestTwoFruitsInADay(),
-            new ChallengeRipeAndHarvestFiveFruitsInADay(),
-            new ChallengeHarvestARadish(),
-            new ChallengeRipeAndHarvestFruitAndRadishInOneDay(),
-            new ChallengeHarvest10thFruit(),
-            new ChallengeHarvest10thRadish(),
-            new ChallengeFruitCountGreaterOrEqual10(),
-            new ChallengeRadishCountGreaterOrEqual10(),
-            new ChallengeHarvestACabbage(),
-            new ChallengeCoin100(),
-            new ChallengeHarvest10thCabbage(),
-            new ChallengeCabbageCountGreaterOrEqual10()
+            // new ChallengeHarvestAFruit(),
+            // new ChallengeRipeAndHarvestTwoFruitsInADay(),
+            // new ChallengeRipeAndHarvestFiveFruitsInADay(),
+            // new ChallengeHarvestARadish(),
+            // new ChallengeRipeAndHarvestFruitAndRadishInOneDay(),
+            // new ChallengeHarvest10thFruit(),
+            // new ChallengeHarvest10thRadish(),
+            // new ChallengeFruitCountGreaterOrEqual10(),
+            // new ChallengeRadishCountGreaterOrEqual10(),
+            // new ChallengeHarvestACabbage(),
+            // new ChallengeCoin100(),
+            // new ChallengeHarvest10thCabbage(),
+            // new ChallengeCabbageCountGreaterOrEqual10(),
+            new ChallengeHarvest10thCarrot(),
+            new ChallengeCarrotCountGreaterOrEqual10(),
+            new ChallengeHarvestACarrot()
         };
 
         public static List<Challenge> ActiveChallenges = new List<Challenge>();
@@ -100,6 +106,16 @@ namespace IndieFarm
                         RipeAndHarvestCabbageCountInCurrentDay.Value++;
                     }
                 }
+                else if (plant is PlantCarrot)
+                {
+                    HarvestedCarrotCount++;
+                    CarrotHarvestCountInCurrentDay.Value++;
+                    if (plant.RipeDay == Global.Days.Value)
+                    {
+                        RipeAndHarvestCarrotCountInCurrentDay.Value++;
+                    }
+                }
+              
             }).UnRegisterWhenGameObjectDestroyed(gameObject); //当前类
         }
 

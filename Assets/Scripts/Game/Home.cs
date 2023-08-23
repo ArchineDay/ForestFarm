@@ -16,5 +16,5 @@ namespace IndieFarm
 				AudioController.Get.SfxNextDay.Play();
 			}
 		}
-	}
+	} 
 }
