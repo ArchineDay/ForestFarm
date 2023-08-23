@@ -18,41 +18,12 @@ MonoBehaviour:
     GameObject: {fileID: 0}
     From: 0
     NameToFullName: []
-    BindInfos:
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnBuyFruitSeed
-      MemberName: BtnBuyFruitSeed
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnBuyRadishSeed
-      MemberName: BtnBuyRadishSeed
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnBuyCabbageSeed
-      MemberName: BtnBuyCabbageSeed
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnSellFruit
-      MemberName: BtnSellFruit
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnSellRadish
-      MemberName: BtnSellRadish
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnSellCabbage
-      MemberName: BtnSellCabbage
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnSellCarrot
-      MemberName: BtnSellCarrot
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnBuyCarrotSeed
-      MemberName: BtnBuyCarrotSeed
+    BindInfos: []
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: UIShop
+    ClassName: ResController
     Namespace: IndieFarm
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace IndieFarm\r\n{\r\n\tpublic
-      partial class UIShop : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class ResController : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:783bd36a-f9d3-4dd3-b170-b5b5528af70e\r\nusing UnityEngine;\r\n\r\nnamespace
-      IndieFarm\r\n{\r\n\tpublic partial class UIShop\r\n\t{\r\n\r\n\t\tpublic UnityEngine.UI.Button
-      BtnBuyFruitSeed;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnBuyRadishSeed;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Button BtnBuyCabbageSeed;\r\n\r\n\t\tpublic UnityEngine.UI.Button
-      BtnSellFruit;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnSellRadish;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Button BtnSellCabbage;\r\n\r\n\t\tpublic UnityEngine.UI.Button
-      BtnSellCarrot;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnBuyCarrotSeed;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:92426e0b-63c4-45bd-a8b1-56cc10f784ce\r\nusing UnityEngine;\r\n\r\nnamespace
+      IndieFarm\r\n{\r\n\tpublic partial class ResController\r\n\t{\r\n\r\n\t}\r\n}\r\n"

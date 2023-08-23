@@ -117,15 +117,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: plants free_0
+      name: PumpkinSeed
       rect:
         serializedVersion: 2
         x: 0
         y: 80
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.31656218}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -138,15 +138,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_1
+      name: PumpkinSmall
       rect:
         serializedVersion: 2
         x: 16
         y: 80
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.22484303}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -159,15 +159,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_2
+      name: PumpkinMiddle
       rect:
         serializedVersion: 2
         x: 32
         y: 80
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.50000024, y: 0.25104856}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -180,15 +180,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_3
+      name: PumpkinBig
       rect:
         serializedVersion: 2
         x: 48
         y: 80
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.22484303}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -201,15 +201,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_4
+      name: PumpkinRipe
       rect:
         serializedVersion: 2
         x: 64
         y: 80
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.51310253, y: 0.19863749}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -720,8 +720,11 @@ TextureImporter:
       CarrotRipe: 1486495578
       CarrotSeed: -842724458
       CarrotSmall: 259047706
-      plants free_0: 2094987522
-      plants free_1: -1416428844
+      PumpkinBig: 121390447
+      PumpkinMiddle: -1785637537
+      PumpkinRipe: -739164748
+      PumpkinSeed: 2094987522
+      PumpkinSmall: -1416428844
       plants free_10: 1823999027
       plants free_11: 554977115
       plants free_12: 1700083830
@@ -732,7 +735,6 @@ TextureImporter:
       plants free_17: 2103721268
       plants free_18: -1951307846
       plants free_19: -388019102
-      plants free_2: -1785637537
       plants free_20: 850134637
       plants free_21: 2043918942
       plants free_22: 2047019869
@@ -741,8 +743,6 @@ TextureImporter:
       plants free_25: 1561866246
       plants free_26: -470798029
       plants free_27: -1144611774
-      plants free_3: 121390447
-      plants free_4: -739164748
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

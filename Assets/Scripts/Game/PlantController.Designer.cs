@@ -1,4 +1,4 @@
-// Generate Id:cd7997e2-f533-463c-9848-9b68a2b56da2
+// Generate Id:65877b77-b594-414a-b564-803d162d58c1
 using UnityEngine;
 
 namespace IndieFarm

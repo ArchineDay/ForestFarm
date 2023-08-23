@@ -116,6 +116,23 @@ namespace IndieFarm
                 Item = item
             });
         }
+        
+        public static Item CreateSeedPumpkin(int count = 5)
+        {
+            return new Item()
+            {
+                IconName = "PumpkinSeedIcon",
+                Count = new BindableProperty<int>(count),
+                Countable = true,
+                IsPlant = true,
+                Name = "seed_pumpkin",
+                PlantPrefabName = "PlantPumpkin",
+                Tool = new ToolSeed()
+            }.Self(item => item.Tool = new ToolSeed()
+            {
+                Item = item
+            });
+        }
 
         public static Item CreateCarrot(int count)
         {
@@ -130,6 +147,20 @@ namespace IndieFarm
                 Tool = null
             };
         }
+        
+        public static Item CreatePumpkin(int count)
+        {
+            return new Item()
+            {
+                IconName = "PumpkinIcon",
+                Count = new BindableProperty<int>(count),
+                Countable = true,
+                IsPlant = false,
+                Name = "pumpkin",
+                PlantPrefabName = string.Empty,
+                Tool = null
+            };
+        }
 
         public static List<Item> Items = new List<Item>()
         {
@@ -140,6 +171,7 @@ namespace IndieFarm
             CreateSeedRadish(),
             CreateSeedCabbage(),
             CreateSeedCarrot(),
+            CreateSeedPumpkin()
         };
     }
 }

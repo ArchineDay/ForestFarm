@@ -61281,11 +61281,19 @@ MonoBehaviour:
   - {fileID: -957445543, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
   - {fileID: 1486495578, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
   - {fileID: -1482223270, guid: 9a34177d837ebc94ca19e1b3ff69050c, type: 3}
+  - {fileID: 2094987522, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
+  - {fileID: -1416428844, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
+  - {fileID: -1785637537, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
+  - {fileID: 121390447, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
+  - {fileID: -739164748, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
+  - {fileID: -1290962679, guid: 9a34177d837ebc94ca19e1b3ff69050c, type: 3}
+  - {fileID: 1307073514, guid: 9a34177d837ebc94ca19e1b3ff69050c, type: 3}
   PlantPrefabs:
   - {fileID: 3620523988723446051, guid: f7cb7b9b07be12f4db0c90be8fc68f20, type: 3}
   - {fileID: 3620523988723446051, guid: 37489f7ae4ac6f94cbe4106556b2ce02, type: 3}
   - {fileID: 3620523988723446051, guid: 0abef9089575b8f4b92bcba02f21f43a, type: 3}
   - {fileID: 3620523988723446051, guid: 0b291a75561ea8a4f800574f4ae8c138, type: 3}
+  - {fileID: 3620523988723446051, guid: 02a4c8a801941b841919d46a01d50207, type: 3}
 --- !u!4 &1688994990
 Transform:
   m_ObjectHideFlags: 0

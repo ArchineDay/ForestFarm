@@ -11,7 +11,7 @@ namespace IndieFarm
     public partial class UIToolBar : ViewController
     {
         public List<UISlot> ToolbarSlots = new List<UISlot>();
-        
+
         private void Start()
         {
             // ToolbarSlot1.SetData(new SlotData()
@@ -61,20 +61,20 @@ namespace IndieFarm
             if (tool != null)
             {
                 Global.CurrentTool.Value = tool;
+                AudioController.Get.SfxTake.Play();
+
+                HideAllSelect();
+                selectImage.Show();
+
+                Global.MouseTool.Icon.sprite = toolIcon;
             }
-
-            AudioController.Get.SfxTake.Play();
-
-            HideAllSelect();
-            selectImage.Show();
-
-            Global.MouseTool.Icon.sprite = toolIcon;
         }
 
         public void SelectDefault()
         {
             UISlot.OnItemSelect(ToolbarSlot1);
         }
+
         private void Update()
         {
             for (var i = 0; i < ToolbarSlots.Count; i++)
