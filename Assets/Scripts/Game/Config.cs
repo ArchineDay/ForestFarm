@@ -133,7 +133,55 @@ namespace IndieFarm
                 Item = item
             });
         }
-
+        public static Item CreateSeedPotato(int count = 5)
+        {
+            return new Item()
+            {
+                IconName = "PotatoSeedIcon",
+                Count = new BindableProperty<int>(count),
+                Countable = true,
+                IsPlant = true,
+                Name = "seed_potato",
+                PlantPrefabName = "PlantPotato",
+                Tool = new ToolSeed()
+            }.Self(item => item.Tool = new ToolSeed()
+            {
+                Item = item
+            });
+        }
+        public static Item CreateSeedTomato(int count = 5)
+        {
+            return new Item()
+            {
+                IconName = "TomatoSeedIcon",
+                Count = new BindableProperty<int>(count),
+                Countable = true,
+                IsPlant = true,
+                Name = "seed_tomato",
+                PlantPrefabName = "PlantTomato",
+                Tool = new ToolSeed()
+            }.Self(item => item.Tool = new ToolSeed()
+            {
+                Item = item
+            });
+        }
+        
+        public static Item CreateSeedBean(int count = 5)
+        {
+            return new Item()
+            {
+                IconName = "BeanSeedIcon",
+                Count = new BindableProperty<int>(count),
+                Countable = true,
+                IsPlant = true,
+                Name = "seed_bean",
+                PlantPrefabName = "PlantBean",
+                Tool = new ToolSeed()
+            }.Self(item => item.Tool = new ToolSeed()
+            {
+                Item = item
+            });
+        }
         public static Item CreateCarrot(int count)
         {
             return new Item()
@@ -161,17 +209,62 @@ namespace IndieFarm
                 Tool = null
             };
         }
+        
+        public static Item CreatePotato(int count)
+        {
+            return new Item()
+            {
+                IconName = "PotatoIcon",
+                Count = new BindableProperty<int>(count),
+                Countable = true,
+                IsPlant = false,
+                Name = "potato",
+                PlantPrefabName = string.Empty,
+                Tool = null
+            };
+        }
+        
+        public static Item CreateTomato(int count)
+        {
+            return new Item()
+            {
+                IconName = "TomatoIcon",
+                Count = new BindableProperty<int>(count),
+                Countable = true,
+                IsPlant = false,
+                Name = "tomato",
+                PlantPrefabName = string.Empty,
+                Tool = null
+            };
+        }
+        
+        public static Item CreateBean(int count)
+        {
+            return new Item()
+            {
+                IconName = "BeanIcon",
+                Count = new BindableProperty<int>(count),
+                Countable = true,
+                IsPlant = false,
+                Name = "bean",
+                PlantPrefabName = string.Empty,
+                Tool = null
+            };
+        }
 
         public static List<Item> Items = new List<Item>()
         {
             CreateHand(),
             CreateHandShovel(),
             CreateWateringCan(),
-            CreateSeed(),
-            CreateSeedRadish(),
-            CreateSeedCabbage(),
+            // CreateSeed(),
+            // CreateSeedRadish(),
+            // CreateSeedCabbage(),
             CreateSeedCarrot(),
-            CreateSeedPumpkin()
+            CreateSeedPumpkin(),
+            CreateSeedPotato(),
+            CreateSeedTomato(),
+            CreateSeedBean()
         };
     }
 }

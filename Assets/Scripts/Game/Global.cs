@@ -26,6 +26,10 @@ namespace IndieFarm
         //萝卜数量
         public static BindableProperty<int> RadishCount = new BindableProperty<int>(0);
         public static BindableProperty<int> CarrotCount = new BindableProperty<int>(0);
+        public static BindableProperty<int> PumpkinCount = new BindableProperty<int>(0);
+        public static BindableProperty<int> PotatoCount = new BindableProperty<int>(0);
+        public static BindableProperty<int> TomatoCount = new BindableProperty<int>(0);
+        public static BindableProperty<int> BeanCount = new BindableProperty<int>(0);
       
         
         //白菜数量

@@ -138,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items free_1
+      name: PotatoIcon
       rect:
         serializedVersion: 2
         x: 16
@@ -180,7 +180,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items free_3
+      name: TomatoIcon
       rect:
         serializedVersion: 2
         x: 48
@@ -201,7 +201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items free_4
+      name: BeanIcon
       rect:
         serializedVersion: 2
         x: 64
@@ -243,7 +243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items free_6
+      name: PotatoSeedIcon
       rect:
         serializedVersion: 2
         x: 16
@@ -285,7 +285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items free_8
+      name: TomatoSeedIcon
       rect:
         serializedVersion: 2
         x: 48
@@ -306,7 +306,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items free_9
+      name: BeanSeedIcon
       rect:
         serializedVersion: 2
         x: 64
@@ -400,19 +400,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      BeanIcon: 41581122
+      BeanSeedIcon: -291152040
       CarrotIcon: -1482223270
       CarrotSeedIcon: -1985833074
+      PotatoIcon: 1336794183
+      PotatoSeedIcon: -715724916
       PumpkinIcon: 1307073514
       PumpkinSeedIcon: -1290962679
-      items free_1: 1336794183
+      TomatoIcon: -2142931611
+      TomatoSeedIcon: 150734328
       items free_10: -116489912
       items free_11: -263743711
       items free_12: 1572766816
-      items free_3: -2142931611
-      items free_4: 41581122
-      items free_6: -715724916
-      items free_8: 150734328
-      items free_9: -291152040
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

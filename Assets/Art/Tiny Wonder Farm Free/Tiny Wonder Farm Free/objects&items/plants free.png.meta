@@ -125,7 +125,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.5000001, y: 0.31656218}
+      pivot: {x: 0.5000001, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,7 +146,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.22484303}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,7 +167,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.50000024, y: 0.25104856}
+      pivot: {x: 0.50000024, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -188,7 +188,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.22484303}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -209,7 +209,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.51310253, y: 0.19863749}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -327,7 +327,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_10
+      name: PotatoSeed
       rect:
         serializedVersion: 2
         x: 0
@@ -348,7 +348,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_11
+      name: PotatoSmall
       rect:
         serializedVersion: 2
         x: 16
@@ -369,7 +369,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_12
+      name: PotatoMiddle
       rect:
         serializedVersion: 2
         x: 32
@@ -390,7 +390,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_13
+      name: PotatoBig
       rect:
         serializedVersion: 2
         x: 48
@@ -411,7 +411,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_14
+      name: PotatoRipe
       rect:
         serializedVersion: 2
         x: 64
@@ -432,7 +432,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_15
+      name: TomatoSeed
       rect:
         serializedVersion: 2
         x: 0
@@ -453,7 +453,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_16
+      name: TomatoSmall
       rect:
         serializedVersion: 2
         x: 16
@@ -474,7 +474,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_17
+      name: TomatoMiddle
       rect:
         serializedVersion: 2
         x: 32
@@ -495,7 +495,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_18
+      name: TomatoBig
       rect:
         serializedVersion: 2
         x: 48
@@ -516,7 +516,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_19
+      name: TomatoRipe
       rect:
         serializedVersion: 2
         x: 64
@@ -600,7 +600,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_23
+      name: BeanSeed
       rect:
         serializedVersion: 2
         x: 0
@@ -621,7 +621,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_24
+      name: BeanSmall
       rect:
         serializedVersion: 2
         x: 16
@@ -642,14 +642,14 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_25
+      name: BeanMiddle
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 16
-        height: 16
-      alignment: 0
+        height: 20
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -663,15 +663,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_26
+      name: BeanBig
       rect:
         serializedVersion: 2
         x: 48
         y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -684,15 +684,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plants free_27
+      name: BeanRipe
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -715,34 +715,34 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      BeanBig: -470798029
+      BeanMiddle: 1561866246
+      BeanRipe: -1144611774
+      BeanSeed: -1210297308
+      BeanSmall: 759954086
       CarrotBig: -957445543
       CarrotMiddle: 920583458
       CarrotRipe: 1486495578
       CarrotSeed: -842724458
       CarrotSmall: 259047706
+      PotatoBig: -1884045434
+      PotatoMiddle: 1700083830
+      PotatoRipe: 474845619
+      PotatoSeed: 1823999027
+      PotatoSmall: 554977115
       PumpkinBig: 121390447
       PumpkinMiddle: -1785637537
       PumpkinRipe: -739164748
       PumpkinSeed: 2094987522
       PumpkinSmall: -1416428844
-      plants free_10: 1823999027
-      plants free_11: 554977115
-      plants free_12: 1700083830
-      plants free_13: -1884045434
-      plants free_14: 474845619
-      plants free_15: 874910655
-      plants free_16: 20906965
-      plants free_17: 2103721268
-      plants free_18: -1951307846
-      plants free_19: -388019102
+      TomatoBig: -1951307846
+      TomatoMiddle: 2103721268
+      TomatoRipe: -388019102
+      TomatoSeed: 874910655
+      TomatoSmall: 20906965
       plants free_20: 850134637
       plants free_21: 2043918942
       plants free_22: 2047019869
-      plants free_23: -1210297308
-      plants free_24: 759954086
-      plants free_25: 1561866246
-      plants free_26: -470798029
-      plants free_27: -1144611774
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

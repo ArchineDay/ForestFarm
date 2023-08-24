@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4266611570572926962}
   - component: {fileID: -5690702030543730305}
   m_Layer: 0
-  m_Name: PlantPumpkin
+  m_Name: PlantPotato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 2094987522, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
+  m_Sprite: {fileID: 1823999027, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,25 +102,25 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
-  name: pumpkin
+  name: potato
   states:
   - state: 0
-    sprite: {fileID: 2094987522, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
+    sprite: {fileID: 1823999027, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
     ShowDigState: 1
     Days: 1
   - state: 1
-    sprite: {fileID: -1416428844, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
+    sprite: {fileID: 554977115, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
     ShowDigState: 0
     Days: 1
   - state: 2
-    sprite: {fileID: -1785637537, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
+    sprite: {fileID: 1700083830, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
     ShowDigState: 0
     Days: 1
   - state: 3
-    sprite: {fileID: 121390447, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
+    sprite: {fileID: -1884045434, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
     ShowDigState: 0
     Days: 1
   - state: 4
-    sprite: {fileID: -739164748, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
+    sprite: {fileID: 474845619, guid: 64a8cbb0975d6d14b8fd004bd6823b44, type: 3}
     ShowDigState: 0
     Days: 1

@@ -31,8 +31,71 @@ namespace IndieFarm.Tool
 
             if (PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as Plant)
             {
-                //果子+1
-                Global.FruitCount.Value++;
+                var plant = PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as Plant;
+                if (plant.name=="fruit")
+                {
+                    //果子+1
+                    Global.FruitCount.Value++;
+                }
+                else if (plant.name=="pumpkin")
+                {
+                    var pumpkinItem=Config.Items.FirstOrDefault(item => item.Name == "pumpkin");
+                    if (pumpkinItem==null)
+                    {
+                        pumpkinItem = Config.CreatePumpkin(1);
+                        Config.Items.Add(pumpkinItem);
+                    }
+                    else 
+                    {
+                        pumpkinItem.Count.Value++;
+                    }
+                    Global.PumpkinCount.Value++;
+                }
+                else if (plant.name=="potato")
+                {
+                    var potatoItem=Config.Items.FirstOrDefault(item => item.Name == "potato");
+                    if (potatoItem==null)
+                    {
+                        potatoItem = Config.CreatePotato(1);
+                        Config.Items.Add(potatoItem);
+                    }
+                    else 
+                    {
+                        potatoItem.Count.Value++;
+                    }
+                    Global.PotatoCount.Value++;
+                }
+                else if (plant.name=="tomato")
+                {
+                    var tomatoItem=Config.Items.FirstOrDefault(item => item.Name == "tomato");
+                    if (tomatoItem==null)
+                    {
+                        tomatoItem = Config.CreateTomato(1);
+                        Config.Items.Add(tomatoItem);
+                    }
+                    else 
+                    {
+                        tomatoItem.Count.Value++;
+                    }
+                    Global.TomatoCount.Value++;
+                }
+                else if (plant.name=="bean")
+                {
+                    var beanItem=Config.Items.FirstOrDefault(item => item.Name == "bean");
+                    if (beanItem==null)
+                    {
+                        beanItem = Config.CreateBean(1);
+                        Config.Items.Add(beanItem);
+                    }
+                    else 
+                    {
+                        beanItem.Count.Value++;
+                    }
+                    Global.BeanCount.Value++;
+                }
+
+           
+               
             }
 
             if (PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as PlantRadish)
@@ -54,7 +117,6 @@ namespace IndieFarm.Tool
                 {
                     carrotItem = Config.CreateCarrot(1);
                     Config.Items.Add(carrotItem);
-                   // Object.FindObjectOfType<UIToolBar>().AddItem(carrotItem);
                 }
                 else 
                 {
