@@ -36,11 +36,11 @@ namespace IndieFarm
         {
             public PlantStates state;
             public Sprite sprite;
-            public bool ShowDigState = false;
-            public int Days = 1;
+            public bool showDigState = false;
+            public int days = 1;
         }
 
-        public string name;
+        public new string name;
         public List<PlantState> states = new List<PlantState>();
 
         public int RipeDay { get; private set; }
@@ -68,7 +68,7 @@ namespace IndieFarm
                 var plantState = states.FirstOrDefault(s => s.state == newState);
                 mState = newState;
 
-                if (!plantState.ShowDigState)
+                if (!plantState.showDigState)
                 {
                     this.ClearSoilDigState();
                 }
@@ -92,7 +92,7 @@ namespace IndieFarm
                 //阶段切换
                 mDaysInCurrenrState++;
                 var plantState = states.FirstOrDefault(s => s.state == mState);
-                if (mDaysInCurrenrState >= plantState.Days)
+                if (plantState != null && mDaysInCurrenrState >= plantState.days)
                 {
                     var currentStateIndex = states.FindIndex(s => s.state == mState);
                     //获取后一个阶段

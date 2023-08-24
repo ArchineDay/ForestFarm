@@ -1,3 +1,4 @@
+using System;
 using IndieFarm.Tool;
 using QFramework;
 using UnityEngine;
@@ -15,5 +16,6 @@ using UnityEngine;
          public ITool Tool;
          public bool IsPlant;
          public string PlantPrefabName;
+         
      }
  }

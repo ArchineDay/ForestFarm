@@ -116,7 +116,7 @@ namespace IndieFarm
                 Item = item
             });
         }
-        
+
         public static Item CreateSeedPumpkin(int count = 5)
         {
             return new Item()
@@ -133,6 +133,7 @@ namespace IndieFarm
                 Item = item
             });
         }
+
         public static Item CreateSeedPotato(int count = 5)
         {
             return new Item()
@@ -149,6 +150,7 @@ namespace IndieFarm
                 Item = item
             });
         }
+
         public static Item CreateSeedTomato(int count = 5)
         {
             return new Item()
@@ -165,7 +167,7 @@ namespace IndieFarm
                 Item = item
             });
         }
-        
+
         public static Item CreateSeedBean(int count = 5)
         {
             return new Item()
@@ -182,6 +184,7 @@ namespace IndieFarm
                 Item = item
             });
         }
+
         public static Item CreateCarrot(int count)
         {
             return new Item()
@@ -195,7 +198,7 @@ namespace IndieFarm
                 Tool = null
             };
         }
-        
+
         public static Item CreatePumpkin(int count)
         {
             return new Item()
@@ -209,7 +212,7 @@ namespace IndieFarm
                 Tool = null
             };
         }
-        
+
         public static Item CreatePotato(int count)
         {
             return new Item()
@@ -223,7 +226,7 @@ namespace IndieFarm
                 Tool = null
             };
         }
-        
+
         public static Item CreateTomato(int count)
         {
             return new Item()
@@ -237,7 +240,7 @@ namespace IndieFarm
                 Tool = null
             };
         }
-        
+
         public static Item CreateBean(int count)
         {
             return new Item()
@@ -266,5 +269,18 @@ namespace IndieFarm
             CreateSeedTomato(),
             CreateSeedBean()
         };
+        
+        public static Item CreateItem(string name, int count)
+        {
+            return name switch
+            {
+                "tomato" => CreateTomato(count),
+                "bean" => CreateBean(count),
+                "carrot" => CreateCarrot(count),
+                "pumpkin" => CreatePumpkin(count),
+                "potato" => CreatePotato(count),
+                _ => null
+            };
+        }
     }
 }

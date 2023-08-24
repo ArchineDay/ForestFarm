@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace IndieFarm.Tool
 {
-    public class ToolHand:ITool
+    public class ToolHand : ITool
     {
         public Item Item { get; set; }
         public string Name { get; set; } = "hand";
 
-        public int Range=>Global.HandRange1UnLock?2:1;
+        public int Range => Global.HandRange1UnLock ? 2 : 1;
 
         public bool Selectable(ToolData toolData)
         {
@@ -29,73 +29,43 @@ namespace IndieFarm.Tool
             Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y]);
 
 
+            void HarvestPlant(Plant plant, string plantName)
+            {
+                if (plant.name == plantName)
+                {
+                    var plantItem = Config.Items.FirstOrDefault(item => item.Name == plantName);
+                    if (plantItem == null)
+                    {
+                        //找到对应名字的Item
+                        plantItem = Config.CreateItem(plantName, 1);
+                        //plantItem = Config.CreatePumpkin(1);
+                        Config.Items.Add(plantItem);
+                    }
+                    else
+                    {
+                        plantItem.Count.Value++;
+                    }
+                    //Global.PumpkinCount.Value++;
+                }
+            }
+
             if (PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as Plant)
             {
                 var plant = PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as Plant;
-                if (plant.name=="fruit")
+                if (plant.name == "fruit")
                 {
                     //果子+1
                     Global.FruitCount.Value++;
                 }
-                else if (plant.name=="pumpkin")
-                {
-                    var pumpkinItem=Config.Items.FirstOrDefault(item => item.Name == "pumpkin");
-                    if (pumpkinItem==null)
-                    {
-                        pumpkinItem = Config.CreatePumpkin(1);
-                        Config.Items.Add(pumpkinItem);
-                    }
-                    else 
-                    {
-                        pumpkinItem.Count.Value++;
-                    }
-                    Global.PumpkinCount.Value++;
-                }
-                else if (plant.name=="potato")
-                {
-                    var potatoItem=Config.Items.FirstOrDefault(item => item.Name == "potato");
-                    if (potatoItem==null)
-                    {
-                        potatoItem = Config.CreatePotato(1);
-                        Config.Items.Add(potatoItem);
-                    }
-                    else 
-                    {
-                        potatoItem.Count.Value++;
-                    }
-                    Global.PotatoCount.Value++;
-                }
-                else if (plant.name=="tomato")
-                {
-                    var tomatoItem=Config.Items.FirstOrDefault(item => item.Name == "tomato");
-                    if (tomatoItem==null)
-                    {
-                        tomatoItem = Config.CreateTomato(1);
-                        Config.Items.Add(tomatoItem);
-                    }
-                    else 
-                    {
-                        tomatoItem.Count.Value++;
-                    }
-                    Global.TomatoCount.Value++;
-                }
-                else if (plant.name=="bean")
-                {
-                    var beanItem=Config.Items.FirstOrDefault(item => item.Name == "bean");
-                    if (beanItem==null)
-                    {
-                        beanItem = Config.CreateBean(1);
-                        Config.Items.Add(beanItem);
-                    }
-                    else 
-                    {
-                        beanItem.Count.Value++;
-                    }
-                    Global.BeanCount.Value++;
-                }
 
-           
-               
+                HarvestPlant(plant, "pumpkin");
+                Global.PumpkinCount.Value++;
+                HarvestPlant(plant, "potato");
+                Global.PotatoCount.Value++;
+                HarvestPlant(plant, "tomato");
+                Global.TomatoCount.Value++;
+                HarvestPlant(plant, "bean");
+                Global.BeanCount.Value++;
             }
 
             if (PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as PlantRadish)
@@ -103,25 +73,27 @@ namespace IndieFarm.Tool
                 //萝卜+1
                 Global.RadishCount.Value++;
             }
-            
+
             if (PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as PlantCabbage)
             {
                 //白菜+1
                 Global.CabbageCount.Value++;
             }
+
             if (PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as PlantCarrot)
             {
                 //胡萝卜+1
-                var carrotItem=Config.Items.FirstOrDefault(item => item.Name == "carrot");
-                if (carrotItem==null)
+                var carrotItem = Config.Items.FirstOrDefault(item => item.Name == "carrot");
+                if (carrotItem == null)
                 {
                     carrotItem = Config.CreateCarrot(1);
                     Config.Items.Add(carrotItem);
                 }
-                else 
+                else
                 {
                     carrotItem.Count.Value++;
                 }
+
                 Global.CarrotCount.Value++;
             }
 
