@@ -52,11 +52,11 @@ namespace IndieFarm.Tool
             if (PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as Plant)
             {
                 var plant = PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as Plant;
-                if (plant.name == "fruit")
-                {
-                    //果子+1
-                    Global.FruitCount.Value++;
-                }
+                // if (plant.name == "fruit")
+                // {
+                //     //果子+1
+                //     Global.FruitCount.Value++;
+                // }
 
                 HarvestPlant(plant, "pumpkin");
                 Global.PumpkinCount.Value++;
@@ -66,18 +66,6 @@ namespace IndieFarm.Tool
                 Global.TomatoCount.Value++;
                 HarvestPlant(plant, "bean");
                 Global.BeanCount.Value++;
-            }
-
-            if (PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as PlantRadish)
-            {
-                //萝卜+1
-                Global.RadishCount.Value++;
-            }
-
-            if (PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as PlantCabbage)
-            {
-                //白菜+1
-                Global.CabbageCount.Value++;
             }
 
             if (PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as PlantCarrot)

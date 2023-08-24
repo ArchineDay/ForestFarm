@@ -41,12 +41,8 @@ namespace IndieFarm
 
             Global.Days.Register(day =>
             {
-                ChallengeController.RipeAndHarvestCountInCurrentDay.Value = 0;
-                ChallengeController.HarvestCountInCurrentDay.Value = 0;
-                ChallengeController.RipeAndHarvestRadishCountInCurrentDay.Value = 0;
-                ChallengeController.RadishHarvestCountInCurrentDay.Value = 0;
-                ChallengeController.RipeAndHarvestCabbageCountInCurrentDay.Value = 0;
-                ChallengeController.CabbageHarvestCountInCurrentDay.Value = 0;
+                ChallengeController.CarrotHarvestCountInCurrentDay.Value = 0;
+                ChallengeController.RipeAndHarvestCarrotCountInCurrentDay.Value = 0;
                 var soilDatas = FindObjectOfType<GridController>().ShowGrid;
                 //天数变更小植物成熟
                 PlantController.Instance.Plants.ForEach((x, y, plant) =>
@@ -92,21 +88,6 @@ namespace IndieFarm
             GUILayout.Label("$" + Global.Coin.Value, mCoinStyle);
             GUILayout.EndHorizontal();
 
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(10);
-            GUILayout.Label("果子:" + Global.FruitCount.Value, mLabelStyle);
-            GUILayout.EndHorizontal();
-            
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(10);
-            GUILayout.Label("萝卜:" + Global.RadishCount.Value, mLabelStyle);
-            GUILayout.EndHorizontal();
-            
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(10);
-            GUILayout.Label("白菜:" + Global.CabbageCount.Value, mLabelStyle);
-            GUILayout.EndHorizontal();
-            
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
             GUILayout.Label("胡萝卜:" + Global.CarrotCount.Value, mLabelStyle);

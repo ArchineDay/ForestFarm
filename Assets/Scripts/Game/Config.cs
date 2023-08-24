@@ -35,23 +35,6 @@ namespace IndieFarm
             };
         }
 
-        public static Item CreateSeed(int count = 5)
-        {
-            return new Item()
-            {
-                IconName = "ToolSeed_0",
-                Count = new BindableProperty<int>(count),
-                Countable = true,
-                IsPlant = true,
-                Name = "seed",
-                PlantPrefabName = "Plant",
-                Tool = new ToolSeed()
-            }.Self(item => item.Tool = new ToolSeed()
-            {
-                Item = item
-            });
-        }
-
         public static Item CreateWateringCan()
         {
             return new Item()
@@ -64,40 +47,6 @@ namespace IndieFarm
                 PlantPrefabName = string.Empty,
                 Tool = new ToolWateringCan()
             };
-        }
-
-        public static Item CreateSeedRadish(int count = 5)
-        {
-            return new Item()
-            {
-                IconName = "ToolSeedRadish_0",
-                Count = new BindableProperty<int>(count),
-                Countable = true,
-                IsPlant = true,
-                Name = "seed_radish",
-                PlantPrefabName = "PlantRadish",
-                Tool = new ToolSeed()
-            }.Self(item => item.Tool = new ToolSeed()
-            {
-                Item = item
-            });
-        }
-
-        public static Item CreateSeedCabbage(int count = 5)
-        {
-            return new Item()
-            {
-                IconName = "ToolSeedCabbage_0",
-                Count = new BindableProperty<int>(count),
-                Countable = true,
-                IsPlant = true,
-                Name = "seed_cabbage",
-                PlantPrefabName = "PlantCabbage",
-                Tool = new ToolSeed()
-            }.Self(item => item.Tool = new ToolSeed()
-            {
-                Item = item
-            });
         }
 
         public static Item CreateSeedCarrot(int count = 5)
@@ -260,16 +209,14 @@ namespace IndieFarm
             CreateHand(),
             CreateHandShovel(),
             CreateWateringCan(),
-            // CreateSeed(),
-            // CreateSeedRadish(),
-            // CreateSeedCabbage(),
+         
             CreateSeedCarrot(),
             CreateSeedPumpkin(),
             CreateSeedPotato(),
             CreateSeedTomato(),
             CreateSeedBean()
         };
-        
+
         public static Item CreateItem(string name, int count)
         {
             return name switch

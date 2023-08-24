@@ -1,4 +1,4 @@
-// Generate Id:c7abcd03-146e-4021-8d2f-1f92b90fd456
+// Generate Id:5e22b298-0c4a-4fee-9c37-f928f8ec773a
 using UnityEngine;
 
 namespace IndieFarm
@@ -11,10 +11,6 @@ namespace IndieFarm
 		public UnityEngine.UI.Button BtnShovelRange1;
 
 		public UnityEngine.UI.Button BtnWateringCanRange1;
-
-		public UnityEngine.UI.Button BtnSeedRange1;
-
-		public UnityEngine.UI.Button BtnSellRadish;
 
 	}
 }

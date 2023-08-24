@@ -11,49 +11,20 @@ namespace IndieFarm
     {
         public Font Font;
         private GUIStyle mLabelStyle;
+        
 
-
-        //当天成熟果子的数量
-        public static BindableProperty<int> RipeAndHarvestCountInCurrentDay = new(0);
-
-        //当天成熟萝卜的数量
-        public static BindableProperty<int> RipeAndHarvestRadishCountInCurrentDay = new(0);
+        //当天成熟胡萝卜的数量
         public static BindableProperty<int> RipeAndHarvestCarrotCountInCurrentDay = new(0);
-        //当天成熟白菜的数量
-        public static BindableProperty<int> RipeAndHarvestCabbageCountInCurrentDay = new(0);
-
-        //当天收割果子的数量
-        public static BindableProperty<int> HarvestCountInCurrentDay = new(0);
 
         //当天收割萝卜的数量
-        public static BindableProperty<int> RadishHarvestCountInCurrentDay = new(0);
         public static BindableProperty<int> CarrotHarvestCountInCurrentDay = new(0);
-        //当天收获白菜的数量
-        public static BindableProperty<int> CabbageHarvestCountInCurrentDay = new(0);
-
-        //收获过的果实数量
-        public static int HarvestedFruitCount = 0;
-        //收获过的萝卜数量
-        public static int HarvestedRadishCount = 0;
+        
+        //收获过的胡萝卜数量
         public static int HarvestedCarrotCount = 0;
-        //收获过的白菜数量
-        public static int HarvestedCabbageCount = 0;
 
         public static List<Challenge> Challenges = new List<Challenge>()
         {
-            // new ChallengeHarvestAFruit(),
-            // new ChallengeRipeAndHarvestTwoFruitsInADay(),
-            // new ChallengeRipeAndHarvestFiveFruitsInADay(),
-            // new ChallengeHarvestARadish(),
-            // new ChallengeRipeAndHarvestFruitAndRadishInOneDay(),
-            // new ChallengeHarvest10thFruit(),
-            // new ChallengeHarvest10thRadish(),
-            // new ChallengeFruitCountGreaterOrEqual10(),
-            // new ChallengeRadishCountGreaterOrEqual10(),
-            // new ChallengeHarvestACabbage(),
-            // new ChallengeCoin100(),
-            // new ChallengeHarvest10thCabbage(),
-            // new ChallengeCabbageCountGreaterOrEqual10(),
+            new ChallengeCoin100(),
             new ChallengeHarvest10thCarrot(),
             new ChallengeCarrotCountGreaterOrEqual10(),
             new ChallengeHarvestACarrot()
@@ -79,34 +50,7 @@ namespace IndieFarm
             //监听当前成熟的植物是不是当天成熟收割的
             Global.OnPlantHarvest.Register(plant =>
             {
-                if (plant is Plant)
-                {
-                    HarvestedFruitCount++;
-                    HarvestCountInCurrentDay.Value++;
-                    if (plant.RipeDay == Global.Days.Value)
-                    {
-                        RipeAndHarvestCountInCurrentDay.Value++;
-                    }
-                }
-
-                else if (plant is PlantRadish)
-                {
-                    HarvestedRadishCount++;
-                    RadishHarvestCountInCurrentDay.Value++;
-                    if (plant.RipeDay == Global.Days.Value)
-                    {
-                        RipeAndHarvestRadishCountInCurrentDay.Value++;
-                    }
-                }else if (plant is PlantCabbage)
-                {
-                    HarvestedCabbageCount++;
-                    CabbageHarvestCountInCurrentDay.Value++;
-                    if (plant.RipeDay == Global.Days.Value)
-                    {
-                        RipeAndHarvestCabbageCountInCurrentDay.Value++;
-                    }
-                }
-                else if (plant is PlantCarrot)
+                if (plant is PlantCarrot)
                 {
                     HarvestedCarrotCount++;
                     CarrotHarvestCountInCurrentDay.Value++;

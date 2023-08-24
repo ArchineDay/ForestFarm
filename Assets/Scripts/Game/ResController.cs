@@ -9,18 +9,6 @@ namespace IndieFarm
 	{
 		public  GameObject waterPrefab;
 
-		public Sprite seedSprite;
-		public Sprite smallPlantSprite;
-		public Sprite ripeSprite;
-		public Sprite oldSprite;
-		
-		public Sprite seedRadishSprite;
-		public Sprite smallPlantRadishSprite;
-		public Sprite ripeRadishSprite;
-		
-		public Sprite seedCabbageSprite;
-		public Sprite smallCabbageSprite;
-		public Sprite ripeCabbageSprite;
 
 
 		public List<Sprite> Sprites = new List<Sprite>();
