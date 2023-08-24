@@ -102,5 +102,17 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
-  XCell: 0
-  YCell: 0
+  name: Fruit
+  states:
+  - state: 0
+    sprite: {fileID: -7866928900747384746, guid: 2307a34bf09abe544b8bd464296329bc, type: 3}
+    ShowDigState: 1
+    Days: 1
+  - state: 1
+    sprite: {fileID: -8902951029311973782, guid: e0f7ba3b149b2a247b0fb63b73e2e21a, type: 3}
+    ShowDigState: 0
+    Days: 1
+  - state: 4
+    sprite: {fileID: 853675080466277832, guid: 900ac3c42260ccd4eb3e573c069248c8, type: 3}
+    ShowDigState: 0
+    Days: 1
