@@ -59,6 +59,22 @@ namespace IndieFarm
                 Global.Days.Value != self.StartDate && BeanHarvestCountInCurrentDay.Value >= 1));
             Challenges.Add(new GenericChallenge().Key("结出一个南瓜").OnCheckFinish(self =>
                 Global.Days.Value != self.StartDate && PumpkinHarvestCountInCurrentDay.Value >= 1));
+            Challenges.Add(new GenericChallenge().Key("收获第10个土豆").OnCheckFinish(self =>
+                HarvestedPotatoCount >= 10));
+            Challenges.Add(new GenericChallenge().Key("收获第10个西红柿").OnCheckFinish(self =>
+                HarvestedTomatoCount >= 10));
+            Challenges.Add(new GenericChallenge().Key("收获第10个豌豆").OnCheckFinish(self =>
+                HarvestedBeanCount >= 10));
+            Challenges.Add(new GenericChallenge().Key("收获第10个南瓜").OnCheckFinish(self =>
+                HarvestedPumpkinCount >= 10));
+            Challenges.Add(new GenericChallenge().Key("拥有10个土豆").OnCheckFinish(self =>
+                Global.PotatoCount >= 10));
+            Challenges.Add(new GenericChallenge().Key("拥有10个西红柿").OnCheckFinish(self =>
+                Global.TomatoCount >= 10));
+            Challenges.Add(new GenericChallenge().Key("拥有10个豌豆").OnCheckFinish(self =>
+                Global.BeanCount >= 10));
+            Challenges.Add(new GenericChallenge().Key("拥有10个南瓜").OnCheckFinish(self =>
+                Global.PumpkinCount >= 10));
         }
 
         void Start()
@@ -94,7 +110,8 @@ namespace IndieFarm
                         {
                             RipeAndHarvestPotatoCountInCurrentDay.Value++;
                         }
-                    }else if (plantObj.name=="tomato")
+                    }
+                    else if (plantObj.name == "tomato")
                     {
                         HarvestedTomatoCount++;
                         TomatoHarvestCountInCurrentDay.Value++;
@@ -102,7 +119,8 @@ namespace IndieFarm
                         {
                             RipeAndHarvestTomatoCountInCurrentDay.Value++;
                         }
-                    }else if (plantObj.name=="pumpkin")
+                    }
+                    else if (plantObj.name == "pumpkin")
                     {
                         HarvestedPumpkinCount++;
                         PumpkinHarvestCountInCurrentDay.Value++;
@@ -110,7 +128,8 @@ namespace IndieFarm
                         {
                             RipeAndHarvestPumpkinCountInCurrentDay.Value++;
                         }
-                    }else if (plantObj.name=="bean")
+                    }
+                    else if (plantObj.name == "bean")
                     {
                         HarvestedBeanCount++;
                         BeanHarvestCountInCurrentDay.Value++;
