@@ -9,8 +9,6 @@ namespace IndieFarm
 	{
 		public  GameObject waterPrefab;
 
-
-
 		public List<Sprite> Sprites = new List<Sprite>();
 
 		//加载图片

@@ -52,12 +52,6 @@ namespace IndieFarm.Tool
             if (PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as Plant)
             {
                 var plant = PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as Plant;
-                // if (plant.name == "fruit")
-                // {
-                //     //果子+1
-                //     Global.FruitCount.Value++;
-                // }
-
                 HarvestPlant(plant, "pumpkin");
                 Global.PumpkinCount.Value++;
                 HarvestPlant(plant, "potato");

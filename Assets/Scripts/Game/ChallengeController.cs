@@ -11,23 +11,35 @@ namespace IndieFarm
     {
         public Font Font;
         private GUIStyle mLabelStyle;
-        
+
 
         //当天成熟胡萝卜的数量
         public static BindableProperty<int> RipeAndHarvestCarrotCountInCurrentDay = new(0);
+        public static BindableProperty<int> RipeAndHarvestTomatoCountInCurrentDay = new(0);
+        public static BindableProperty<int> RipeAndHarvestPotatoCountInCurrentDay = new(0);
+        public static BindableProperty<int> RipeAndHarvestPumpkinCountInCurrentDay = new(0);
+        public static BindableProperty<int> RipeAndHarvestBeanCountInCurrentDay = new(0);
 
         //当天收割萝卜的数量
         public static BindableProperty<int> CarrotHarvestCountInCurrentDay = new(0);
-        
+        public static BindableProperty<int> TomatoHarvestCountInCurrentDay = new(0);
+        public static BindableProperty<int> PotatoHarvestCountInCurrentDay = new(0);
+        public static BindableProperty<int> PumpkinHarvestCountInCurrentDay = new(0);
+        public static BindableProperty<int> BeanHarvestCountInCurrentDay = new(0);
+
         //收获过的胡萝卜数量
         public static int HarvestedCarrotCount = 0;
+        public static int HarvestedTomatoCount = 0;
+        public static int HarvestedPotatoCount = 0;
+        public static int HarvestedPumpkinCount = 0;
+        public static int HarvestedBeanCount = 0;
 
         public static List<Challenge> Challenges = new List<Challenge>()
         {
-            new ChallengeCoin100(),
-            new ChallengeHarvest10thCarrot(),
-            new ChallengeCarrotCountGreaterOrEqual10(),
-            new ChallengeHarvestACarrot()
+            // new ChallengeCoin100(),
+            // new ChallengeHarvest10thCarrot(),
+            // new ChallengeCarrotCountGreaterOrEqual10(),
+            new ChallengeHarvestACarrot(),
         };
 
         public static List<Challenge> ActiveChallenges = new List<Challenge>();
@@ -36,6 +48,18 @@ namespace IndieFarm
 
         //挑战完成
         public static EasyEvent<Challenge> OnChallengeFinish = new EasyEvent<Challenge>();
+
+        private void Awake()
+        {
+            Challenges.Add(new GenericChallenge().Key("结出一个土豆").OnCheckFinish(self =>
+                Global.Days.Value != self.StartDate && PotatoHarvestCountInCurrentDay.Value >= 1));
+            Challenges.Add(new GenericChallenge().Key("结出一个西红柿").OnCheckFinish(self =>
+                Global.Days.Value != self.StartDate && TomatoHarvestCountInCurrentDay.Value >= 1));
+            Challenges.Add(new GenericChallenge().Key("结出一个豌豆").OnCheckFinish(self =>
+                Global.Days.Value != self.StartDate && BeanHarvestCountInCurrentDay.Value >= 1));
+            Challenges.Add(new GenericChallenge().Key("结出一个南瓜").OnCheckFinish(self =>
+                Global.Days.Value != self.StartDate && PumpkinHarvestCountInCurrentDay.Value >= 1));
+        }
 
         void Start()
         {
@@ -59,7 +83,43 @@ namespace IndieFarm
                         RipeAndHarvestCarrotCountInCurrentDay.Value++;
                     }
                 }
-              
+                else if (plant is Plant)
+                {
+                    var plantObj = plant as Plant;
+                    if (plantObj.name == "potato")
+                    {
+                        HarvestedPotatoCount++;
+                        PotatoHarvestCountInCurrentDay.Value++;
+                        if (plant.RipeDay == Global.Days.Value)
+                        {
+                            RipeAndHarvestPotatoCountInCurrentDay.Value++;
+                        }
+                    }else if (plantObj.name=="tomato")
+                    {
+                        HarvestedTomatoCount++;
+                        TomatoHarvestCountInCurrentDay.Value++;
+                        if (plant.RipeDay == Global.Days.Value)
+                        {
+                            RipeAndHarvestTomatoCountInCurrentDay.Value++;
+                        }
+                    }else if (plantObj.name=="pumpkin")
+                    {
+                        HarvestedPumpkinCount++;
+                        PumpkinHarvestCountInCurrentDay.Value++;
+                        if (plant.RipeDay == Global.Days.Value)
+                        {
+                            RipeAndHarvestPumpkinCountInCurrentDay.Value++;
+                        }
+                    }else if (plantObj.name=="bean")
+                    {
+                        HarvestedBeanCount++;
+                        BeanHarvestCountInCurrentDay.Value++;
+                        if (plant.RipeDay == Global.Days.Value)
+                        {
+                            RipeAndHarvestBeanCountInCurrentDay.Value++;
+                        }
+                    }
+                }
             }).UnRegisterWhenGameObjectDestroyed(gameObject); //当前类
         }
 

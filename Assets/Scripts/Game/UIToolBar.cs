@@ -14,14 +14,7 @@ namespace IndieFarm
 
         private void Start()
         {
-            // ToolbarSlot1.SetData(new SlotData()
-            // {
-            //     Icon = ResController.Instance.LoadSprites(Config.Hand.Name),
-            //     OnSelect = () => { ChangeTool(Config.Hand.Tool, ToolbarSlot1.Select, ToolbarSlot1.Icon.sprite); }
-            // },"1");
-
-            UISlot.IconLoader = (spriteName) => ResController.Instance.LoadSprite(spriteName);
-
+            //注册委托
             UISlot.OnItemSelect = slot =>
             {
                 if (slot.Data != null)
