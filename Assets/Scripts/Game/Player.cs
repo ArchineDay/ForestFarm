@@ -98,6 +98,24 @@ namespace IndieFarm
             GUILayout.Space(10);
             GUILayout.Label("南瓜:" + Global.PumpkinCount.Value, mLabelStyle);
             GUILayout.EndHorizontal();
+            
+                    
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(10);
+            GUILayout.Label("土豆:" + Global.PotatoCount.Value, mLabelStyle);
+            GUILayout.EndHorizontal();
+            
+                    
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(10);
+            GUILayout.Label("西红柿:" + Global.TomatoCount.Value, mLabelStyle);
+            GUILayout.EndHorizontal();
+            
+                    
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(10);
+            GUILayout.Label("豌豆:" + Global.BeanCount.Value, mLabelStyle);
+            GUILayout.EndHorizontal();
 
             // GUILayout.BeginHorizontal();
             // GUILayout.Space(10);

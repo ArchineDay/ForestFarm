@@ -24,13 +24,13 @@ namespace IndieFarm
             CreateBuyButton(BtnBuyPumpkinSeed, 6, "seed_pumpkin", Config.CreateSeedItem);
             CreateBuyButton(BtnBuyBeanSeed, 8, "seed_bean", Config.CreateSeedItem);
 
-            void CreateBuyButton(Button button, int money, string toBuyItemName, Func<string, int, Item> toCreateItem)
+            void CreateBuyButton(Button button, int price, string toBuyItemName, Func<string, int, Item> toCreateItem)
             {
                 button.onClick.AddListener(BtnBuy);
 
                 void BtnBuy()
                 {
-                    Global.Coin.Value -= money;
+                    Global.Coin.Value -= price;
                     //购买种子
                     //查询是否有种子，如果没有，创建一个,有的话，数量+1
                     var toBuyItem = Config.Items.FirstOrDefault(i => i.Name == toBuyItemName);
@@ -43,12 +43,14 @@ namespace IndieFarm
                     {
                         toBuyItem.Count.Value++;
                     }
-                    AudioController.Get.SfxBuy.Play();
-                }
 
+                    AudioController.Get.SfxBuy.Play();
+
+                   
+                }
                 Global.Coin.RegisterWithInitValue(coin =>
                 {
-                    if (coin >= money)
+                    if (coin >= price)
                     {
                         button.interactable = true;
                     }
@@ -57,7 +59,6 @@ namespace IndieFarm
                         button.interactable = false;
                     }
                 }).UnRegisterWhenGameObjectDestroyed(gameObject);
-               
             }
 
             void CreateSellButton(Button button, int price, BindableProperty<int> globalItemName, string sellItemName)
@@ -77,9 +78,11 @@ namespace IndieFarm
                         Config.Items.Remove(sellItem);
                         FindObjectOfType<UIToolBar>().SelectDefault();
                     }
-                    AudioController.Get.SfxBuy.Play();
-                }
 
+                    AudioController.Get.SfxBuy.Play();
+
+                    
+                }
                 globalItemName.RegisterWithInitValue(item =>
                 {
                     if (item >= 1)

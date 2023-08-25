@@ -1,4 +1,5 @@
 using System.Linq;
+using QFramework;
 using UnityEngine;
 
 namespace IndieFarm.Tool
@@ -29,7 +30,7 @@ namespace IndieFarm.Tool
             Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y]);
 
 
-            void HarvestPlant(Plant plant, string plantName)
+            void HarvestPlant(Plant plant, string plantName, BindableProperty<int> globalCount)
             {
                 if (plant.name == plantName)
                 {
@@ -44,21 +45,22 @@ namespace IndieFarm.Tool
                     {
                         plantItem.Count.Value++;
                     }
-                    //Global.PumpkinCount.Value++;
+
+                    globalCount.Value++;
                 }
             }
 
             if (PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as Plant)
             {
                 var plant = PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as Plant;
-                HarvestPlant(plant, "pumpkin");
-                Global.PumpkinCount.Value++;
-                HarvestPlant(plant, "potato");
-                Global.PotatoCount.Value++;
-                HarvestPlant(plant, "tomato");
-                Global.TomatoCount.Value++;
-                HarvestPlant(plant, "bean");
-                Global.BeanCount.Value++;
+
+                HarvestPlant(plant, "pumpkin", Global.PumpkinCount);
+
+                HarvestPlant(plant, "potato", Global.PotatoCount);
+
+                HarvestPlant(plant, "tomato", Global.TomatoCount);
+
+                HarvestPlant(plant, "bean", Global.BeanCount);
             }
 
             if (PlantController.Instance.Plants[toolData.CellPos.x, toolData.CellPos.y] as PlantCarrot)
