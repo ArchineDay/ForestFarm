@@ -19,22 +19,22 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos:
+    - TypeName: RectTransform
+      PathToRoot: BtnRoot
+      MemberName: BtnRoot
     - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnHandRange1
-      MemberName: BtnHandRange1
+      PathToRoot: BtnRoot/BtnSellCarrot
+      MemberName: BtnSellCarrot
     - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnShovelRange1
-      MemberName: BtnShovelRange1
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnWateringCanRange1
-      MemberName: BtnWateringCanRange1
+      PathToRoot: BtnRoot/BtnBuyCarrotSeed
+      MemberName: BtnBuyCarrotSeed
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: UIPowerUp
+    ClassName: UIShop
     Namespace: IndieFarm
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace IndieFarm\r\n{\r\n\tpublic
-      partial class UIPowerUp : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class UIShop : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:5e22b298-0c4a-4fee-9c37-f928f8ec773a\r\nusing UnityEngine;\r\n\r\nnamespace
-      IndieFarm\r\n{\r\n\tpublic partial class UIPowerUp\r\n\t{\r\n\r\n\t\tpublic
-      UnityEngine.UI.Button BtnHandRange1;\r\n\r\n\t\tpublic UnityEngine.UI.Button
-      BtnShovelRange1;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnWateringCanRange1;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:ea376977-a355-4753-bfdc-6877ae361cc9\r\nusing UnityEngine;\r\n\r\nnamespace
+      IndieFarm\r\n{\r\n\tpublic partial class UIShop\r\n\t{\r\n\r\n\t\tpublic RectTransform
+      BtnRoot;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnSellCarrot;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Button BtnBuyCarrotSeed;\r\n\r\n\t}\r\n}\r\n"

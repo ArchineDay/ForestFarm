@@ -1,10 +1,12 @@
-// Generate Id:a627af94-9e24-43d5-8431-17c2698e1498
+// Generate Id:ea376977-a355-4753-bfdc-6877ae361cc9
 using UnityEngine;
 
 namespace IndieFarm
 {
 	public partial class UIShop
 	{
+
+		public RectTransform BtnRoot;
 
 		public UnityEngine.UI.Button BtnSellCarrot;
 

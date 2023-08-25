@@ -37,7 +37,7 @@ namespace IndieFarm.Tool
                     if (plantItem == null)
                     {
                         //找到对应名字的Item
-                        plantItem = Config.CreateItem(plantName, 1);
+                        plantItem = Config.CreatePlantItem(plantName, 1);
                         //plantItem = Config.CreatePumpkin(1);
                         Config.Items.Add(plantItem);
                     }
