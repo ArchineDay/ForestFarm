@@ -20,6 +20,20 @@ namespace IndieFarm
                 _ => null
             };
         }
+        
+        public static Item CreateSeedItem(string name, int count)
+        {
+            return name switch
+            {
+                "seed_carrot" => CreateSeedCarrot(count),
+                "seed_pumpkin" => CreateSeedPumpkin(count),
+                "seed_tomato" => CreateSeedTomato(count),
+                "seed_potato" => CreateSeedPotato(count),
+                "seed_bean" => CreateSeedBean(count),
+                _ => null
+            };
+        }
+
 
         public static Item CreateHand() =>
             Item.CreateItem("ToolHand_0", 1, false, false, "hand", string.Empty, new ToolHand());

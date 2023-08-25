@@ -1,10 +1,21 @@
+using System;
 using UnityEngine;
 using QFramework;
+using UnityEngine.UI;
 
 namespace IndieFarm
 {
     public partial class UIPowerUp : ViewController
     {
+        private void SetupBtnShowCheck(BindableProperty<int> itemCount, Button btn, Func<int, bool> showCondition)
+        {
+            itemCount.RegisterWithInitValue(count =>
+            {
+                //满足条件才可交互
+                btn.interactable = showCondition(count);
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+        }
+
         void Start()
         {
             //顺序
@@ -12,13 +23,11 @@ namespace IndieFarm
             //花洒
             //手
             //种子
-            UIShop.SetupBtnShowCheck(Global.Coin, BtnShovelRange1, coin => coin >= 20 && !Global.ShovelRange1UnLock,
-                gameObject);
-            UIShop.SetupBtnShowCheck(Global.Coin, BtnWateringCanRange1,
-                coin => coin >= 30 && !Global.WateringCanRange1UnLock && Global.ShovelRange1UnLock, gameObject);
-            UIShop.SetupBtnShowCheck(Global.Coin, BtnHandRange1,
-                coin => coin >= 20 && !Global.HandRange1UnLock && Global.WateringCanRange1UnLock,
-                gameObject);
+            SetupBtnShowCheck(Global.Coin, BtnShovelRange1, coin => coin >= 20 && !Global.ShovelRange1UnLock);
+            SetupBtnShowCheck(Global.Coin, BtnWateringCanRange1,
+                coin => coin >= 30 && !Global.WateringCanRange1UnLock && Global.ShovelRange1UnLock);
+            SetupBtnShowCheck(Global.Coin, BtnHandRange1,
+                coin => coin >= 20 && !Global.HandRange1UnLock && Global.WateringCanRange1UnLock);
 
             BtnHandRange1.onClick.AddListener(() =>
             {

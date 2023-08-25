@@ -8,69 +8,57 @@ namespace IndieFarm
 {
     public partial class UIShop : ViewController
     {
-        public static void SetupBtnShowCheck(BindableProperty<int> itemCount, Button btn, Func<int, bool> showCondition,
-            GameObject gameObject)
-        {
-            itemCount.RegisterWithInitValue(count =>
-            {
-                //if (count >= 1)
-                if (showCondition(count))
-                {
-                    btn.interactable = true;
-                    //btn.Show();
-                }
-                else
-                {
-                    btn.interactable = false;
-                    //btn.Hide();
-                }
-            }).UnRegisterWhenGameObjectDestroyed(gameObject);
-        }
-
         void Start()
         {
-            SetupBtnShowCheck(Global.CarrotCount, BtnSellCarrot, count => count >= 1, gameObject);
-            SetupBtnShowCheck(Global.Coin, BtnBuyCarrotSeed, count => count >= 4, gameObject);
-
+            //SetupBtnShowCheck(Global.CarrotCount, BtnSellCarrot, count => count >= 1, gameObject);
+            // SetupBtnShowCheck(Global.Coin, BtnBuyCarrotSeed, count => count >= 4, gameObject);
             CreateSellButton(BtnSellCarrot, 8, Global.CarrotCount, "carrot");
+            CreateSellButton(BtnSellTomato, 5, Global.TomatoCount, "tomato");
+            CreateSellButton(BtnSellPotato, 10, Global.PotatoCount, "potato");
+            CreateSellButton(BtnSellPumpkin, 15, Global.PumpkinCount, "pumpkin");
+            CreateSellButton(BtnSellBean, 20, Global.BeanCount, "bean");
 
-            BtnBuyCarrotSeed.onClick.AddListener(() =>
+            CreateBuyButton(BtnBuyCarrotSeed, 3, "seed_carrot", Config.CreateSeedItem);
+            CreateBuyButton(BtnBuyTomatoSeed, 2, "seed_tomato", Config.CreateSeedItem);
+            CreateBuyButton(BtnBuyPotatoSeed, 4, "seed_potato", Config.CreateSeedItem);
+            CreateBuyButton(BtnBuyPumpkinSeed, 6, "seed_pumpkin", Config.CreateSeedItem);
+            CreateBuyButton(BtnBuyBeanSeed, 8, "seed_bean", Config.CreateSeedItem);
+
+            void CreateBuyButton(Button button, int money, string toBuyItemName, Func<string, int, Item> toCreateItem)
             {
-                Global.Coin.Value -= 4;
-                //购买胡萝卜种子
-                //查询是否有胡萝卜种子，如果没有，创建一个,有的话，数量+1
-                var seedItem = Config.Items.FirstOrDefault(i => i.Name == "seed_carrot");
-                if (seedItem == null)
+                button.onClick.AddListener(BtnBuy);
+
+                void BtnBuy()
                 {
-                    seedItem = Config.CreateSeedCarrot(1);
-                    Config.Items.Add(seedItem);
-                }
-                else
-                {
-                    seedItem.Count.Value++;
+                    Global.Coin.Value -= money;
+                    //购买种子
+                    //查询是否有种子，如果没有，创建一个,有的话，数量+1
+                    var toBuyItem = Config.Items.FirstOrDefault(i => i.Name == toBuyItemName);
+                    if (toBuyItem == null)
+                    {
+                        toBuyItem = toCreateItem(toBuyItemName, 1);
+                        Config.Items.Add(toBuyItem);
+                    }
+                    else
+                    {
+                        toBuyItem.Count.Value++;
+                    }
+                    AudioController.Get.SfxBuy.Play();
                 }
 
-                AudioController.Get.SfxBuy.Play();
-            });
-
-            // void CreateBuyButton(BindableProperty<int> money,string toBuyItemName,Item toCreateItem)
-            // {
-            //     money.Value -= 4;
-            //     //购买种子
-            //     //查询是否有种子，如果没有，创建一个,有的话，数量+1
-            //     var toBuyItem = Config.Items.FirstOrDefault(i => i.Name == toBuyItemName);
-            //     if (toBuyItem == null)
-            //     {
-            //         toBuyItem = Config.CreateSeedCarrot(1);
-            //         Config.Items.Add(toBuyItem);
-            //     }
-            //     else
-            //     {
-            //         toBuyItem.Count.Value++;
-            //     }
-            //
-            //     AudioController.Get.SfxBuy.Play();
-            // }
+                Global.Coin.RegisterWithInitValue(coin =>
+                {
+                    if (coin >= money)
+                    {
+                        button.interactable = true;
+                    }
+                    else
+                    {
+                        button.interactable = false;
+                    }
+                }).UnRegisterWhenGameObjectDestroyed(gameObject);
+               
+            }
 
             void CreateSellButton(Button button, int price, BindableProperty<int> globalItemName, string sellItemName)
             {
@@ -80,7 +68,6 @@ namespace IndieFarm
                 {
                     Global.Coin.Value += price;
                     globalItemName.Value -= 1;
-                    AudioController.Get.SfxBuy.Play();
 
                     var sellItem = Config.Items.Single(i => i.Name == sellItemName);
                     sellItem.Count.Value--;
@@ -90,7 +77,20 @@ namespace IndieFarm
                         Config.Items.Remove(sellItem);
                         FindObjectOfType<UIToolBar>().SelectDefault();
                     }
+                    AudioController.Get.SfxBuy.Play();
                 }
+
+                globalItemName.RegisterWithInitValue(item =>
+                {
+                    if (item >= 1)
+                    {
+                        button.interactable = true;
+                    }
+                    else
+                    {
+                        button.interactable = false;
+                    }
+                }).UnRegisterWhenGameObjectDestroyed(gameObject);
             }
         }
     }
