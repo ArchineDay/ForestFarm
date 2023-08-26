@@ -6,9 +6,8 @@ namespace IndieFarm
 {
 	public partial class Home : ViewController
 	{
-		private void OnTriggerEnter2D(Collider2D col)
+		public void NextDay(Collider2D col)
 		{
-
 			if (col.name.StartsWith("Player"))
 			{
 				Global.Days.Value++;
@@ -16,5 +15,6 @@ namespace IndieFarm
 				AudioController.Get.SfxNextDay.Play();
 			}
 		}
+		
 	} 
 }
