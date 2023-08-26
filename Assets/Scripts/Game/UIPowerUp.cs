@@ -28,6 +28,8 @@ namespace IndieFarm
                 coin => coin >= 30 && !Global.WateringCanRange1UnLock && Global.ShovelRange1UnLock);
             SetupBtnShowCheck(Global.Coin, BtnHandRange1,
                 coin => coin >= 20 && !Global.HandRange1UnLock && Global.WateringCanRange1UnLock);
+            SetupBtnShowCheck(Global.Coin, BtnSeedRange1,
+                coin => coin >= 25 && !Global.SeedRange1UnLock && Global.HandRange1UnLock);
 
             BtnHandRange1.onClick.AddListener(() =>
             {
@@ -47,6 +49,13 @@ namespace IndieFarm
             {
                 Global.WateringCanRange1UnLock = true;
                 Global.Coin.Value -= 30;
+                AudioController.Get.SfxBuy.Play();
+            });
+            
+            BtnSeedRange1.onClick.AddListener(() =>
+            {
+                Global.SeedRange1UnLock = true;
+                Global.Coin.Value -= 25;
                 AudioController.Get.SfxBuy.Play();
             });
         }

@@ -33,6 +33,7 @@ namespace IndieFarm
         private void Awake()
         {
             Icon.sprite = null;
+            Icon.Hide();
             Select.Hide();
             ShortCut.text = string.Empty;
             Count.text = string.Empty;
@@ -63,9 +64,11 @@ namespace IndieFarm
                 Icon.sprite = null;
                 ShortCut.text = string.Empty;
                 Count.text = string.Empty;
+                Icon.Hide();
             }
             else
             {
+                Icon.Show();
                 mData = data;
                 Icon.sprite = IconLoader?.Invoke(mData.IconName);
                 //Icon.sprite = ResController.Instance.LoadSprite(mData.IconName);

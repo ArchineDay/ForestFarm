@@ -18,12 +18,27 @@ MonoBehaviour:
     GameObject: {fileID: 0}
     From: 0
     NameToFullName: []
-    BindInfos: []
+    BindInfos:
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnHandRange1
+      MemberName: BtnHandRange1
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnShovelRange1
+      MemberName: BtnShovelRange1
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnWateringCanRange1
+      MemberName: BtnWateringCanRange1
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: BtnSeedRange1
+      MemberName: BtnSeedRange1
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: CameraController
+    ClassName: UIPowerUp
     Namespace: IndieFarm
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace IndieFarm\r\n{\r\n\tpublic
-      partial class CameraController : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class UIPowerUp : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:b88423f1-c59e-4fcc-85c6-33ba1f75a9c5\r\nusing UnityEngine;\r\n\r\nnamespace
-      IndieFarm\r\n{\r\n\tpublic partial class CameraController\r\n\t{\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:4c3a704a-cf9b-42ea-b7aa-0764fb5b8eb9\r\nusing UnityEngine;\r\n\r\nnamespace
+      IndieFarm\r\n{\r\n\tpublic partial class UIPowerUp\r\n\t{\r\n\r\n\t\tpublic
+      UnityEngine.UI.Button BtnHandRange1;\r\n\r\n\t\tpublic UnityEngine.UI.Button
+      BtnShovelRange1;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnWateringCanRange1;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Button BtnSeedRange1;\r\n\r\n\t}\r\n}\r\n"
