@@ -58176,7 +58176,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1411624517, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
       - {fileID: -345680619, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -7, y: -19, z: 0}
@@ -58184,7 +58184,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1411624517, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
       - {fileID: -345680619, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -6, y: -19, z: 0}
@@ -58200,7 +58200,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1418976635, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
       - {fileID: -1688035981, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 19, y: -19, z: 0}
@@ -58208,7 +58208,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1418976635, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
       - {fileID: -1688035981, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 20, y: -19, z: 0}
@@ -58288,7 +58288,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1411624517, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
       - {fileID: -345680619, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 20, y: -18, z: 0}
@@ -58376,7 +58376,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1411624517, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
       - {fileID: -345680619, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -30, y: -16, z: 0}
@@ -58400,7 +58400,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1411624517, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
       - {fileID: -345680619, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -21, y: -16, z: 0}
@@ -58472,7 +58472,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1411624517, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
       - {fileID: -345680619, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -31, y: -12, z: 0}
@@ -58584,7 +58584,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1418976635, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
       - {fileID: -1688035981, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -30, y: -1, z: 0}
@@ -58624,7 +58624,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1418976635, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
       - {fileID: -1688035981, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 31, y: 2, z: 0}
@@ -58712,7 +58712,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1411624517, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
       - {fileID: -345680619, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 28, y: 9, z: 0}
@@ -58760,7 +58760,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1411624517, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
       - {fileID: -345680619, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -28, y: 16, z: 0}
@@ -58768,7 +58768,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1411624517, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
       - {fileID: -345680619, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -26, y: 16, z: 0}
@@ -58800,7 +58800,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1411624517, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
       - {fileID: -345680619, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -22, y: 17, z: 0}
@@ -59067,7 +59067,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1258844080}
   - component: {fileID: 1258844079}
-  - component: {fileID: 1258844078}
   - component: {fileID: 1258844081}
   - component: {fileID: 1258844082}
   - component: {fileID: 1258844083}
@@ -59078,252 +59077,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1258844078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1258844077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fsm:
-    dataVersion: 2
-    usedInTemplate: {fileID: 0}
-    name: "\u79FB\u52A8"
-    startState: "\u79FB\u52A8"
-    states:
-    - name: "\u79FB\u52A8"
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 50
-        y: 100
-        width: 100
-        height: 16
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions: []
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.GetAxis
-        - HutongGames.PlayMaker.Actions.GetAxis
-        - HutongGames.PlayMaker.Actions.SetVelocity2d
-        customNames:
-        - 
-        - 
-        - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 00000000050000000a000000
-        actionHashCodes: 11839a0011839a0068fde304
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams:
-        - ownerOption: 0
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Horizontal
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Vertical
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 5
-        - useVariable: 1
-          name: HorizontalInput
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 5
-        - useVariable: 1
-          name: VerticalInput
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: HorizontalInput
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: VerticalInput
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        fsmIntParams: []
-        fsmBoolParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        fsmVector2Params:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {x: 0, y: 0}
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams: []
-        byteData: 01010000000001
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 120000000f000000110000000f00000001000000120000000f000000110000000f0000000100000014000000250000000f0000000f0000000700000001000000
-        paramName:
-        - axisName
-        - multiplier
-        - invert
-        - store
-        - everyFrame
-        - axisName
-        - multiplier
-        - invert
-        - store
-        - everyFrame
-        - gameObject
-        - vector
-        - x
-        - y
-        - space
-        - everyFrame
-        paramDataPos: 00000000000000000000000001000000000000000100000002000000010000000300000001000000000000000000000004000000050000000200000006000000
-        paramByteDataSize: 00000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000400000001000000
-    events: []
-    globalTransitions: []
-    variables:
-      floatVariables:
-      - useVariable: 1
-        name: HorizontalInput
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
-      - useVariable: 1
-        name: VerticalInput
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
-      intVariables: []
-      boolVariables: []
-      stringVariables: []
-      vector2Variables: []
-      vector3Variables: []
-      colorVariables: []
-      rectVariables: []
-      quaternionVariables: []
-      gameObjectVariables: []
-      objectVariables: []
-      materialVariables: []
-      textureVariables: []
-      arrayVariables: []
-      enumVariables: []
-      categories:
-      - 
-      variableCategoryIDs: 0000000000000000
-    description: 
-    docUrl: 
-    showStateLabel: 0
-    maxLoopCount: 0
-    watermark: 
-    password: 
-    locked: 0
-    manualUpdate: 0
-    outVariableIndices: 
-    keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
-    ExposedEvents: []
-    OutputEvents: []
-    RestartOnEnable: 1
-    ResetVariablesOnEnable: 0
-    EnableDebugFlow: 0
-    EnableBreakpoints: 1
-    editorFlags: 225
-    activeStateName: 
-    mouseEvents: 0
-    handleLevelLoaded: 0
-    handleTriggerEnter2D: 0
-    handleTriggerExit2D: 0
-    handleTriggerStay2D: 0
-    handleCollisionEnter2D: 0
-    handleCollisionExit2D: 0
-    handleCollisionStay2D: 0
-    handleTriggerEnter: 0
-    handleTriggerExit: 0
-    handleTriggerStay: 0
-    handleCollisionEnter: 0
-    handleCollisionExit: 0
-    handleCollisionStay: 0
-    handleParticleCollision: 0
-    handleControllerColliderHit: 0
-    handleJointBreak: 0
-    handleJointBreak2D: 0
-    handleOnGUI: 0
-    handleFixedUpdate: 0
-    handleLateUpdate: 0
-    handleApplicationEvents: 0
-    handleUiEvents: 0
-    handleLegacyNetworking: 0
-    handleAnimatorMove: 0
-    handleAnimatorIK: 0
-  fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
 --- !u!212 &1258844079
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -59408,7 +59161,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -59432,6 +59185,7 @@ MonoBehaviour:
   Grid: {fileID: 2034824083}
   Tilemap: {fileID: 1487783424}
   Font: {fileID: 12800000, guid: 2e73ff15626ac9f4ab3f80d37dfe22b8, type: 3}
+  mRigidbody2D: {fileID: 0}
 --- !u!61 &1258844083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59916,7 +59670,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1418976635, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
       - {fileID: -1688035981, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -8, y: -10, z: 0}
@@ -59932,7 +59686,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1418976635, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
       - {fileID: -1688035981, guid: 0583ac0fd23d48746970ccda590fe148, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 10, y: -10, z: 0}

@@ -10,6 +10,7 @@ namespace IndieFarm
     {
         void Start()
         {
+            Application.targetFrameRate= 60;
             ChallengeController.OnChallengeFinish.Register(challenge =>
             {
                 AudioController.Get.SfxChallengeFinish.Play();

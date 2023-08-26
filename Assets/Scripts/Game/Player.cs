@@ -1,11 +1,13 @@
 using System;
 using System.Linq;
+using System.Numerics;
 using HutongGames.PlayMaker.Actions;
 using UnityEngine;
 using QFramework;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using Vector2 = UnityEngine.Vector2;
 
 namespace IndieFarm
 {
@@ -17,10 +19,12 @@ namespace IndieFarm
         public Font Font;
         private GUIStyle mLabelStyle;
         private GUIStyle mCoinStyle;
+        public Rigidbody2D mRigidbody2D;
 
         private void Awake()
         {
             Global.Player = this;
+            mRigidbody2D = GetComponent<Rigidbody2D>();
         }
 
         private void Start()
@@ -82,7 +86,7 @@ namespace IndieFarm
             GUILayout.Space(10);
             GUILayout.Label("天数:" + Global.Days.Value, mLabelStyle);
             GUILayout.EndHorizontal();
-            
+
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
             GUILayout.Label("$" + Global.Coin.Value, mCoinStyle);
@@ -92,26 +96,26 @@ namespace IndieFarm
             GUILayout.Space(10);
             GUILayout.Label("胡萝卜:" + Global.CarrotCount.Value, mLabelStyle);
             GUILayout.EndHorizontal();
-            
-                  
+
+
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
             GUILayout.Label("南瓜:" + Global.PumpkinCount.Value, mLabelStyle);
             GUILayout.EndHorizontal();
-            
-                    
+
+
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
             GUILayout.Label("土豆:" + Global.PotatoCount.Value, mLabelStyle);
             GUILayout.EndHorizontal();
-            
-                    
+
+
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
             GUILayout.Label("西红柿:" + Global.TomatoCount.Value, mLabelStyle);
             GUILayout.EndHorizontal();
-            
-                    
+
+
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
             GUILayout.Label("豌豆:" + Global.BeanCount.Value, mLabelStyle);
@@ -131,18 +135,21 @@ namespace IndieFarm
 
         private void Update()
         {
-            // //天数变更
-            // if (Input.GetKeyDown(KeyCode.F))
-            // {
-            //     AudioController.Get.SfxNextDay.Play();
-            //     Global.Days.Value++;
-            // }
-
             //结束游戏
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 SceneManager.LoadScene("GamePass");
             }
+            
+
+            //角色移动
+            var horizontalInput = Input.GetAxisRaw("Horizontal");
+            var verticalInput = Input.GetAxisRaw("Vertical");
+
+            var direction = new Vector2(horizontalInput, verticalInput).normalized;
+
+            var targetVelocity = direction * 5;
+            mRigidbody2D.velocity= Vector2.Lerp(mRigidbody2D.velocity,targetVelocity,1-Mathf.Exp(-Time.deltaTime*10));
         }
 
         private void OnDestroy()

@@ -18,52 +18,12 @@ MonoBehaviour:
     GameObject: {fileID: 0}
     From: 0
     NameToFullName: []
-    BindInfos:
-    - TypeName: RectTransform
-      PathToRoot: BtnRoot
-      MemberName: BtnRoot
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnRoot/BtnSellTomato
-      MemberName: BtnSellTomato
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnRoot/BtnSellCarrot
-      MemberName: BtnSellCarrot
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnRoot/BtnSellPotato
-      MemberName: BtnSellPotato
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnRoot/BtnSellPumpkin
-      MemberName: BtnSellPumpkin
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnRoot/BtnSellBean
-      MemberName: BtnSellBean
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnRoot/BtnBuyTomatoSeed
-      MemberName: BtnBuyTomatoSeed
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnRoot/BtnBuyCarrotSeed
-      MemberName: BtnBuyCarrotSeed
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnRoot/BtnBuyPotatoSeed
-      MemberName: BtnBuyPotatoSeed
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnRoot/BtnBuyPumpkinSeed
-      MemberName: BtnBuyPumpkinSeed
-    - TypeName: UnityEngine.UI.Button
-      PathToRoot: BtnRoot/BtnBuyBeanSeed
-      MemberName: BtnBuyBeanSeed
+    BindInfos: []
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: UIShop
+    ClassName: CameraController
     Namespace: IndieFarm
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace IndieFarm\r\n{\r\n\tpublic
-      partial class UIShop : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class CameraController : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:aa453e33-c7ee-4065-b733-8c299def97d0\r\nusing UnityEngine;\r\n\r\nnamespace
-      IndieFarm\r\n{\r\n\tpublic partial class UIShop\r\n\t{\r\n\r\n\t\tpublic RectTransform
-      BtnRoot;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnSellTomato;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Button BtnSellCarrot;\r\n\r\n\t\tpublic UnityEngine.UI.Button
-      BtnSellPotato;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnSellPumpkin;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Button BtnSellBean;\r\n\r\n\t\tpublic UnityEngine.UI.Button
-      BtnBuyTomatoSeed;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnBuyCarrotSeed;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Button BtnBuyPotatoSeed;\r\n\r\n\t\tpublic UnityEngine.UI.Button
-      BtnBuyPumpkinSeed;\r\n\r\n\t\tpublic UnityEngine.UI.Button BtnBuyBeanSeed;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:b88423f1-c59e-4fcc-85c6-33ba1f75a9c5\r\nusing UnityEngine;\r\n\r\nnamespace
+      IndieFarm\r\n{\r\n\tpublic partial class CameraController\r\n\t{\r\n\r\n\t}\r\n}\r\n"
