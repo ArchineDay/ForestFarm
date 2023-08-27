@@ -20,11 +20,12 @@ namespace IndieFarm
         private GUIStyle mLabelStyle;
         private GUIStyle mCoinStyle;
         public Rigidbody2D mRigidbody2D;
-
+        public Animator mAnimator;
         private void Awake()
         {
             Global.Player = this;
             mRigidbody2D = GetComponent<Rigidbody2D>();
+            mAnimator = GetComponent<Animator>();
         }
 
         private void Start()
@@ -96,37 +97,26 @@ namespace IndieFarm
             GUILayout.Space(10);
             GUILayout.Label("胡萝卜:" + Global.CarrotCount.Value, mLabelStyle);
             GUILayout.EndHorizontal();
-
-
+            
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
             GUILayout.Label("南瓜:" + Global.PumpkinCount.Value, mLabelStyle);
             GUILayout.EndHorizontal();
 
-
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
             GUILayout.Label("土豆:" + Global.PotatoCount.Value, mLabelStyle);
             GUILayout.EndHorizontal();
-
-
+            
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
             GUILayout.Label("西红柿:" + Global.TomatoCount.Value, mLabelStyle);
             GUILayout.EndHorizontal();
-
-
+            
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
             GUILayout.Label("豌豆:" + Global.BeanCount.Value, mLabelStyle);
             GUILayout.EndHorizontal();
-
-            // GUILayout.BeginHorizontal();
-            // GUILayout.Space(10);
-            // GUILayout.Label("下一天: F", mLabelStyle);
-            // GUILayout.EndHorizontal();
-
-            //GUILayout.Label($"当前工具: {Constant.DisplayName(Global.CurrentTool)}");
 
             GUILayout.FlexibleSpace();
 
@@ -150,6 +140,31 @@ namespace IndieFarm
 
             var targetVelocity = direction * 5;
             mRigidbody2D.velocity= Vector2.Lerp(mRigidbody2D.velocity,targetVelocity,1-Mathf.Exp(-Time.deltaTime*10));
+            
+            //动画播放
+            if (horizontalInput==0&&verticalInput==0)
+            {
+                //静止
+                //上一帧是向右走则方向为右
+                if (mAnimator.GetCurrentAnimatorStateInfo(0).IsName("PlayerRightWalk"))
+                {
+                    mAnimator.Play("PlayerRightIdle");
+                }
+                else if (mAnimator.GetCurrentAnimatorStateInfo(0).IsName("PlayerLeftWalk"))
+                {
+                    mAnimator.Play("PlayerLeftIdle");
+                }
+            }else 
+            {
+                if (horizontalInput>=0)
+                {
+                    mAnimator.Play("PlayerRightWalk");
+                }
+                else
+                {
+                    mAnimator.Play("PlayerLeftWalk");
+                }
+            }
         }
 
         private void OnDestroy()
