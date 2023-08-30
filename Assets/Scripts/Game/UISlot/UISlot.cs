@@ -32,6 +32,7 @@ namespace IndieFarm
 
         private void Awake()
         {
+            
             Icon.sprite = null;
             Icon.Hide();
             Select.Hide();
@@ -40,8 +41,9 @@ namespace IndieFarm
 
             Button.onClick.AddListener(() =>
             {
-                //当前UISlot被点击了，我们需要通知外部
-                OnItemSelect?.Invoke(this);
+                //调用委托，传入slot自己
+                //等价OnItemSelect?.Invoke(this);
+                OnItemSelect(this);
             });
         }
 #if UNITY_EDITOR

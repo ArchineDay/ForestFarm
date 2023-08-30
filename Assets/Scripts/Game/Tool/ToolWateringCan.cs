@@ -26,5 +26,7 @@ namespace IndieFarm.Tool
             AudioController.Get.SfxWater.Play();
             Debug.Log("grid" + toolData.ShowGrid[toolData.CellPos.x, toolData.CellPos.y].PlantState);
         }
+
+        public int EnergyCost { get; } = 3;
     }
 }

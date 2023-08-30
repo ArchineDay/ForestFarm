@@ -13,6 +13,8 @@ namespace IndieFarm.Tool
         bool Selectable(ToolData toolData);
 
         void Use(ToolData toolData);
+        
+        int EnergyCost { get; }
     }
 
     public class ToolData

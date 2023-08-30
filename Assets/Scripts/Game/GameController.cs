@@ -21,9 +21,6 @@ namespace IndieFarm
                 }
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
         }
-
-        private void Update()
-        {
-        }
+        
     }
 }

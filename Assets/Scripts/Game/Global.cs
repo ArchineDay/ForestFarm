@@ -15,6 +15,8 @@ namespace IndieFarm
 
         //默认是第一天
         public static BindableProperty<int> Days = new BindableProperty<int>(1);
+        //体力
+        public static BindableProperty<int> Power = new BindableProperty<int>(100);
         //硬币
         public static BindableProperty<int> Coin = new BindableProperty<int>(0);
 

@@ -35,7 +35,7 @@ namespace IndieFarm
             mSprite = GetComponent<SpriteRenderer>();
             mSprite.enabled = false;
         }
-        
+
         private ToolData mTooldata = new ToolData();
 
         bool ToolInRange(Vector3Int mouseCellPos, Vector3Int playerPos, int range)
@@ -45,6 +45,7 @@ namespace IndieFarm
             float deltaY = Mathf.Abs(mouseCellPos.y - playerPos.y);
             return deltaX <= range && deltaY <= range && (deltaX + deltaY) >= 0;
         }
+
         private void Update()
         {
             mSprite.enabled = false;
@@ -54,11 +55,13 @@ namespace IndieFarm
             //图标位置在格子右下角
             Icon.Position(worldMousePos.x + 0.5f, worldMousePos.y - 0.5f);
             var mouseCellPos = mGrid.WorldToCell(worldMousePos);
-            
+
+            EnergyNotEnoughIcon.Hide();
             // 检查cellPos是否在playerPos周围（相邻或对角线位置）
-            if (ToolInRange(mouseCellPos, playerPos,Global.CurrentTool.Value.Range))
+            if (ToolInRange(mouseCellPos, playerPos, Global.CurrentTool.Value.Range))
             {
-                if (mouseCellPos.x<mShowGrid.Width&&mouseCellPos.y<mShowGrid.Height&&mouseCellPos is { x: >= 0, y: >= 0 })
+                if (mouseCellPos.x < mShowGrid.Width && mouseCellPos.y < mShowGrid.Height &&
+                    mouseCellPos is { x: >= 0, y: >= 0 })
                 {
                     ShowSelectCenter(mouseCellPos);
                     mTooldata.GridCenterPos = ShowSelectCenter(mouseCellPos);
@@ -67,15 +70,26 @@ namespace IndieFarm
                     mTooldata.CellPos = mouseCellPos;
                     mTooldata.SoilTilemap = mTilemap;
                     mTooldata.Pen = mGridController.Pen;
+                    
+                    EnergyNotEnoughIcon.Hide();
                     //使用工具
                     if (Global.CurrentTool.Value.Selectable(mTooldata))
                     {
-                        if (Input.GetMouseButton(0))
+                        if (Global.Power.Value >= Global.CurrentTool.Value.EnergyCost)
                         {
-                            Global.CurrentTool.Value.Use(mTooldata);
+                            if (Input.GetMouseButton(0))
+                            {
+                                Global.CurrentTool.Value.Use(mTooldata);
+                                //扣除体力
+                                Global.Power.Value -= Global.CurrentTool.Value.EnergyCost;
+                            }
+                        }
+                        else
+                        {
+                            EnergyNotEnoughIcon.Show();
                         }
                     }
-
+                   
                 }
                 else
                 {

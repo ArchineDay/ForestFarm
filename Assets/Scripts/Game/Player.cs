@@ -92,31 +92,38 @@ namespace IndieFarm
             GUILayout.Space(10);
             GUILayout.Label("$" + Global.Coin.Value, mCoinStyle);
             GUILayout.EndHorizontal();
-
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(10);
-            GUILayout.Label("胡萝卜:" + Global.CarrotCount.Value, mLabelStyle);
-            GUILayout.EndHorizontal();
+            
             
             GUILayout.BeginHorizontal();
             GUILayout.Space(10);
-            GUILayout.Label("南瓜:" + Global.PumpkinCount.Value, mLabelStyle);
-            GUILayout.EndHorizontal();
-
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(10);
-            GUILayout.Label("土豆:" + Global.PotatoCount.Value, mLabelStyle);
+            GUILayout.Label("体力" + Global.Power, mLabelStyle);
             GUILayout.EndHorizontal();
             
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(10);
-            GUILayout.Label("西红柿:" + Global.TomatoCount.Value, mLabelStyle);
-            GUILayout.EndHorizontal();
-            
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(10);
-            GUILayout.Label("豌豆:" + Global.BeanCount.Value, mLabelStyle);
-            GUILayout.EndHorizontal();
+            //
+            // GUILayout.BeginHorizontal();
+            // GUILayout.Space(10);
+            // GUILayout.Label("胡萝卜:" + Global.CarrotCount.Value, mLabelStyle);
+            // GUILayout.EndHorizontal();
+            //
+            // GUILayout.BeginHorizontal();
+            // GUILayout.Space(10);
+            // GUILayout.Label("南瓜:" + Global.PumpkinCount.Value, mLabelStyle);
+            // GUILayout.EndHorizontal();
+            //
+            // GUILayout.BeginHorizontal();
+            // GUILayout.Space(10);
+            // GUILayout.Label("土豆:" + Global.PotatoCount.Value, mLabelStyle);
+            // GUILayout.EndHorizontal();
+            //
+            // GUILayout.BeginHorizontal();
+            // GUILayout.Space(10);
+            // GUILayout.Label("西红柿:" + Global.TomatoCount.Value, mLabelStyle);
+            // GUILayout.EndHorizontal();
+            //
+            // GUILayout.BeginHorizontal();
+            // GUILayout.Space(10);
+            // GUILayout.Label("豌豆:" + Global.BeanCount.Value, mLabelStyle);
+            // GUILayout.EndHorizontal();
 
             GUILayout.FlexibleSpace();
 
@@ -135,7 +142,7 @@ namespace IndieFarm
             //角色移动
             var horizontalInput = Input.GetAxisRaw("Horizontal");
             var verticalInput = Input.GetAxisRaw("Vertical");
-
+            
             var direction = new Vector2(horizontalInput, verticalInput).normalized;
 
             var targetVelocity = direction * 5;

@@ -82,5 +82,7 @@ namespace IndieFarm.Tool
 
             AudioController.Get.SfxHarvest.Play();
         }
+
+        public int EnergyCost { get; } = 1;
     }
 }

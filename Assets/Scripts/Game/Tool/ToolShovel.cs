@@ -22,5 +22,7 @@ namespace IndieFarm.Tool
             toolData.ShowGrid[toolData.CellPos.x,toolData.CellPos.y] = new SoliData();
             AudioController.Get.SfxShovelDig.Play();
         }
+
+        public int EnergyCost { get; } = 5;
     }
 }

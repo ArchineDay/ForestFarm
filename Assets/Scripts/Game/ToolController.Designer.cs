@@ -1,4 +1,4 @@
-// Generate Id:7a1c9bd5-3a75-4632-800b-150273f9e8de
+// Generate Id:57158856-07be-41a5-b746-aefa4939b03a
 using UnityEngine;
 
 namespace IndieFarm
@@ -7,6 +7,8 @@ namespace IndieFarm
 	{
 
 		public SpriteRenderer Icon;
+
+		public SpriteRenderer EnergyNotEnoughIcon;
 
 	}
 }
