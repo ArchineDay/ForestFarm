@@ -7,6 +7,7 @@ using QFramework;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using Random = UnityEngine.Random;
 using Vector2 = UnityEngine.Vector2;
 
 namespace IndieFarm
@@ -46,6 +47,9 @@ namespace IndieFarm
 
             Global.Days.Register(day =>
             {
+                //扣除硬币
+                Global.Coin.Value-=Random.Range(10, 20);
+                
                 ChallengeController.CarrotHarvestCountInCurrentDay.Value = 0;
                 ChallengeController.RipeAndHarvestCarrotCountInCurrentDay.Value = 0;
                 var soilDatas = FindObjectOfType<GridController>().ShowGrid;
@@ -75,7 +79,21 @@ namespace IndieFarm
                 {
                     water.DestroySelf();
                 }
+                //体力回复
+                Global.Power.Value = 100;
+
+                //硬币不足，游戏结束
+                if (Global.Coin.Value<0)
+                {
+                    ActionKit.Delay(1.0f, () =>
+                        {
+                            SceneManager.LoadScene("GameOver");
+                        }
+                    ).Start(this);
+                }
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
+            
+          
         }
 
         private void OnGUI()

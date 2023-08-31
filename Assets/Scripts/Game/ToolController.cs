@@ -60,9 +60,11 @@ namespace IndieFarm
             // 检查cellPos是否在playerPos周围（相邻或对角线位置）
             if (ToolInRange(mouseCellPos, playerPos, Global.CurrentTool.Value.Range))
             {
+                
                 if (mouseCellPos.x < mShowGrid.Width && mouseCellPos.y < mShowGrid.Height &&
                     mouseCellPos is { x: >= 0, y: >= 0 })
                 {
+                  
                     ShowSelectCenter(mouseCellPos);
                     mTooldata.GridCenterPos = ShowSelectCenter(mouseCellPos);
 
@@ -70,11 +72,12 @@ namespace IndieFarm
                     mTooldata.CellPos = mouseCellPos;
                     mTooldata.SoilTilemap = mTilemap;
                     mTooldata.Pen = mGridController.Pen;
+
                     
-                    EnergyNotEnoughIcon.Hide();
                     //使用工具
                     if (Global.CurrentTool.Value.Selectable(mTooldata))
                     {
+                        Icon.Alpha(1.0f);   
                         if (Global.Power.Value >= Global.CurrentTool.Value.EnergyCost)
                         {
                             if (Input.GetMouseButton(0))
@@ -89,12 +92,13 @@ namespace IndieFarm
                             EnergyNotEnoughIcon.Show();
                         }
                     }
-                   
                 }
-                else
-                {
-                    mSprite.enabled = false;
-                }
+            }
+            else
+            {
+                mSprite.enabled = false;
+                Icon.Alpha(0.5f);
+                EnergyNotEnoughIcon.Hide();
             }
         }
 
