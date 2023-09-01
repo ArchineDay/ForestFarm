@@ -18,7 +18,7 @@ namespace IndieFarm
         //体力
         public static BindableProperty<int> Power = new BindableProperty<int>(100);
         //硬币
-        public static BindableProperty<int> Coin = new BindableProperty<int>(0);
+        public static BindableProperty<int> Coin = new BindableProperty<int>(100);
 
         //植物数量
         public static BindableProperty<int> CarrotCount = new BindableProperty<int>(0);
