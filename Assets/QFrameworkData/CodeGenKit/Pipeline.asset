@@ -19,18 +19,19 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos:
-    - TypeName: SpriteRenderer
-      PathToRoot: Icon
-      MemberName: Icon
-    - TypeName: SpriteRenderer
-      PathToRoot: Icon/EnergyNotEnoughIcon
-      MemberName: EnergyNotEnoughIcon
+    - TypeName: IndieFarm.UIMessageItem
+      PathToRoot: UIMessageItemTemplate
+      MemberName: UIMessageItemTemplate
+    - TypeName: RectTransform
+      PathToRoot: MessageRoot
+      MemberName: MessageRoot
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: ToolController
+    ClassName: UIMessageQuene
     Namespace: IndieFarm
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace IndieFarm\r\n{\r\n\tpublic
-      partial class ToolController : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class UIMessageQuene : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:57158856-07be-41a5-b746-aefa4939b03a\r\nusing UnityEngine;\r\n\r\nnamespace
-      IndieFarm\r\n{\r\n\tpublic partial class ToolController\r\n\t{\r\n\r\n\t\tpublic
-      SpriteRenderer Icon;\r\n\r\n\t\tpublic SpriteRenderer EnergyNotEnoughIcon;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:a3d23d73-eb59-426e-9a27-76709184453c\r\nusing UnityEngine;\r\n\r\nnamespace
+      IndieFarm\r\n{\r\n\tpublic partial class UIMessageQuene\r\n\t{\r\n\r\n\t\tpublic
+      IndieFarm.UIMessageItem UIMessageItemTemplate;\r\n\r\n\t\tpublic RectTransform
+      MessageRoot;\r\n\r\n\t}\r\n}\r\n"

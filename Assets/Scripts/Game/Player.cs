@@ -48,7 +48,10 @@ namespace IndieFarm
             Global.Days.Register(day =>
             {
                 //扣除硬币
-                Global.Coin.Value-=Random.Range(10, 20);
+                var cost= Random.Range(10, 20);
+                //$作用是将变量转换为字符串
+                UIMessageQuene.Push($"前一天的开销为:-${cost}");
+                Global.Coin.Value-=cost;
                 
                 ChallengeController.CarrotHarvestCountInCurrentDay.Value = 0;
                 ChallengeController.RipeAndHarvestCarrotCountInCurrentDay.Value = 0;
