@@ -32,7 +32,6 @@ namespace IndieFarm
 
         private void Awake()
         {
-            
             Icon.sprite = null;
             Icon.Hide();
             Select.Hide();

@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 
 namespace IndieFarm
 {
-    public partial class UIMessageQuene : ViewController
+    public partial class UIMessageQueue : ViewController
     {
         public static void Push(Sprite icon, string message)
         {
@@ -38,6 +38,8 @@ namespace IndieFarm
                 self.SetAlpha(0);
                 self.Show();
 
+                //将透明度从0渐变到1，动画持续时间为0.5秒。
+                //将透明度从1渐变到0，动画持续时间为2秒。
                 ActionKit.Sequence().Append(ActionKit.Lerp(0, 1, 0.5f, self.SetAlpha))
                     .Delay(3.0f)
                     .Lerp(1, 0, 2.0f, self.SetAlpha)
@@ -45,7 +47,7 @@ namespace IndieFarm
             }).Show();
         }
 
-        private static UIMessageQuene mInstance;
+        private static UIMessageQueue mInstance;
 
         private void Start()
         {

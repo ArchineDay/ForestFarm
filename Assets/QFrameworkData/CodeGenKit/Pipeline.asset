@@ -19,19 +19,50 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos:
-    - TypeName: IndieFarm.UIMessageItem
-      PathToRoot: UIMessageItemTemplate
-      MemberName: UIMessageItemTemplate
-    - TypeName: RectTransform
-      PathToRoot: MessageRoot
-      MemberName: MessageRoot
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot1
+      MemberName: ToolbarSlot1
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot2
+      MemberName: ToolbarSlot2
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot3
+      MemberName: ToolbarSlot3
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot4
+      MemberName: ToolbarSlot4
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot5
+      MemberName: ToolbarSlot5
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot6
+      MemberName: ToolbarSlot6
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot7
+      MemberName: ToolbarSlot7
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot8
+      MemberName: ToolbarSlot8
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot9
+      MemberName: ToolbarSlot9
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlot10
+      MemberName: ToolbarSlot10
+    - TypeName: IndieFarm.UISlot
+      PathToRoot: ToolbarSlotTemplate
+      MemberName: ToolbarSlotTemplate
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: UIMessageQuene
+    ClassName: UIToolBar
     Namespace: IndieFarm
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace IndieFarm\r\n{\r\n\tpublic
-      partial class UIMessageQuene : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class UIToolBar : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:a3d23d73-eb59-426e-9a27-76709184453c\r\nusing UnityEngine;\r\n\r\nnamespace
-      IndieFarm\r\n{\r\n\tpublic partial class UIMessageQuene\r\n\t{\r\n\r\n\t\tpublic
-      IndieFarm.UIMessageItem UIMessageItemTemplate;\r\n\r\n\t\tpublic RectTransform
-      MessageRoot;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:950e1eae-ddb1-451d-85bf-bd31cb5bd8c1\r\nusing UnityEngine;\r\n\r\nnamespace
+      IndieFarm\r\n{\r\n\tpublic partial class UIToolBar\r\n\t{\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot1;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot2;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot3;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot4;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot5;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot6;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot7;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot8;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlot9;\r\n\r\n\t\tpublic IndieFarm.UISlot ToolbarSlot10;\r\n\r\n\t\tpublic
+      IndieFarm.UISlot ToolbarSlotTemplate;\r\n\r\n\t}\r\n}\r\n"

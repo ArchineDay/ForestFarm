@@ -4,6 +4,7 @@ using System.Linq;
 using IndieFarm.Tool;
 using UnityEngine;
 using QFramework;
+using UnityEditor.UIElements;
 using UnityEngine.UI;
 
 namespace IndieFarm
@@ -12,6 +13,7 @@ namespace IndieFarm
     {
         public List<UISlot> ToolbarSlots = new List<UISlot>();
 
+        private static UIToolBar mInstance;
         private void Start()
         {
             //注册委托
@@ -96,6 +98,16 @@ namespace IndieFarm
             if (Input.GetKeyDown(KeyCode.Alpha8)) UISlot.OnItemSelect(ToolbarSlot8);
             if (Input.GetKeyDown(KeyCode.Alpha9)) UISlot.OnItemSelect(ToolbarSlot9);
             if (Input.GetKeyDown(KeyCode.Alpha0)) UISlot.OnItemSelect(ToolbarSlot10);
+        }
+
+        private void Awake()
+        {
+            mInstance = this;
+        }
+
+        private void OnDestroy()
+        {
+            mInstance = null;
         }
     }
 }

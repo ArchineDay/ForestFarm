@@ -1,4 +1,4 @@
-// Generate Id:c826ebca-7270-4b69-b3b4-efff624f2251
+// Generate Id:950e1eae-ddb1-451d-85bf-bd31cb5bd8c1
 using UnityEngine;
 
 namespace IndieFarm
@@ -25,6 +25,8 @@ namespace IndieFarm
 		public IndieFarm.UISlot ToolbarSlot9;
 
 		public IndieFarm.UISlot ToolbarSlot10;
+
+		public IndieFarm.UISlot ToolbarSlotTemplate;
 
 	}
 }
